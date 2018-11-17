@@ -1,4 +1,9 @@
-\input{Titelblatt} \newpage \thispagestyle{empty} \addtocounter{page}{-2}
+\begin{tikzpicture}[remember picture,overlay]
+\thispagestyle{empty}
+  \node at (current page.center) {\includegraphics[page=1]{misc/deckblattTerminiert.pdf}};
+\end{tikzpicture}
+\newpage
+\input{Titelblatt} \newpage \thispagestyle{empty} \addtocounter{page}{-3}
 \setlength{\evensidemargin}{0.6cm}			%Zum Drucken -0.6cm Rand einstellen!
 \setlength{\oddsidemargin}{0.6cm}				%Zum Drucken 0.6cm Rand einstellen!
 \begin{abstract}[Abstract] \thispagestyle{plain} \fussy Semiconductor-2nanowires
@@ -40,8 +45,8 @@ die Nanodrähte auf ein \mbox{magnetisierbares} Substrat aufgebracht und die
 Magnetisierungsrichtung mit einer \mbox{Helmholtzspule} \textit{in situ}
 verändert. Hierbei soll der ``\mbox{Proximity}-Effekt'' für eine spontane
 Spinkohärenz sorgen, die zu einer Spinpolarisation führt. \end{abstract}
-\setlength{\evensidemargin}{0.6cm}			%Zum Drucken -0.6cm Rand einstellen!
-\setlength{\oddsidemargin}{0.6cm}				%Zum Drucken 0.6cm Rand einstellen!
+\setlength{\evensidemargin}{0cm}			%Zum Drucken -0.6cm Rand einstellen!
+\setlength{\oddsidemargin}{0cm}				%Zum Drucken 0.6cm Rand einstellen!
 \tableofcontents \newpage \thispagestyle{empty}
 %\listoffigures
 %\listoftables
