@@ -1,11 +1,11 @@
-\babel@toc {ngerman}{}
+\select@language {german}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Theoretische Grundlagen}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Das Materialsystem Zinkoxid (ZnO)}{3}{section.2.1}
 \contentsline {section}{\numberline {2.2}Lumineszenz in II$^b$-VI Halbleitern}{4}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Exzitonen}{4}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Mehr-Exziton-Prozesse}{6}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Elektron-Loch-Plasma}{7}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.2}Mehr-Exziton-Prozesse}{7}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Elektron-Loch-Plasma}{8}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Plasmonik}{9}{section.2.3}
 \contentsline {subsubsection}{\nonumberline Volumenplasmonen}{9}{section*.7}
 \contentsline {subsubsection}{\nonumberline Oberflächenplasmon-Polariton}{10}{section*.8}
@@ -28,7 +28,7 @@
 \contentsline {subsubsection}{\nonumberline Spindekohärenzzeit T$_\text {2}$}{22}{section*.21}
 \contentsline {subsubsection}{\nonumberline Der Elliott-Yafet-Mechanismus}{22}{section*.22}
 \contentsline {subsubsection}{\nonumberline Der D'yakonov-Perel'-Mechanismus}{23}{section*.23}
-\contentsline {subsubsection}{\nonumberline Einfluss eines externen Magnetfeldes auf den D'yakonov-Perel'-Mechanismus}{25}{section*.24}
+\contentsline {subsubsection}{\nonumberline Einfluss eines externen Magnetfeldes auf den D'yakonov-Perel'-Mechanismus}{24}{section*.24}
 \contentsline {subsubsection}{\nonumberline Der Hanle-Effekt}{25}{section*.25}
 \contentsline {chapter}{\numberline {3}Experimentelle Methodik}{27}{chapter.3}
 \contentsline {section}{\numberline {3.1}Synthese und Präparation der Nanodrähte}{27}{section.3.1}
@@ -52,26 +52,26 @@
 \contentsline {subsection}{\numberline {4.1.2}Polarisationseigenschaften der Nanodrahtemission}{48}{subsection.4.1.2}
 \contentsline {subsubsection}{\nonumberline Polarisationsgrad der Nanodrahtemission}{48}{section*.52}
 \contentsline {subsubsection}{\nonumberline Stokes-Parameter der Polarisation}{51}{section*.56}
-\contentsline {section}{\numberline {4.2}ZnO-Nanodrähte auf einem MgO/Co/SiO$_\text {2}$-Substrat}{56}{section.4.2}
+\contentsline {section}{\numberline {4.2}ZnO-Nanodrähte auf einem MgO/Co/SiO$_\text {2}$-Substrat}{57}{section.4.2}
 \contentsline {subsubsection}{\nonumberline Drahtkombinationen}{59}{section*.63}
-\contentsline {subsection}{\numberline {4.2.1}Fourierabbildung der Nanodrahtemission}{61}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Polarisationseigenschaften der Nanodrahtemission}{62}{subsection.4.2.2}
-\contentsline {chapter}{\numberline {5}Einfluss eines externen Magnetfeldes auf die Emissionscharakteristik}{65}{chapter.5}
-\contentsline {section}{\numberline {5.1}Spektrum und Laserschwellwert}{66}{section.5.1}
-\contentsline {section}{\numberline {5.2}Polarisationsgrad und Stokes-Parameter}{68}{section.5.2}
-\contentsline {chapter}{\numberline {6}Zusammenfassung und Ausblick}{75}{chapter.6}
-\contentsline {chapter}{\numberline {A}Anhang}{79}{appendix.A}
-\contentsline {section}{\numberline {A.1}Anleitungen zur Justage der $\upmu $PL}{79}{section.A.1}
-\contentsline {section}{\numberline {A.2}Leistungsmessung}{81}{section.A.2}
-\contentsline {section}{\numberline {A.3}Herleitung Korrektur der Abbildung}{82}{section.A.3}
-\contentsline {section}{\numberline {A.4}Einmessung der Fourieroptik}{86}{section.A.4}
-\contentsline {section}{\numberline {A.5}Fehlerabschätzung und Hintergrundrauschen}{87}{section.A.5}
-\contentsline {subsection}{\numberline {A.5.1}Fehler der Fourierkoeffizienten}{87}{subsection.A.5.1}
-\contentsline {subsubsection}{\nonumberline Schwankung der PL-Emission}{87}{section*.80}
-\contentsline {subsubsection}{\nonumberline Genauigkeit der Rotation}{88}{section*.81}
-\contentsline {subsection}{\numberline {A.5.2}Ausrichtung der optischen Elemente und Phasenverschiebung}{89}{subsection.A.5.2}
-\contentsline {subsection}{\numberline {A.5.3}Kosmische Strahlung und Hintergrundrauschen}{91}{subsection.A.5.3}
-\contentsline {section}{\numberline {A.6}Ergänzungen zur Berechnung der Stokes-Parameter}{92}{section.A.6}
-\contentsline {section}{\numberline {A.7}Spin Injektion}{92}{section.A.7}
+\contentsline {subsection}{\numberline {4.2.1}Fourierabbildung der Nanodrahtemission}{62}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Polarisationseigenschaften der Nanodrahtemission}{63}{subsection.4.2.2}
+\contentsline {chapter}{\numberline {5}Einfluss eines externen Magnetfeldes auf die Emissionscharakteristik}{67}{chapter.5}
+\contentsline {section}{\numberline {5.1}Spektrum und Laserschwellwert}{68}{section.5.1}
+\contentsline {section}{\numberline {5.2}Polarisationsgrad und Stokes-Parameter}{70}{section.5.2}
+\contentsline {chapter}{\numberline {6}Zusammenfassung und Ausblick}{77}{chapter.6}
+\contentsline {chapter}{\numberline {A}Anhang}{81}{appendix.A}
+\contentsline {section}{\numberline {A.1}Anleitungen zur Justage der $\upmu $PL}{81}{section.A.1}
+\contentsline {section}{\numberline {A.2}Leistungsmessung}{83}{section.A.2}
+\contentsline {section}{\numberline {A.3}Herleitung Korrektur der Abbildung}{84}{section.A.3}
+\contentsline {section}{\numberline {A.4}Einmessung der Fourieroptik}{88}{section.A.4}
+\contentsline {section}{\numberline {A.5}Fehlerabschätzung und Hintergrundrauschen}{89}{section.A.5}
+\contentsline {subsection}{\numberline {A.5.1}Fehler der Fourierkoeffizienten}{89}{subsection.A.5.1}
+\contentsline {subsubsection}{\nonumberline Schwankung der PL-Emission}{89}{section*.80}
+\contentsline {subsubsection}{\nonumberline Genauigkeit der Rotation}{90}{section*.81}
+\contentsline {subsection}{\numberline {A.5.2}Ausrichtung der optischen Elemente und Phasenverschiebung}{90}{subsection.A.5.2}
+\contentsline {subsection}{\numberline {A.5.3}Kosmische Strahlung und Hintergrundrauschen}{93}{subsection.A.5.3}
+\contentsline {section}{\numberline {A.6}Ergänzungen zur Berechnung der Stokes-Parameter}{94}{section.A.6}
+\contentsline {section}{\numberline {A.7}Spin Injektion}{94}{section.A.7}
 \vspace *{1em}
-\contentsline {chapter}{Literaturverzeichnis}{95}{chapter*.82}
+\contentsline {chapter}{Literaturverzeichnis}{97}{chapter*.82}

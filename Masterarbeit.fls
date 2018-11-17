@@ -174,34 +174,152 @@ INPUT C:\Program Files\MiKTeX 2.9\tex\latex\tools\afterpage.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\tools\afterpage.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\tools\afterpage.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\tools\afterpage.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\luababel.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\luababel.def
-INPUT C:\ProgramData\MiKTeX\2.9\tex\generic\config\language.dat
-INPUT C:\ProgramData\MiKTeX\2.9\tex\generic\config\language.dat
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\babel-german\ngerman.ldf
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\babel-german\ngerman.ldf
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\babel-german\ngerman.ldf
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\babel-german\ngerman.ldf
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\babel-german\ngermanb.ldf
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\babel-german\ngermanb.ldf
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\luababel.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\babel\luababel.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\hyph-utf8\loadhyph\loadhyph-de-1996.tex
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\hyph-utf8\loadhyph\loadhyph-de-1996.tex
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\hyph-utf8\patterns\tex\hyph-de-1996.tex
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\hyph-utf8\patterns\tex\hyph-de-1996.tex
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\polyglossia.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\polyglossia.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\polyglossia.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\polyglossia.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\makecmds\makecmds.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\makecmds\makecmds.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\makecmds\makecmds.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\makecmds\makecmds.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\UnicodeData.txt
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\UnicodeData.txt
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\UnicodeData.txt
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\UnicodeData.txt
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\CaseFolding.txt
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\CaseFolding.txt
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\CaseFolding.txt
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\CaseFolding.txt
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\SpecialCasing.txt
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\SpecialCasing.txt
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\SpecialCasing.txt
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\SpecialCasing.txt
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec-luatex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec-luatex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec-luatex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec-luatex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.cfg
+INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman12-bold.luc
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr6.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr6.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi6.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi6.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy6.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy6.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman12-italic.luc
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\luatex\luatexbase\luatexbase.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\luatex\luatexbase\luatexbase.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\luatex\luatexbase\luatexbase.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\luatex\luatexbase\luatexbase.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\luatex\ctablestack\ctablestack.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\luatex\ctablestack\ctablestack.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\luatex\ctablestack\ctablestack.sty
+INPUT C:\Program Files\MiKTeX 2.9\tex\luatex\ctablestack\ctablestack.sty
+INPUT C:\ProgramData\MiKTeX\2.9\tex\generic\config\language.dat.lua
+INPUT C:\ProgramData\MiKTeX\2.9\tex\generic\config\language.dat.lua
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-german.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-german.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-german.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-german.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-german.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-german.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\babelsh.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\babelsh.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\babelsh.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\babelsh.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-english.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-english.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-english.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-english.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-english.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-english.ldf
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\hfoldsty\hfoldsty.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\hfoldsty\hfoldsty.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\hfoldsty\hfoldsty.sty
@@ -305,10 +423,6 @@ INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty
 INPUT C:\Program Files\MiKTeX 2.9\scripts\oberdiek\oberdiek.luatex.lua
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty
@@ -357,14 +471,6 @@ INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fmtcount.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fmtcount.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fmtcount.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fmtcount.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fcprefix.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fcprefix.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fcprefix.sty
@@ -373,10 +479,20 @@ INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fcnumparser.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fcnumparser.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fcnumparser.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fcnumparser.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-ngerman.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-ngerman.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-ngerman.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-ngerman.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-english.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-english.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-english.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-english.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-english.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-english.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-spanish.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-spanish.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-portuges.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-portuges.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-french.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-french.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-german.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-german.ldf
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-german.def
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-german.def
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-german.def
@@ -385,148 +501,21 @@ INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-germanb.def
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-germanb.def
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-germanb.def
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-germanb.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-ngermanb.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-ngermanb.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-ngermanb.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fmtcount\fc-ngermanb.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-italian.ldf
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\polyglossia\gloss-italian.ldf
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\datetime\datetime-defaults.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\datetime\datetime-defaults.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\datetime\datetime-defaults.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\datetime\datetime-defaults.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\datetime\dt-ngerman.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\datetime\dt-ngerman.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\datetime\dt-ngerman.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\datetime\dt-ngerman.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\UnicodeData.txt
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\UnicodeData.txt
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\UnicodeData.txt
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\UnicodeData.txt
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\CaseFolding.txt
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\CaseFolding.txt
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\CaseFolding.txt
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\CaseFolding.txt
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\SpecialCasing.txt
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\SpecialCasing.txt
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\SpecialCasing.txt
-INPUT C:\Program Files\MiKTeX 2.9\tex\generic\unicode-data\SpecialCasing.txt
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec-luatex.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec-luatex.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec-luatex.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec-luatex.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\tuenc.def
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.cfg
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.cfg
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.cfg
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\fontspec\fontspec.cfg
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman12-bold.luc
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr8.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr8.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr6.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr6.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi12.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi12.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi8.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi8.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi6.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi6.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy8.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy8.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy6.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy6.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmex10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmex10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam7.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam7.tfm
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm8.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm8.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm6.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm6.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm10.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm7.tfm
-INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm7.tfm
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman12-italic.luc
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\datetime\dt-german.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\datetime\dt-german.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\datetime\dt-german.def
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\datetime\dt-german.def
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\titling\titling.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\titling\titling.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\titling\titling.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\titling\titling.sty
+INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\cambria.luc
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\csquotes\csquotes.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\csquotes\csquotes.sty
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\csquotes\csquotes.sty
@@ -548,10 +537,6 @@ INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-cmr.cfg
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-cmr.cfg
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-cmr.cfg
-INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-cmr.cfg
 INPUT C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii
@@ -601,21 +586,53 @@ INPUT .\Bilder\Logo_NAK.jpg
 INPUT .\Bilder\Logo_NAK.jpg
 INPUT .\Bilder\Logo_NAK.jpg
 INPUT .\Bilder\Logo_NAK.jpg
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman17-regular.luc
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman8-regular.luc
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman6-regular.luc
+INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\calibril.luc
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-eur.cfg
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-eur.cfg
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-eur.cfg
 INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-eur.cfg
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm8.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm6.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm6.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm10.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm7.tfm
+INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\euler\eurm7.tfm
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-cmr.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-cmr.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-cmr.cfg
+INPUT C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-cmr.cfg
 INPUT .\Bilder\Logo_NAK.jpg
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi12.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi12.tfm
@@ -645,14 +662,10 @@ INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmsans12-regular.luc
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmsans10-bold.luc
 INPUT .\Masterarbeit.toc
 INPUT .\Masterarbeit.toc
 INPUT .\Masterarbeit.toc
 INPUT .\Masterarbeit.toc
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman8-bold.luc
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman6-bold.luc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmib10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmib10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmmib8.tfm
@@ -687,9 +700,6 @@ INPUT .\Hauptteil.tex
 INPUT .\Hauptteil.tex
 INPUT .\Hauptteil.tex
 INPUT .\Hauptteil.tex
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman10-regular.luc
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman7-regular.luc
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman5-regular.luc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi7.tfm
@@ -732,9 +742,6 @@ INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr7.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr7.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr5.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmr5.tfm
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman10-bold.luc
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman7-bold.luc
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman5-bold.luc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmmi10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmsy10.tfm
@@ -780,9 +787,6 @@ INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\cm\cmbx10.tfm
 INPUT .\Bilder\Vorbetrachtung\ZnO_Str_BG.png
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman10-bolditalic.luc
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman8-italic.luc
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmroman7-italic.luc
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmmib5.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmmib5.tfm
 INPUT C:\Program Files\MiKTeX 2.9\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
@@ -1219,7 +1223,6 @@ INPUT .\Masterarbeit.bbl
 INPUT .\Masterarbeit.bbl
 INPUT .\Masterarbeit.bbl
 INPUT .\Masterarbeit.bbl
-INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmromancaps10-regular.luc
 INPUT C:\Users\zietl\AppData\Local\MiKTeX\2.9\luatex-cache\generic\fonts\otl\lmmono12-regular.luc
 INPUT .\Masterarbeit.aux
 INPUT .\Masterarbeit.aux
