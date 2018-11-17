@@ -1,0 +1,60 @@
+\documentclass[12pt,twoside,bind,ams,a4paper]{hepthesis}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,hfoldsty,charter}
+\usepackage{amssymb}
+\usepackage[numbers]{natbib}
+\setcitestyle{square}
+\usepackage{pdfpages}
+\usepackage{url}
+\usepackage{ulem}
+\usepackage{color}
+\usepackage[squaren]{SIunits}
+\usepackage{upgreek}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{nameref}
+\usepackage[section]{placeins}
+\KOMAoption{numbers}{noenddot}
+\usepackage{booktabs}
+\author{Malte Zietlow}
+\title{Emissionscharakteristik von ZnO-Nanodrähten unter externen Magnetfeldern}
+\date{01. August 2018}
+\hypersetup{
+ pdfauthor = {\theauthor},
+ pdftitle = {\thetitle},
+ pdfsubject = {Masterthesis, Friedrich-Schiller-Universität Jena, 2018},
+ bookmarksopen=true
+}
+\raggedbottom
+\begin{document}
+
+\renewcommand*\chapterheadstartvskip{\vspace*{-2cm}}
+\renewcommand*{\figurename}{Abb.}
+\renewcommand*{\figureautorefname}{Abb.}
+\renewcommand*{\tablename}{Tab.}
+\renewcommand*{\tableautorefname}{Tab.}
+\renewcommand*{\chapterautorefname}{Kapitel}
+\renewcommand*{\sectionautorefname}{Kapitel}
+\renewcommand*{\subsectionautorefname}{Kapitel}
+\renewcommand*{\equationautorefname}{Gl.}
+
+\begin{frontmatter}
+\input{Vorspann}
+\end{frontmatter}
+\setlength{\evensidemargin}{0.6cm}			%Zum Drucken -0.6cm Rand einstellen!
+\setlength{\oddsidemargin}{0.6cm}			%Zum Drucken  0.6cm Rand
+\begin{mainmatter}
+\input{Hauptteil}
+\end{mainmatter}
+
+\begin{appendices}
+\input{Anhang}
+\end{appendices}
+
+\begin{backmatter}
+\input{Nachspann}
+\end{backmatter}
+
+\end{document}
