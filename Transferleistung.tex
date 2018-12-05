@@ -33,7 +33,7 @@ an Meine TK.}
  pdfsubject = {Transferleistung, Techniker Krankenkasse/Nordakademie, 2018},
  bookmarksopen=true
 }
-\raggedbottom
+\raggedbottom{}
 \setmainfont[Path=C:/Windows/Fonts/]{cambria.ttc}
 \begin{document}
 
@@ -48,20 +48,20 @@ an Meine TK.}
 \renewcommand*{\equationautorefname}{Gl.}
 
 \begin{frontmatter}
-\input{Vorspann}
+\input{Dokument/Vorspann}
 \end{frontmatter}
 \setlength{\evensidemargin}{0cm}	   %Zum Drucken -0.6cm Rand einstellen!
 \setlength{\oddsidemargin}{0cm}		   %Zum Drucken  0.6cm Rand
 \begin{mainmatter}
-\input{Hauptteil}
+\input{Dokument/Hauptteil}
 \end{mainmatter}
 
 \begin{appendices}
-\input{Anhang}
+\input{Dokument/Anhang}
 \end{appendices}
 
 \begin{backmatter}
-\input{Nachspann}
+\input{Dokument/Nachspann}
 \end{backmatter}
 
 \end{document}
