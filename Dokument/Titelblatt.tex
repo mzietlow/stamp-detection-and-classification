@@ -5,24 +5,26 @@
 \vspace*{-2cm}
 \includegraphics[width=0.85\textwidth]{Bilder/Logo_NAK}\\
 \vspace*{1.5cm}
-    {\fontspec[Path=C:/Windows/Fonts/]{calibril.ttf}\huge \onehalfspacing{}
+{
+    \fontspec[Path=C:/Windows/Fonts/]{calibril.ttf}\huge
+    \onehalfspacing{}
     \color[RGB]{91,155,213}
-        \noindent\rule{\textwidth}{0.4pt}
-            \thetitle{}
-            \vspace*{-3mm}
-        \noindent\rule{\textwidth}{0.4pt}
-
-    \par}%
-   \vfill
-  %\vskip 6em
-    {\normalfont\normalcolor\bfseries
-	\large
-	Transferleistung \\
-	\large
-	im Studiengang Angewandte Informatik\\
-	angefertigt im Projekt-Team Innovations.OMP\\
-	der Techniker Krankenkasse\\
-    \par}%
+    \noindent\rule{\textwidth}{0.4pt}
+        \thetitle{}
+    \vspace*{-3mm}
+    \noindent\vspace*{-3mm}\rule{\textwidth}{0.4pt}
+    \par
+}
+\vfill
+{
+    \normalfont\normalcolor\bfseries\large
+    Transferleistung \\
+    \large
+    im Studiengang Angewandte Informatik\\
+    angefertigt im Projekt-Team Innovations.OMP\\
+    der Techniker Krankenkasse\\
+    \par
+}
 \end{center}\par
 %\vfill
 \vspace*{2.5cm}
@@ -31,7 +33,7 @@
   \noindent \textbf{von \theauthor, geb.~am 01.~März 1998 in Bad Oldesloe}\\
 
   \begin{tabbing}
-  \textbf{Betreuer und Prüfer:}  \= \textbf{Jan Koops, Tech-Lead TK-App}\\
+  \textbf{Betreuer und Prüfer:}  \= \textbf{Jan Koops, Tech-Lead TK-App}
   \\
   \\
   \\
@@ -39,6 +41,6 @@
   %\textbf{3. Betreuer und Pr\"ufer:}  \= \textbf{Jan Ove Weichel, Android}\\
   \end{tabbing}
 
-  \noindent \textbf{Hamburg, den \thedate}
-  }
+  \noindent\textbf{\theLocationAndDate}
+}
 \end{minipage}

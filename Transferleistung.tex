@@ -1,4 +1,4 @@
-\documentclass[12pt,twoside,bind,ams,a4paper]{hepthesis}
+\documentclass[12pt,oneside,ams,a4paper]{hepthesis}
 \usepackage{polyglossia}
 \setmainlanguage[babelshorthands=true]{german}
 \setotherlanguage[variant=british]{english}
@@ -21,11 +21,12 @@
 \usepackage{datetime}
 \usepackage{fontspec}
 \usepackage{titling}
-\usepackage{tikz}
 \usepackage{glossaries}
+\usepackage{fixltx2e}
+
 \author{Malte Zietlow}
-\title{OAuth 2.0 zur Weiterreichung der zweiten Sicherheitsstufe aus der TK-App
-an Meine TK.}
+\title{Analyse von OAuth 2.0 und OpenID Connect zur Weiterreichung der
+\mbox{zwei-Faktor Authentifizierung} aus der TK-App an Meine~TK.}
 \date{\today}
 \hypersetup{
  pdfauthor = {\theauthor},
@@ -36,7 +37,7 @@ an Meine TK.}
 \raggedbottom{}
 \setmainfont[Path=C:/Windows/Fonts/]{cambria.ttc}
 \begin{document}
-
+\newcommand{\theLocationAndDate}{Hamburg, den \thedate}
 \renewcommand*\chapterheadstartvskip{\vspace*{-2cm}}
 \renewcommand*{\figurename}{Abb.}
 \renewcommand*{\figureautorefname}{Abb.}
@@ -46,22 +47,21 @@ an Meine TK.}
 \renewcommand*{\sectionautorefname}{Kapitel}
 \renewcommand*{\subsectionautorefname}{Kapitel}
 \renewcommand*{\equationautorefname}{Gl.}
-
+\includepdf[pages=1]{misc/deckblattTerminiert.pdf}
 \begin{frontmatter}
-\input{Dokument/Vorspann}
+    \input{Dokument/Vorspann}
 \end{frontmatter}
-\setlength{\evensidemargin}{0cm}	   %Zum Drucken -0.6cm Rand einstellen!
-\setlength{\oddsidemargin}{0cm}		   %Zum Drucken  0.6cm Rand
+
 \begin{mainmatter}
-\input{Dokument/Hauptteil}
+    \input{Dokument/Hauptteil}
 \end{mainmatter}
 
 \begin{appendices}
-\input{Dokument/Anhang}
+    \input{Dokument/Anhang}
 \end{appendices}
 
 \begin{backmatter}
-\input{Dokument/Nachspann}
+    \input{Dokument/Nachspann}
 \end{backmatter}
 
 \end{document}
