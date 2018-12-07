@@ -1,6 +1,18 @@
-\chapter{OAuth 2.0}
-\blindtext{}
-\input{Dokument/Analyse/OAuth/Grundlagen.tex}
+\chapter{OAuth 2.0} OAuth 2.0 ist ein von der IETF konzipiertes und 2012 in den
+RFC 6749 und RFC 6750 spezifiziertes Framework zur Delegation von
+Zugriffsrechten für Software-Anwendungen. Die Zugriffsrechte auf eine Ressource
+entspringen hierbei keinem Rollensystem, sondern werden durch den Eigentümer der
+Ressource selbst autorisiert. So können Nutzer einer Anwendung limitierten
+Zugriff auf Daten ermöglichen, die von einer anderen Anwendung verwaltet werden.
+Die Kommunikation erfolgt mittels standardisierte Nachrichten, die per JSON und
+HTTP ausgetauscht werden. Für den Austausch der Berechtigungen werden sogenannte
+Flows genutzt. Im Folgenden sollen die in OAuth beteiligten Parteien, Objekte
+und Flows erläutert und zusammengeführt werden. Ferner soll OAuth als
+Authentifizierungsverfahren betrachtet und auf mögliche Probleme untersucht
+werden, wofür auch die innerhalb der TK bereits vorhandene Umsetzung
+herangezogen wird.
+
+\input{Dokument/Analyse/OAuth/Parteien.tex}
 \input{Dokument/Analyse/OAuth/Flows.tex}
 \input{Dokument/Analyse/OAuth/Sicherheitsanalyse.tex}
 \input{Dokument/Analyse/OAuth/Fazit.tex}
