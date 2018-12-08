@@ -2,22 +2,13 @@
 \usepackage{polyglossia}
 \setmainlanguage[babelshorthands=true]{german}
 \setotherlanguage[variant=british]{english}
-\usepackage{hfoldsty}
-\usepackage{amssymb}
-\usepackage[numbers]{natbib}
-\setcitestyle{square}
 \usepackage{pdfpages}
-\usepackage{url}
-\usepackage{ulem}
-\usepackage{color}
-\usepackage[squaren]{SIunits}
-\usepackage{upgreek}
+\usepackage{ulem} % Unterstreichen von Text
 \usepackage{hyperref}
-\usepackage{braket}
 \usepackage{nameref}
-\usepackage[section]{placeins}
+\usepackage[section]{placeins} % Stoppt Floats an Section-Grenzen
 \KOMAoption{numbers}{noenddot}
-\usepackage{booktabs}
+\usepackage{booktabs} % Erweiterung von Tabellen
 \usepackage{datetime}
 \usepackage{fontspec}
 \usepackage{titling}
@@ -51,11 +42,14 @@
 \renewcommand*{\sectionautorefname}{Kapitel}
 \renewcommand*{\subsectionautorefname}{Kapitel}
 \renewcommand*{\equationautorefname}{Gl.}
+
 \includepdf[pages=1]{misc/deckblattTerminiert.pdf}
 \newpage
 \begin{frontmatter}
     \input{Dokument/Vorspann}
 \end{frontmatter}
+
+\input{Dokument/Glossar}
 
 \begin{mainmatter}
     \input{Dokument/Hauptteil}
