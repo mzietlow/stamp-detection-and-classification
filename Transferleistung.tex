@@ -12,11 +12,12 @@
 \usepackage{datetime}
 \usepackage{fontspec}
 \usepackage{titling}
-\usepackage{glossaries}
+\usepackage{glossaries} % \gls{<golssary-entry>}
 \usepackage{fixltx2e}
 \usepackage{blindtext}
 \usepackage{geometry}
 \usepackage{setspace}
+\makeglossaries{}
 \setstretch{1.0269} % 1.25-facher Zeilenabstand bei 12pt.
 \geometry{a4paper,left=20mm,right=20mm}
 \author{Malte Zietlow}
@@ -43,13 +44,14 @@
 \renewcommand*{\subsectionautorefname}{Kapitel}
 \renewcommand*{\equationautorefname}{Gl.}
 
+\input{Dokument/GlossarMetadaten}
+
 \includepdf[pages=1]{misc/deckblattTerminiert.pdf}
 \newpage
 \begin{frontmatter}
     \input{Dokument/Vorspann}
 \end{frontmatter}
 
-\input{Dokument/Glossar}
 
 \begin{mainmatter}
     \input{Dokument/Hauptteil}
