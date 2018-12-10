@@ -235,4 +235,17 @@ In this work, we analyze the existing approaches to cross-domain service composi
   doi       = {10.1007/978-1-4302-6817-8},
 }
 
+@TechReport{RFC6749,
+  author       = {D. Hardt},
+  title        = {The OAuth 2.0 Authorization Framework},
+  institution  = {RFC Editor},
+  year         = {2012},
+  type         = {RFC},
+  number       = {6749},
+  month        = {October},
+  howpublished = {Internet Requests for Comments},
+  issn         = {2070-1721},
+  url          = {https://tools.ietf.org/html/rfc6749},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

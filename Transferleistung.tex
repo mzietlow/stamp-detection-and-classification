@@ -8,6 +8,7 @@
 \usepackage{nameref}
 \usepackage[section]{placeins} % Stoppt Floats an Section-Grenzen
 \KOMAoption{numbers}{noenddot}
+\addtokomafont{labelinglabel}{\sffamily}
 \usepackage{booktabs} % Erweiterung von Tabellen
 \usepackage{datetime}
 \usepackage{fontspec}
@@ -17,6 +18,11 @@
 \usepackage{blindtext}
 \usepackage{geometry}
 \usepackage{setspace}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{nameref}
+\usepackage{todonotes}
+
 \makeglossaries{}
 \setstretch{1.0269} % 1.25-facher Zeilenabstand bei 12pt.
 \geometry{a4paper,left=20mm,right=20mm}
@@ -32,8 +38,20 @@
 }
 \raggedbottom{}
 \setmainfont[Path=C:/Windows/Fonts/]{times.ttf}
+
+\definecolor{lightgray}{gray}{0.9}
+
+\lstset{
+    showstringspaces=false,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color[grey]{0.6},
+    stringstyle=\color[RGB]{255,150,75}
+}
+
 \begin{document}
 \newcommand{\theLocationAndDate}{Hamburg, den \thedate}
+\newcommand{\inlinecode}[2]{\colorbox{lightgray}{\lstinline[language=#1]$#2$}}
 \renewcommand*\chapterheadstartvskip{\vspace*{-2cm}}
 \renewcommand*{\figurename}{Abb.}
 \renewcommand*{\figureautorefname}{Abb.}

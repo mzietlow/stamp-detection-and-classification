@@ -1,2 +1,54 @@
 \section{Flows}
+\subsection{Implicit}
+
+\inlinecode{Java}{import java.utils.LinkedList;}
+
+Basiert auf OAuth (2-legged)+ ID Token
+\subsection{Hybrid}
+Kombination aus Authorization und Implicit
+Kann Access Token, ID Token oder beide requesten, zusätzlich zum Authorization Code, der gegen einen Access Token eingetauscht werden kann. Nützlich für bspw. SSO
+\subsection{Authorization Code}
+Basiert auf OAuth (3-legged) + ID Token
+Redirectet den Useragent (meiste ein Browser) zu dem Authorization Endpoint des \gls{idp}. Useragent macht ein GET auf den \gls{idp}:\@
+\(
+GET /authorize?
+Host: oidc.provider.com:443
+    response\_type=code\&
+    scope=openid\%20email\%20profile\& % openid request, möchte email und profil
+    client\_id=2e1a31df02a234e0bd8c18d396c47647\&
+    state=fsdfset403857SYxc\&
+    redirect\_uri=https\%3A\textbackslash52F\textbackslash2Fexample.com\%2Freturn\%2F\&
+\)
+User wird an \gls{idp} Login-Screen weitergeleitet, dem die entsprechenden
+Credentials übergeben werden. Der \gls{idp} authentisiert den Nutzer und erfragt
+% Todo: authentisieren zum Glossar
+Einverständnis bezüglich der Zugriffsberechtigungen. Im Positivfall sendet der
+\gls{idp} eine Authorization Response Message vom Authorization-Endpoint und
+redirectet den Useragent zu der Redirection-URI, die zuvor angegeben wurde.
+\(
+HTTP/1.1 302 Found
+    Location=https://client.example.com/return
+    code=DU11dej739qsWDGFaw34fCA=\&
+    state=fsdfset403857SYxc
+\)
+
+der Client requestet hierauf einen ID-Token zu dem Token-Endpoint
+\(
+POST /token HTTP/1.1
+    Authorization: Basic 3SDskf4HEkA09fdfdPWVKS2123445HH % base 64 encoded
+    grant\_type=authorization\_code\&
+    code=DU11dej739qasWDGFaw34fCA=\&
+    redirect\_uri=https\%3A\textbackslash52F\textbackslash2Fexample.com\%2Freturn\%2F\&
+\)
+der \gls{idp} authentisiert den Client per ID und Secret, Validiert den Auth.
+Code und Redirect uri. Sofern valide respondet der \gls{idp}
+\(
+HTTP/1.1 200 OK
+    id\_token:eyJHbGCi0iJSUz\ldots,
+    access\_token:bzb93eld29e45b\ldots,
+    refresh\_token:fsdfsdllf89dfj\ldots,
+    token\_type:Bearer
+    expires\_in:3600
+\)
+
 \blindtext{}
