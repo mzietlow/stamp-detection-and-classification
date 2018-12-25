@@ -1,18 +1,29 @@
-\chapter{OAuth 2.0} OAuth 2.0 ist ein von der \gls{ietf} konzipiertes und 2012
-in den RFC 6749 und RFC 6750 spezifiziertes Framework zur Delegation von
-Zugriffsrechten für Software-Anwendungen. Die Zugriffsrechte auf eine Ressource
-entspringen hierbei keinem Rollensystem, sondern werden durch den Eigentümer der
-Ressource selbst autorisiert. So können Nutzer einer Anwendung limitierten
-Zugriff auf Daten ermöglichen, die von einer anderen Anwendung verwaltet werden.
-Die Kommunikation erfolgt mittels standardisierte Nachrichten, die per JSON und
-HTTP ausgetauscht werden. Für den Austausch der Berechtigungen werden sogenannte
-Flows genutzt. Im Folgenden sollen die in OAuth beteiligten Parteien, Objekte
-und Flows erläutert und zusammengeführt werden. Ferner soll OAuth als
+\chapter{OAuth 2.0} \gls{OAuth} ist ein von der \gls{ietf} konzipierte Protokoll
+zur Delegation von Zugriffsrechten für Anwendungssoftware. Zugriffsrechte werden
+hierbei durch von dem Besitzer der entsprechenden Zielressource autorisierte,
+zeitlich limitierte Access-Tokens abgebildet. Access-Tokens sind bereits häufig
+über den Vergleich mit Konzerttickets erläutert worden. Wer im Besitz des
+zeitlich beschränkten Tickets ist, in diesem Fall der Zeichenfolge des Tokens,
+ist damit auch im Besitz der mit diesem einhergehenden Zugriffsrechte, e.g.\ dem
+Zugriff auf eine fiktive UserInfo-API, die den Namen und die Adresse des über
+den Token zuordenbar Nutzers zurückgibt. Access-Tokens sind also eine
+Möglichkeit für den Ressourcenbesitzer, anderen Parteien limitierten Zugriff auf
+Daten zu ermöglichen, die für ihn bereits von einer Anwendung verwaltet werden,
+wobei das Zugriffsrecht unabhängig von der Identität der Partei allein auf den
+Besitz des Tokens zurückgeht. Auf Access-Tokens soll in Abschnitt
+~\ref{accessToken} näher eingegangen werden. Die Übergabe des Access-Tokens ist
+durch sogenannte Flows organisiert, deren wichtigste, Authorization Grant Flow
+sowie Implicit Grant, in Abschnitt~\ref{Flows} erläutert werden sollen. Die
+Kommunikation innerhalb der Flows erfolgt mittels standardisierter Nachrichten,
+die als JSON per HTTP-Methode ausgetauscht werden. Im Folgenden sollen die in
+\gls{OAuth} beteiligten Parteien, Objekte, Nachrichtenformate und Flows
+erläutert und zusammengeführt werden. Ferner soll \gls{OAuth} als
 Authentifizierungsverfahren betrachtet und auf mögliche Probleme untersucht
 werden, wofür auch die innerhalb der TK bereits vorhandene Umsetzung
-herangezogen wird.
+betrachtet wird.
 
 \input{Dokument/Analyse/OAuth/Parteien}
 \input{Dokument/Analyse/OAuth/Flows}
+\input{Dokument/Analyse/OAuth/Access-Tokens}
 \input{Dokument/Analyse/OAuth/Sicherheitsanalyse}
 \input{Dokument/Analyse/OAuth/Fazit}

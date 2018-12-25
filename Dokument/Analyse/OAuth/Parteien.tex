@@ -2,6 +2,6 @@
 \begin{labeling}{OAuthParteien}
     \item [Resource Owner] besitzt geschützte Ressourcen, die auf einem Resource Server gehostet werden.
     \item [Resource Server] hostet geschützte Ressourcen, nimmt Requests auf geschützte Ressourcen entgegen und gewährt Zugriff, sofern der übermittelte Access-Token valide ist.
-    \item [Client Application] ist eine vom Resource Owner genutzte Anwendung, die Zugriff auf geschützte Ressourcen anfragt und entsprechende Requests an den Resource Server stellt.
-    \item[Authorization Server] authentisiert den Resource Owner anhand seiner Zugangsdaten und stellt dem Client anschließend einen Access Token auf die angefragte Ressource zur Verfügung.
+    \item [Client Application] ist eine vom Resource Owner genutzte Anwendung, die Zugriff auf geschützte Ressourcen anfragt und entsprechende Requests an den Resource Server stellt. Jeder Client muss sich am Authorization Server registrieren, woraufhin ihm eine Client-ID und ein Client-Secret zugewiesen werden.
+    \item[Authorization Server] authentisiert den Resource Owner anhand seiner Zugangsdaten und stellt dem Client je nach Flow einen Authorization Code oder einen Access Token auf die angefragte Ressource zur Verfügung.
 \end{labeling}

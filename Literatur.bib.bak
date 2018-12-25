@@ -225,7 +225,7 @@ In this work, we analyze the existing approaches to cross-domain service composi
 }
 
 @Book{Siriwardena.2014,
-  title     = {Advanced API Security: Securing APIs with OAuth 2.0, OpenID Connect, JWS, and JWE},
+  title     = {NOT YET RECIEVED: Advanced API Security: Securing APIs with OAuth 2.0, OpenID Connect, JWS, and JWE},
   publisher = {Apress},
   year      = {2014},
   author    = {Siriwardena, Prabath},
@@ -246,6 +246,19 @@ In this work, we analyze the existing approaches to cross-domain service composi
   howpublished = {Internet Requests for Comments},
   issn         = {2070-1721},
   url          = {https://tools.ietf.org/html/rfc6749},
+}
+
+@Article{chari.2011,
+  author    = {Suresh Chari and Charanjit S. Jutla and Arnab Roy},
+  title     = {Universally Composable Security Analysis of OAuth v2.0},
+  journal   = {{IACR} Cryptology ePrint Archive},
+  year      = {2011},
+  volume    = {2011},
+  pages     = {526},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/bib/journals/iacr/ChariJR11},
+  timestamp = {Tue, 14 Aug 2018 17:08:20 +0200},
+  url       = {http://eprint.iacr.org/2011/526},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

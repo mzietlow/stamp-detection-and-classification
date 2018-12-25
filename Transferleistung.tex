@@ -6,7 +6,7 @@
 \usepackage{ulem} % Unterstreichen von Text
 \usepackage{hyperref}
 \usepackage{nameref}
-\usepackage[section]{placeins} % Stoppt Floats an Section-Grenzen
+\usepackage[section]{placeins} % stoppt Floats an Section-Grenzen
 \KOMAoption{numbers}{noenddot}
 \addtokomafont{labelinglabel}{\sffamily}
 \usepackage{booktabs} % Erweiterung von Tabellen
@@ -26,7 +26,7 @@
 \makeglossaries{}
 %\setstretch{1.0269} % 1.25-facher Zeilenabstand bei 12pt.
 \spacing{1.25}
-\geometry{a4paper,left=20mm,right=20mm}
+\geometry{a4paper,left=20mm,right=20mm, top=30mm, bottom=20mm}
 \author{Malte Zietlow}
 \title{Analyse von OAuth 2.0 und OpenID Connect zur Weiterreichung der
 \mbox{zwei-Faktor Authentifizierung} aus der TK-App an Meine~TK.}
@@ -53,7 +53,7 @@
 \begin{document}
 \newcommand{\theLocationAndDate}{Hamburg, den \thedate}
 \newcommand{\inlinecode}[2]{\colorbox{lightgray}{\lstinline[language=#1]$#2$}}
-\renewcommand*\chapterheadstartvskip{\vspace*{-2cm}}
+\renewcommand*\chapterheadstartvskip{\vspace*{-1cm}}
 \renewcommand*{\figurename}{Abb.}
 \renewcommand*{\figureautorefname}{Abb.}
 \renewcommand*{\tablename}{Tab.}
@@ -70,7 +70,6 @@
 \begin{frontmatter}
     \input{Dokument/Vorspann}
 \end{frontmatter}
-
 
 \begin{mainmatter}
     \input{Dokument/Hauptteil}
