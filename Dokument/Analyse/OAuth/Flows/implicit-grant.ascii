@@ -1,0 +1,27 @@
+     +----------+
+     | Resource |
+     |  Owner   |
+     |          |
+     +----|-----+
+          v
+         (3)
+      Providing
+   User Credentials
+          v
+     +----|-----+                                +---------------+
+     |         -+->>>>(2)>>  Grant Request   >>>-+-              |
+     |  User-   |                                | Authorization |
+     |  Agent  -+->>>>(4)>> User Credentials >>>-+-    Server    |
+     |(Browser) |                                |               |
+     |         -+-<<<<(5)<<   Access Token   <<<-+-              |
+     +-|----|---+                                +---------------+
+       ^    v
+       ^   (6) Access Token
+       ^    v
+      (1) Grant Request
+       ^    v
+     +-|----|--+
+     |         |
+     |  Client |
+     |         |
+     +---------+
