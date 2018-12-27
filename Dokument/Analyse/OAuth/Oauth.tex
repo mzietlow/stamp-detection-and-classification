@@ -1,29 +1,30 @@
-\chapter{OAuth 2.0} \gls{OAuth} ist ein von der \gls{ietf} konzipierte Protokoll
-zur Delegation von Zugriffsrechten für Anwendungssoftware. Zugriffsrechte werden
-hierbei durch von dem Besitzer der entsprechenden Zielressource autorisierte,
-zeitlich limitierte Access-Tokens abgebildet. Access-Tokens sind bereits häufig
-über den Vergleich mit Konzerttickets erläutert worden. Wer im Besitz des
-zeitlich beschränkten Tickets ist, in diesem Fall der Zeichenfolge des Tokens,
-ist damit auch im Besitz der mit diesem einhergehenden Zugriffsrechte, e.g.\ dem
-Zugriff auf eine fiktive UserInfo-API, die den Namen und die Adresse des über
-den Token zuordenbar Nutzers zurückgibt. Access-Tokens sind also eine
-Möglichkeit für den Ressourcenbesitzer, anderen Parteien limitierten Zugriff auf
-Daten zu ermöglichen, die für ihn bereits von einer Anwendung verwaltet werden,
-wobei das Zugriffsrecht unabhängig von der Identität der Partei allein auf den
-Besitz des Tokens zurückgeht. Auf Access-Tokens soll in Abschnitt
-~\ref{accessToken} näher eingegangen werden. Die Übergabe des Access-Tokens ist
-durch sogenannte Flows organisiert, deren wichtigste, Authorization Grant Flow
-sowie Implicit Grant, in Abschnitt~\ref{Flows} erläutert werden sollen. Die
-Kommunikation innerhalb der Flows erfolgt mittels standardisierter Nachrichten,
-die als JSON per HTTP-Methode ausgetauscht werden. Im Folgenden sollen die in
-\gls{OAuth} beteiligten Parteien, Objekte, Nachrichtenformate und Flows
-erläutert und zusammengeführt werden. Ferner soll \gls{OAuth} als
-Authentifizierungsverfahren betrachtet und auf mögliche Probleme untersucht
-werden, wofür auch die innerhalb der TK bereits vorhandene Umsetzung
-betrachtet wird.
+\chapter{OAuth 2.0} \gls{OAuth} ist ein von der \gls{ietf} konzipiertes
+Protokoll zur Delegation von Zugriffsrechten für Anwendungssoftware.
+Zugriffsrechte werden hierbei durch, von dem Besitzer der entsprechenden
+Zielressource autorisierte, zeitlich limitierte Access-Tokens abgebildet.
+Access-Tokens sind bereits häufig über den Vergleich mit Konzerttickets
+erläutert worden. Wer im Besitz des zeitlich beschränkten Tickets ist, der
+Zeichenfolge des Tokens, muss sich nicht weiter ausweisen und ist so auch im
+Besitz der mit dem Token einhergehenden Zugriffsrechte, e.g.\ dem Zugriff auf
+eine fiktive UserInfo-API, die den Namen und die Adresse des über den Token
+zuordenbaren Nutzers zurückgibt. Access-Tokens sind also eine Möglichkeit für
+den Ressourcenbesitzer, anderen Parteien limitierten Zugriff auf Daten zu
+ermöglichen, die für ihn bereits von einer Anwendung verwaltet werden, wobei das
+Zugriffsrecht, unabhängig von der Identität der Partei, allein auf den Besitz des
+Tokens zurückgeht. Auf Access-Tokens soll in Abschnitt~\ref{accessToken} näher
+eingegangen werden. Die Übergabe des Access-Tokens ist durch sogenannte
+\glspl{Grant Type} strukturiert, deren wichtigste, Authorization Grant sowie
+Implicit Grant, in Abschnitt~\ref{GrantTypes} erläutert werden sollen. Die
+Kommunikation innerhalb der \glspl{Grant Type} erfolgt mittels standardisierter
+Nachrichten, die als JSON per HTTP-Methode ausgetauscht werden. Im Folgenden
+sollen die in \gls{OAuth} beteiligten Parteien, Objekte, Nachrichtenformate und
+\glspl{Grant Type} erläutert und zusammengeführt werden. Ferner soll \gls{OAuth}
+als Authentifizierungsverfahren betrachtet und auf mögliche Probleme untersucht
+werden, wofür auch die innerhalb der TK bereits vorhandene Umsetzung betrachtet
+wird.
 
 \input{Dokument/Analyse/OAuth/Parteien}
-\input{Dokument/Analyse/OAuth/Flows}
+\input{Dokument/Analyse/OAuth/GrantTypes}
 \input{Dokument/Analyse/OAuth/Access-Tokens}
 \input{Dokument/Analyse/OAuth/Sicherheitsanalyse}
 \input{Dokument/Analyse/OAuth/Fazit}

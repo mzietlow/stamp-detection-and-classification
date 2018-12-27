@@ -1,17 +1,17 @@
 +--------+                               +---------------+
-|        |--(A)- Authorization Request ->|   Resource    |
+|        |>>(1)> Authorization Request >>|   Resource    |
 |        |                               |     Owner     |
-|        |<-(B)-- Authorization Grant ---|               |
+|        |<<(2)<< Authorization Grant <<<|               |
 |        |                               +---------------+
 |        |
 |        |                               +---------------+
-|        |--(C)-- Authorization Grant -->| Authorization |
+|        |>>(3)>> Authorization Grant >>>| Authorization |
 | Client |                               |     Server    |
-|        |<-(D)----- Access Token -------|               |
+|        |<<(4)<<<<< Access Token <<<<<<<|               |
 |        |                               +---------------+
 |        |
 |        |                               +---------------+
-|        |--(E)----- Access Token ------>|    Resource   |
+|        |>>(5)>>>>> Access Token >>>>>>>|    Resource   |
 |        |                               |     Server    |
-|        |<-(F)--- Protected Resource ---|               |
+|        |<<(6)<<< Protected Resource <<<|               |
 +--------+                               +---------------+

@@ -1,25 +1,28 @@
-+----------+
+     +----------+
      | Resource |
      |   Owner  |
      |          |
      +----------+
-          ^
-          |
-         (B)
-     +----|-----+          Client Identifier      +---------------+
-     |         -+----(A)-- & Redirection URI ---->|               |
+          v
+         (3)
+      Providing
+   User Credentials
+          v
+     +----|-----+                                 +---------------+
+     |         -+->>>(2)>>   Grant Request    >>>-+-              |
      |  User-   |                                 | Authorization |
-     |  Agent  -+----(B)-- User authenticates --->|     Server    |
-     |          |                                 |               |
-     |         -+----(C)-- Authorization Code ---<|               |
+     |  Agent  -+->>>(4)>>  User Credentials  >>>-+-    Server    |
+     |(Browser) |                                 |               |
+     |         -+-<<<(5)<< Authorization Code <<<-+-              |
      +-|----|---+                                 +---------------+
-       |    |                                         ^      v
-      (A)  (C)                                        |      |
-       |    |                                         |      |
-       ^    v                                         |      |
-     +---------+                                      |      |
-     |         |>---(D)-- Authorization Code ---------'      |
-     |  Client |          & Redirection URI                  |
-     |         |                                             |
-     |         |<---(E)----- Access Token -------------------'
-     +---------+       (w/ Optional Refresh Token)
+       ^    v                                         ^      v
+       ^   (6) Authorization Code                     ^      v
+       ^    v                                         ^      v
+      (1) Grant Request                               ^      v
+       ^    v                                         ^      v
+     +---------+                                      ^      v
+     |         -+->>>(7)>> Access Token Request >>>>>>'      v
+     |  Client |                                             v
+     |         |                                             v
+     |         -+-<<<(8)<< Access Token <<<<<<<<<<<<<<<<<<<<<'
+     +---------+

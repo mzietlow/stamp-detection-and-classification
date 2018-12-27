@@ -1,0 +1,86 @@
+\section{\glspl{Grant Type}}\label{GrantTypes} \glspl{Grant Type}, auch Flows
+genannt, beschreiben die Interaktionen der vier Parteien, die notwendig sind, um
+Zugriff auf eine geschützte Ressource zu erhalten. Abbildung~\ref{fig: Protocol
+Flow} stellt den grundlegenden Kommunikationsablauf zwischen dem Client auf der
+einen sowie Resource Owner, Authorization Server und Resource Server auf der
+anderen Seite dar. Der Protocol Flow lässt sich auf drei grundlegende Schritte
+reduzieren.
+
+\begin{labeling}{OAuthParteien}
+    \item [Authorization Grant] der Client stößt einen der vier spezifizierten
+    \glspl{Grant Type} an
+    \item [Access Token Retrieval] vorausgesetzt, der Grant war erfolgreich,
+    erhält der Client einen Access Token
+    \item [Ressource Access] durch Vorlage des Access Tokens erhält der Client
+    Zugriff auf die entsprechende Ressource.
+\end{labeling}
+
+
+Im Folgenden soll insbesondere der~\nameref{ssec:authcode} sowie der
+\nameref{ssec:implicit} erläutert werden. Resource Owner Password Credentials
+Grant und Client Credentials Grant Reduktionen der beiden vorgestellten
+\glspl{Grant Type} und werden nicht behandelt.
+
+\begin{figure}[h]
+    \scalebox{.7} {
+        \lstinputlisting[nolol]{Dokument/Analyse/OAuth/Flows/protocol-flow.ascii}
+    }
+    \caption{Protocol Flow}\label{fig: Protocol Flow}
+\end{figure} \todo{irgendwo
+TLS betonen. Erwähnen, dass der Client nie die Credentials sieht}
+\subsection{Authorization Code Grant}\label{ssec:authcode} Der Authorization
+Code Grant ist immer dann möglich, wenn der Client auf einen Web-Browser
+zugreifen kann und über ein eigenes Backend verfügt. Zwar ist der Authorization
+Code Grant der umfangreichste, aufgrund der vielen
+Authentifizierungszwischenschritte aber auch der sicherste der in \gls{OAuth}
+genutzten \glspl{Grant Type}.Vorausgesetzt, die Übermittlung der Daten erfolgt
+per \gls{TLS}, ist die Zuverlässigkeit des Authorization Code Grant formal
+gesichert.\cite{Chari.2011} Wie schon der Protocol Flow,~\ref{fig: Protocol
+Flow}, lässt sich der Authorization Code Grant leicht herunterbrechen. Er
+verfolgt zwei zentrale Ziele: zum einen, den Erwerb eines Authorization Codes,
+zum anderen das Einlösen dieses Authorization Codes gegen einen Access Token.
+
+\begin{figure}[h]
+    \scalebox{.7}{
+        \lstinputlisting[nolol]{Dokument/Analyse/OAuth/Flows/authorization-code-grant.ascii}
+    }
+    \caption{Authorization Code Grant}\label{fig: Authorization Code Grant}
+\end{figure}
+
+\begin{labeling}{OAuthParteien}
+    \item [Authorization Code Retrieval (Schritt 1--6)] Um Zugriff auf einen Authorization Code
+    zu erlangen, redirectet der Client den Ressource Owner im ersten Schritt
+    an den Authorization Server. Aufgabe des Authorization Servers ist es,
+    die Identität des Clients sicherzustellen. In der Regel geschieht dies über
+    einen Login am Authorization Server oder eine bereits bestehende Session.
+    Ist die Identität des Resource Owners verifiziert, führt wiederum der
+    Authorization Server einen Redirect auf die vom Client angegebene Redirect
+    URI. Der Request des Redirects besteht aus zwei erforderlichen Query
+    Parameter
+    \begin{labeling}{RequestParams}
+        \item [response\_type] um einen Authorization Code zu erhalten,
+        muss der Wert `code' gewählt werden.
+        \item [client\_id] die Client ID wie in Kapitel~\ref{Parteien}
+        beschrieben. Der erhaltene Authorization Code kann nur mit dem
+        zugehörigen Client Secret eingelöst werden.
+    \end{labeling}
+    Weitere Parameter wie redirect\_uri, scope und state sind optional.
+    \begin{figure}[h]
+        \lstinputlisting[xleftmargin=2.7cm]{Dokument/Analyse/OAuth/HTTPListings/AuthorizeRequest.ascii}
+        \caption{Authorization Request}\label{ls: Authorization Request}
+    \end{figure}
+
+    \item [Access Token Retrieval (7--8)] vorausgesetzt, der Grant war erfolgreich,
+    so wird der User Agent an die bei der Client Registrierung angegebene
+    Redirect URI weitergeleitet, wobei als Query Parameter der Authorization
+    Code gesetzt ist. Wie der Client auf den Parameter zugreift, ist nicht Teil
+    der Spezifikation.
+    \begin{figure}[h]
+        \lstinputlisting[xleftmargin=2.7cm]{Dokument/Analyse/OAuth/HTTPListings/AuthorizeResponse.ascii}
+        \caption{Authorization Response}\label{ls: Authorization Response}
+    \end{figure}
+\end{labeling}
+
+\subsection{Implicit Grant}\label{ssec:implicit}
+
+\blindtext{}
