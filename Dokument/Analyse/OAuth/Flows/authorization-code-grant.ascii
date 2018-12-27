@@ -21,7 +21,7 @@
       (1) Grant Request                               ^      v
        ^    v                                         ^      v
      +-|----|--+                                      ^      v
-     |        -+->>>(7)>> Access Token Request >>>>>>'      v
+     |        -+->>>(7)>> Access Token Request  >>>>>>'      v
      |  Client |                                             v
      |         |                                             v
      |        -+-<<<(8)<< Access Token <<<<<<<<<<<<<<<<<<<<<'

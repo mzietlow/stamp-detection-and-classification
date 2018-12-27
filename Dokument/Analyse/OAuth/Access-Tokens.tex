@@ -1,1 +1,11 @@
-\section{Access Token}\label{accessToken}
+\section{Access Token}\label{accessTokens}
+Einer der zentralen Kritikpunkte an \gls{OAuth} ist die Ungebundenheit der in
+RFC 6750 spezifizierten Bearer-Tokens. Bearer-Access-Tokens funktionieren, wie
+zu Beginn dieses Kapitels bereits erläutert. Sie sind vollkommen unabhängig von
+dem Client, der sie angefordert hat. Wer sich im Besitz eines Bearer-Tokens
+befindet, der hat auch Zugriff auf die entsprechend geschützten Ressourcen.
+
+\subsection{MAC Token}\label{ssec: MAC Token}
+MAC Tokens, spezifiziert in dem \gls{ietf} HTTP MAC Draft, verhalten sich, um
+die bereits genutzte Geld-Metapher wieder aufzugreifen, wie Kreditkarten.
+~\citevgl[S.~134]{Siriwardena.2014}

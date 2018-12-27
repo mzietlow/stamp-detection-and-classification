@@ -1,7 +1,9 @@
 \documentclass[12pt,oneside,ams,a4paper]{hepthesis}
 \usepackage{polyglossia}
+\usepackage{harvard}
 \setmainlanguage[babelshorthands=true]{german}
 \setotherlanguage[variant=british]{english}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
 \usepackage{pdfpages}
 \usepackage{ulem} % Unterstreichen von Text
 \usepackage{hyperref}
@@ -23,10 +25,21 @@
 \usepackage{nameref}
 \usepackage{todonotes}
 
+
+% Fügt \FloatBarrier an subsections
+\makeatletter
+\AtBeginDocument{%
+  \expandafter\renewcommand\expandafter\subsection\expandafter{%
+    \expandafter\@fb@secFB\subsection
+  }%
+}
+\makeatother
+
+%\addtolength{\headsep}{-20pt}%
 \makeglossaries{}
 %\setstretch{1.0269} % 1.25-facher Zeilenabstand bei 12pt.
 \spacing{1.25}
-\geometry{a4paper,left=20mm,right=20mm, top=30mm, bottom=20mm}
+\geometry{a4paper,left=20mm,right=20mm, top=20mm, bottom=20mm, headsep=7mm}
 \author{Malte Zietlow}
 \title{Analyse von OAuth 2.0 und OpenID Connect zur Weiterreichung der
 \mbox{zwei-Faktor Authentifizierung} aus der TK-App an Meine~TK.}
@@ -62,6 +75,11 @@
 \renewcommand*{\sectionautorefname}{Kapitel}
 \renewcommand*{\subsectionautorefname}{Kapitel}
 \renewcommand*{\equationautorefname}{Gl.}
+\let\harvardleftorig\harvardleft
+\newcommand\citevgl
+  {\def\harvardleft{(vgl.\ \global\let\harvardleft\harvardleftorig}%
+   \cite
+  }
 
 \input{Dokument/GlossarMetadaten}
 

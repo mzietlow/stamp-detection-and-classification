@@ -2,17 +2,17 @@
 Protokoll zur Delegation von Zugriffsrechten für Anwendungssoftware.
 Zugriffsrechte werden hierbei durch, von dem Besitzer der entsprechenden
 Zielressource autorisierte, zeitlich limitierte Access-Tokens abgebildet.
-Access-Tokens sind bereits häufig über den Vergleich mit Konzerttickets
-erläutert worden. Wer im Besitz des zeitlich beschränkten Tickets ist, der
-Zeichenfolge des Tokens, muss sich nicht weiter ausweisen und ist so auch im
+Access-Tokens sind bereits häufig über den Vergleich mit Konzerttickets oder
+Bargeld erläutert worden. Wer im Besitz des zeitlich beschränkten Tickets ist,
+der Zeichenfolge des Tokens, muss sich nicht weiter ausweisen und ist so auch im
 Besitz der mit dem Token einhergehenden Zugriffsrechte, e.g.\ dem Zugriff auf
 eine fiktive UserInfo-API, die den Namen und die Adresse des über den Token
 zuordenbaren Nutzers zurückgibt. Access-Tokens sind also eine Möglichkeit für
 den Ressourcenbesitzer, anderen Parteien limitierten Zugriff auf Daten zu
 ermöglichen, die für ihn bereits von einer Anwendung verwaltet werden, wobei das
-Zugriffsrecht, unabhängig von der Identität der Partei, allein auf den Besitz des
-Tokens zurückgeht. Auf Access-Tokens soll in Abschnitt~\ref{accessToken} näher
-eingegangen werden. Die Übergabe des Access-Tokens ist durch sogenannte
+Zugriffsrecht, unabhängig von der Identität der Partei, allein auf den Besitz
+des Tokens zurückgeht. Auf Access-Tokens soll in Abschnitt~\ref{accessToken}
+näher eingegangen werden. Die Übergabe des Access-Tokens ist durch sogenannte
 \glspl{Grant Type} strukturiert, deren wichtigste, Authorization Grant sowie
 Implicit Grant, in Abschnitt~\ref{GrantTypes} erläutert werden sollen. Die
 Kommunikation innerhalb der \glspl{Grant Type} erfolgt mittels standardisierter
@@ -27,4 +27,3 @@ wird.
 \input{Dokument/Analyse/OAuth/GrantTypes}
 \input{Dokument/Analyse/OAuth/Access-Tokens}
 \input{Dokument/Analyse/OAuth/Sicherheitsanalyse}
-\input{Dokument/Analyse/OAuth/Fazit}
