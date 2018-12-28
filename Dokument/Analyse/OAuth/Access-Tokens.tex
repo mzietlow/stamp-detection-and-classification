@@ -8,4 +8,9 @@ befindet, der hat auch Zugriff auf die entsprechend geschützten Ressourcen.
 \subsection{MAC Token}\label{ssec: MAC Token}
 MAC Tokens, spezifiziert in dem \gls{ietf} HTTP MAC Draft, verhalten sich, um
 die bereits genutzte Geld-Metapher wieder aufzugreifen, wie Kreditkarten.
-~\citevgl[S.~134]{Siriwardena.2014}
+~\citevgl[S.~134]{Siriwardena.2014} Hierzu wird dem Client ein symmetrischer
+Schlüssel übermittelt, mit dem er den MAC berechnet. \todo{Erklären, weshalb ein
+MAC mein Problem nicht löst. Der symmetrische Key ist genau so anfällig wie alles
+andere. Authorization Code, Access Token. Wird halt unverschlüsselt versendet.}
+Weitere Informationen bezüglich der Berechnung des MACs finden sich in
+~\cite[S.~136ff.]{Siriwardena.2014} sowie in RFC 2104.

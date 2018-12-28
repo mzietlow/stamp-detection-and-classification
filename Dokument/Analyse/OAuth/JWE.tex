@@ -1,0 +1,53 @@
+\section{JWT und JWE}
+Definiert in RFC 7159 ist JavaScript Object Notation (JSON) ein Format
+zur Übertragung oder Speicherung von Daten, das sich in den vergangenen Jahren
+als Alternative zu XML etabliert hat.~\citevgl[S.~201]{Siriwardena.2014}
+JSON Web Token (JWT) ist ein JSON-basiertes Container-Format für
+Datenübermittlung, das insbesondere als Dateiformat in OpenID Connect genutzt
+wird. JWTs werden in der Praxis entweder signiert (JWS) oder verschlüsselt
+(JWE).
+Im Folgenden soll ein Beispielhafter JWE erstellt werden.
+
+\subsection{JSON Web Encryption}
+JWEs bestehen, je nach Serialisierungsverfahren aus insgesamt fünf bis sechs
+Attributen, die Base64-Encodiert und mit Punkten getrennt konkateniert werden.
+
+\begin{figure}[h]
+    \scalebox{.8}{
+        \lstinputlisting[xleftmargin=2.7cm]{Dokument/Analyse/OAuth/JWEListings/jweComplete.ascii}
+    }
+    \caption{JWE}\label{ls: JWE}
+\end{figure}
+
+Listing~\ref{ls: JWE} zeigt ein mit JWE Compact Serialization kompatibles,
+fünfteiliges JWE mit den Attributen
+
+\begin{labeling}{initialization\_vector}
+    \item [header] enthält unverschlüsselte Metainformationen über die
+    Verschlüsselung des Content Encryption Keys. Wichtige Elemente sind
+    \begin{labeling}{alg}
+        \item[alg] der Algorithmus zur Verschlüsselung des Content Encryption
+        Keys
+        \item[enc] der Algorithmus zur Verschlüsselung des Payloads, also der zu
+        übermittelnden Daten.
+    \end{labeling}
+    \item [encrypted\_key] Base64-encodierter Content Encryption Key,
+    verschlüsselt durch das in `alg' spezifizierten Algorithmus.
+    \item [initialization\_vector] Base64-encodierter, zufällig generierter
+    Wert, der im Rahmen mancher Ver- und Entschlüsselungsverfahren benötigt wird
+    \item[ciphertext] Base64-encodiert, enthält die zu übermittelnden Daten der
+    Nachricht. Verschlüsselt durch den Content Encryption Key nach dem in `enc'
+    spezifizierten Algorithmus.
+    \item[tag]
+\end{labeling}
+
+Header und Payload, wobei der Header
+Informationen bezüglich der Verschlüsselung des Payloads enthält und der Payload
+die zu übermittelnden Daten. Der Payload enthält
+
+\begin{figure}[h]
+    \scalebox{.8}{
+        \lstinputlisting[xleftmargin=2.7cm]{Dokument/Analyse/OAuth/JWEListings/jweHeader.ascii}
+    }
+    \caption{JWE-Header Übersicht}\label{ls: JWEHeader}
+\end{figure}
