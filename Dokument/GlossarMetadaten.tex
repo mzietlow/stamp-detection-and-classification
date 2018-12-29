@@ -6,23 +6,26 @@ Workinggroups, die sich mit je einem spezifischen Thema befassen. Teil der
 Internet Society (ISOC)}]{ietf}{IETF}{Internet Engineering Task Force}
 \newacronym[description={hostet Nutzerinformationen}]{idp}{IdP}{Identity
 Provider}
-\newacronym[description=Umsetzung eines Features mit zwar minimalem
-Funktionsumfang\, aber dennoch konkretem Mehrwert für den Nutzer, plural=MVPs]
-{mvp}{MVP}{Minimal Viable Product}
-\newacronym[description=Protokoll zur hybriden Verschlüsselung von
-Datenübertragungen\, Grundlage für HTTPS]{TLS}{TLS}{Transport Layer Security}
+\newacronym[description={Umsetzung eines Features oder Produktes mit zwar
+minimalem Funktionsumfang, aber dennoch konkretem Mehrwert für den Nutzer},
+plural={MVPs}] {mvp}{MVP}{Minimal Viable Product}
+\newacronym[description={Protokoll zur hybriden Verschlüsselung von
+Datenübertragungen, Grundlage für HTTPS}]{TLS}{TLS}{Transport Layer Security}
 
 % ----------------------------- Glossary Entries -----------------------------
 
 \newglossaryentry{OAuth} {
-    name=OAuth 2.0,
-    description=Protokoll zur API-basierten Autorisierung
+    name={OAuth 2.0},
+    description={Protokoll zur API-basierten Autorisierung}
+}
+\newglossaryentry{RO} {
+    name={Resource Owner},
+    description={Im \gls{OAuth}-Kontext, Besitzer einer oder mehrer Ressourcen, auf die eine andere Anwendung Zugriff erhalten möchte.}
 }
 \newglossaryentry{Grant Type} {
-    name=Grant Type,
-    plural=Grant Types,
-    description=bestimmt\, wie Clients Authorization Grants von Resource Ownern
-    erhalten können. \gls{ietf} \todo{RFC eintragen\, RFC in Glossary} definiert
-    four Grant Types\: Authorization Code\, Implicit\, Resource Owner Password
-    Credentials sowie Client Credentials\cite{Siriwardena.2014}
+    name={Grant Type},
+    plural={Grant Types},
+    description={bestimmt, wie Clients Authorization Grants von Resource Ownern
+    erhalten können. Die vier Grant Types\: Authorization Code, Implicit, Resource Owner Password Credentials sowie Client Credentials wurden in RFC 6749
+    definiert; auch eigene Grant Types zu definieren ist möglich~\citevgl[S.~23ff.]{RFC6749}}.
 }

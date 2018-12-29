@@ -7,11 +7,11 @@
 |        |                               +---------------+
 |        |>>(3)>> Authorization Grant  >>| Authorization |
 | Client |                               |     Server    |
-|        |<<(4)<<    Access Token      <<|               |
+|        |<<(4)<<    Access-Token      <<|               |
 |        |                               +---------------+
 |        |
 |        |                               +---------------+
-|        |>>(5)>>    Access Token      >>|    Resource   |
+|        |>>(5)>>    Access-Token      >>|    Resource   |
 |        |                               |     Server    |
 |        |<<(6)<<  Protected Resource  <<|               |
 +--------+                               +---------------+

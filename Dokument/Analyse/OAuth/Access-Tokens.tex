@@ -1,16 +1,25 @@
-\section{Access Token}\label{accessTokens}
-Einer der zentralen Kritikpunkte an \gls{OAuth} ist die Ungebundenheit der in
-RFC 6750 spezifizierten Bearer-Tokens. Bearer-Access-Tokens funktionieren, wie
-zu Beginn dieses Kapitels bereits erläutert. Sie sind vollkommen unabhängig von
-dem Client, der sie angefordert hat. Wer sich im Besitz eines Bearer-Tokens
+\section{Access-Token}\label{accessTokens}
+Bei Access-Tokens handelt es sich um serverseitig generierte,
+kryptographische Werte~\citevgl[S.~273]{Rohr.2018}, also zufällige
+Zeichenfolgen, die nur schwer erraten werden
+können~\citevgl[S.~72]{Petrlic.2016}
+
+einer der zentralen Kritikpunkte an \gls{OAuth} ist die Ungebundenheit der in
+RFC 6750 spezifizierten Bearer-Tokens. Eine Alternative hierzu stellen
+MAC-Tokens dar.
+
+\subsection{Bearer-Token} Bearer-Access-Tokens funktionieren, wie zu Beginn
+dieses Kapitels bereits erläutert. Sie sind vollkommen unabhängig von dem
+Client, der sie angefordert hat. Wer sich im Besitz eines Bearer-Tokens
 befindet, der hat auch Zugriff auf die entsprechend geschützten Ressourcen.
 
-\subsection{MAC Token}\label{ssec: MAC Token}
+\subsection{MAC-Token}\label{ssec: MAC Token}
 MAC Tokens, spezifiziert in dem \gls{ietf} HTTP MAC Draft, verhalten sich, um
 die bereits genutzte Geld-Metapher wieder aufzugreifen, wie Kreditkarten.
 ~\citevgl[S.~134]{Siriwardena.2014} Hierzu wird dem Client ein symmetrischer
 Schlüssel übermittelt, mit dem er den MAC berechnet. \todo{Erklären, weshalb ein
 MAC mein Problem nicht löst. Der symmetrische Key ist genau so anfällig wie alles
-andere. Authorization Code, Access Token. Wird halt unverschlüsselt versendet.}
+andere. Authorization Code, Access-Token. Wird halt unverschlüsselt versendet.}
 Weitere Informationen bezüglich der Berechnung des MACs finden sich in
 ~\cite[S.~136ff.]{Siriwardena.2014} sowie in RFC 2104.
+\todo{Berechnung kurz anschneiden.}
