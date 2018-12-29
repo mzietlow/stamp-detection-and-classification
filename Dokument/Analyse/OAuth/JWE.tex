@@ -9,8 +9,9 @@ wird. JWTs werden in der Praxis entweder signiert (JWS) oder verschlüsselt
 Im Folgenden soll ein Beispielhafter JWE erstellt werden.
 
 \subsection{JSON Web Encryption}
-JWEs bestehen, je nach Serialisierungsverfahren aus insgesamt fünf bis sechs
-Attributen, die Base64-Encodiert und mit Punkten getrennt konkateniert werden.
+JWEs bestehen, je nach Anwendungsfall aus insgesamt fünf bis sechs
+Attributen. JWEs mit sechs Attributen können sich an mehr als nur einen
+Empfänger wenden.
 
 \begin{figure}[h]
     \scalebox{.8}{
@@ -19,8 +20,7 @@ Attributen, die Base64-Encodiert und mit Punkten getrennt konkateniert werden.
     \caption{JWE}\label{ls: JWE}
 \end{figure}
 
-Listing~\ref{ls: JWE} zeigt ein mit JWE Compact Serialization kompatibles,
-fünfteiliges JWE mit den Attributen
+Listing~\ref{ls: JWE} zeigt ein fünfteiliges JWE mit den Attributen
 
 \begin{labeling}{initialization\_vector}
     \item [header] enthält unverschlüsselte Metainformationen über die
@@ -31,23 +31,23 @@ fünfteiliges JWE mit den Attributen
         \item[enc] der Algorithmus zur Verschlüsselung des Payloads, also der zu
         übermittelnden Daten.
     \end{labeling}
-    \item [encrypted\_key] Base64-encodierter Content Encryption Key,
+    \item [encrypted\_key] base64url-encodierter Content Encryption Key,
     verschlüsselt durch das in `alg' spezifizierten Algorithmus.
-    \item [initialization\_vector] Base64-encodierter, zufällig generierter
+    \item [initialization\_vector] base64url-encodierter, zufällig generierter
     Wert, der im Rahmen mancher Ver- und Entschlüsselungsverfahren benötigt wird
-    \item[ciphertext] Base64-encodiert, enthält die zu übermittelnden Daten der
+    \item[ciphertext] base64url-encodiert, enthält die zu übermittelnden Daten der
     Nachricht. Verschlüsselt durch den Content Encryption Key nach dem in `enc'
     spezifizierten Algorithmus.
     \item[tag]
 \end{labeling}
 
-Header und Payload, wobei der Header
-Informationen bezüglich der Verschlüsselung des Payloads enthält und der Payload
-die zu übermittelnden Daten. Der Payload enthält
+Zur Serialisierung werden die Attribute, falls sie es noch nicht sein sollten,
+base64url-Encodiert und mit Punkten getrennt konkateniert.
 
 \begin{figure}[h]
     \scalebox{.8}{
-        \lstinputlisting[xleftmargin=2.7cm]{Dokument/Analyse/OAuth/JWEListings/jweHeader.ascii}
+        \lstinputlisting[xleftmargin=2.7cm]{Dokument/Analyse/OAuth/JWEListings/jweEncoded.ascii}
     }
-    \caption{JWE-Header Übersicht}\label{ls: JWEHeader}
+    \caption{Serialisiertes JWE}\label{ls: serializedJWE}
 \end{figure}
+\todo{Codebeispiel in den Anhang einfügen.}

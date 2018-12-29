@@ -248,7 +248,7 @@ In this work, we analyze the existing approaches to cross-domain service composi
   url          = {https://tools.ietf.org/html/rfc6749},
 }
 
-@Article{chari.2011,
+@Article{Chari.2011,
   author    = {Suresh Chari and Charanjit S. Jutla and Arnab Roy},
   title     = {Universally Composable Security Analysis of OAuth v2.0},
   journal   = {{IACR} Cryptology ePrint Archive},

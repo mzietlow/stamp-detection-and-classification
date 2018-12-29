@@ -1,1 +1,53 @@
-\chapter{Implementation}
+\chapter{Implementation} Der in unserem Team aufgetretene Anwendungsfall
+involviert zwei Clients, die TK-App und den Web-Client, mit jeweils unabhängigen
+Backendsessions. Die TK-App ist als sicherer Client zu betrachten, der
+Web-Client kommuniziert per HTTPS und nutzt secured-Cookies. Durch seine
+Backendanbindung ist auch er als sicher einzustufen. Bei erstmaligem Aufruf des
+Web-Clients wird im User-Agent des Nutzers ein neuer, noch nicht eingeloggter
+TKSESSION-Cookie gesetzt. Es wird angenommen, dass der Resource Owner bereits in
+der App eingeloggt ist. Zielsetzung ist nun, die im User-Agent des Web-Clients
+gesetzte Session einzuloggen. Zur Verfügung stehen die bereits aufgezählten
+Parteien: eingeloggte TK-App + Backend, User-Agent, Web-Client + Backend.
+\\
+In ersten Überlegungen wurde die Erstellung einer neuen, eingeloggten Session
+in Betracht gezogen, was sich jedoch schnell als Vergehen am Loadbalancer
+herausstellte und daher verworfen wurde. Auch der Ansatz, die Session ID an die
+TK-App weiterzuleiten und in ihrem Backend einzuloggen erwies sich als
+undurchführbar. Um eine Session einzuloggen, muss ein Session-eigener
+User-Context befüllt werden, was durch eine außerhalb liegende Session unmöglich
+ist. \todo{redirectAPI erklären.}
+\\
+Die App selbst ist also nicht dazu in der Lage, die Web-Session einzuloggen.
+Nur der Web-Client selbst kann dies bewerkstelligen. Durch diese Erkenntnis kann
+auf eine klassische \gls{OAuth}-Problemstellung reduziert werden: der Web-Client
+greift auf eine Login-API zu. Um diese vor unbefugten Nutzern zu schützen,
+setzt der Zugriff auf sie einen Access-Token voraus. Auch lässt sich in der TK-
+Implementation von dem Access-Token auf den Versicherten schließen, für den er
+ausgestellt wurde, ein weiterer Parameter ist also nicht erforderlich.
+\section{Implicit Grant-Login}
+
+Abbildung~\ref{ls: Implicit Authorization TK} zeigt eine mögliche Realisierung
+als von der App ausgehender Implicit Flow. Sie ist die einfachste Realisierung
+des Anwendungsfalls. \todo{Ausführen, weshalb einfach. Bloß ein Web-Api-Call}
+Auf den zweiten Blick, weist dieses Vorgehen aber zwei wichtige Fehler auf:
+zunächst dies, die einzige Verbindung zwischen App- und Web-Client, ist der in
+Schritt 3 übertragene Access-Token. Web-APIs können jedoch von jedem User-Agent
+aufgerufen werden. Wir sollten also davon ausgehen, dass unsere API von Dritten
+angegriffen --- und diese Angriffe erfolgreich sein werden, falls es einem
+Dritten gelingen sollte, in den Besitz eine Access Tokens zu gelangen. Hier
+also, ebenfalls in Schritt 3, findet sich der zweite Fehler. Die Übertragung des
+Access Tokens an den Web-Client erfolgt unverschlüsselt als Query Parameter.
+Durch einen korrumpierten User Agent, respektive Smartphone, könnte es einem
+Dritten nun möglich sein, den Access Token zu entwenden. Da der Token
+unverschlüsselt übermittelt wurde, kann der Dritte sich durch einen Aufruf
+der login/redirect-API Zugang zu einer eingeloggten Session verschaffen.
+
+\begin{figure}[h]
+    \scalebox{.6}{
+        \lstinputlisting[linewidth=25cm]{Dokument/TkFlows/implicit.ascii}
+    }
+    \caption{Anwendungsfall, Implicit Login Flow}\label{ls: Implicit Authorization TK}
+\end{figure}
+
+
+Ist ein Pingpong _wirklich_ nötig oder reicht ein Session JWE?

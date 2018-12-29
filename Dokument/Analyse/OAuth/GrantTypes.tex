@@ -1,10 +1,10 @@
 \section{\glspl{Grant Type}}\label{GrantTypes} \glspl{Grant Type}, auch Flows
-genannt, beschreiben die Interaktionen der vier Parteien, die notwendig sind, um
-Zugriff auf eine geschützte Ressource zu erhalten. Abbildung~\ref{fig: Protocol
-Flow} stellt den grundlegenden Kommunikationsablauf zwischen dem Client auf der
-einen sowie Resource Owner, Authorization Server und Resource Server auf der
-anderen Seite dar. Der Protocol Flow lässt sich auf drei grundlegende Schritte
-reduzieren.
+genannt, beschreiben die Interaktionen der vier Parteien untereinander, die
+notwendig sind, um Zugriff auf eine geschützte Ressource zu erhalten.
+Abbildung~\ref{fig: Protocol Flow} stellt den grundlegenden Kommunikationsablauf
+zwischen dem Client auf der einen sowie Resource Owner, Authorization Server und
+Resource Server auf der anderen Seite dar. Der Protocol Flow lässt sich auf drei
+grundlegende Schritte reduzieren.
 
 \todo{Authorization Code und Token Lifetimes ansprechen}
 
@@ -13,7 +13,7 @@ reduzieren.
     \glspl{Grant Type} an
     \item [Access Token Retrieval] vorausgesetzt, der Grant war erfolgreich,
     erhält der Client einen Access Token
-    \item [Ressource Access] durch Vorlage des Access Tokens erhält der Client
+    \item [Resource Access] durch Vorlage des Access Tokens erhält der Client
     Zugriff auf die entsprechende Ressource.
 \end{labeling} Im Folgenden soll insbesondere der~\nameref{ssec:authcode} sowie
 der \nameref{ssec:implicit} erläutert werden. Resource Owner Password
@@ -32,14 +32,15 @@ TLS betonen. Erwähnen, dass der Client nie die Credentials sieht}
 Token\ldots} Der Authorization Code Grant ist immer dann möglich, wenn der
 Client auf einen Web-Browser zugreifen kann und über ein eigenes Backend verfügt
 oder anderweitig dazu in der Lage ist, sein Client Secret  geheimzuhalten. Zwar
-ist der Authorization Code Grant der umfangreichste, aufgrund der vielen
-Authentifizierungszwischenschritte aber auch der sicherste der in \gls{OAuth}
-genutzten \glspl{Grant Type}.Vorausgesetzt, die Übermittlung der Daten erfolgt
-per \gls{TLS}, ist die Zuverlässigkeit des Authorization Code Grant formal
-gesichert.\cite{Chari.2011} Wie schon der~\nameref{fig: Protocol Flow}, lässt
-sich der Authorization Code Grant leicht herunterbrechen. Er verfolgt zwei
-zentrale Ziele: zum einen, den Erwerb eines Authorization Codes, zum anderen das
-Einlösen dieses Authorization Codes gegen einen Access Token.
+ist der Authorization Code Grant, aufgrund der vielen
+Authentifizierungszwischenschritte der umfangreichste, hierdurch aber auch der
+sicherste der in \gls{OAuth} genutzten \glspl{Grant Type}. Vorausgesetzt, die
+Übermittlung der Daten erfolgt per \gls{TLS}, ist die Zuverlässigkeit des
+Authorization Code Grant formal gesichert \cite{Chari.2011}. Wie schon
+der~\nameref{fig: Protocol Flow}, lässt sich der Authorization Code Grant leicht
+herunterbrechen. Er verfolgt zwei zentrale Ziele: zum einen, den Erwerb eines
+Authorization Codes, zum anderen das Einlösen dieses Authorization Codes gegen
+einen Access Token.
 
 \begin{figure}[h]
     \scalebox{.6}{
@@ -109,7 +110,7 @@ Einlösen dieses Authorization Codes gegen einen Access Token.
     übertragen werden, ist eine Übermittlung ausschließlich per HTTPS anzuraten.
     Nur falls der Client nicht in der Lage sein sollte, HTTP Basic Authentication
     auszuführen, dürfen Client ID und Client Secret im Body des Requests
-    übertragen werden.\citevgl[S.~15f.]{RFC6749}
+    übertragen werden \citevgl[S.~15f.]{RFC6749}.
 
     \begin{figure}[h]
         \scalebox{.8}{
@@ -146,8 +147,7 @@ entfällt dieser Mechanismus für den Implicit Grant.
     }
     \caption{Implicit Grant}\label{fig: Implicit Grant}
 \end{figure} \noindent
-Der Request an den Authorization Server ist in seinem Aufbau ident zu Listing
-~\ref{ls: Authorization Request}. Der Wert des response\_type ist auf `token'
+Der Request an den Authorization Server ist in seinem Aufbau ident zu Listing~\ref{ls: Authorization Request}. Der Wert des response\_type ist auf `token'
 anzupassen.
 
 \begin{figure}[h]
