@@ -1,18 +1,18 @@
 
 
 +----------+                        +-----------+                      +----------+
-|         -+->(4)> login/redirect >-+-          |                      |          |
-|  User-   |              +token    |  Web-    -+->(5)> verify Token >-+- Auth    |
+|          | >(4)> login/redirect > |           |                      |          |
+|  User-   |              +token    |  Web-     | >(5)> verify Token > |  Auth    |
 |  Agent   |                        |  Client   |       /getId         |  Server  |
-|(Browser) |                        | (Backend)-+-<(6)< UserID <<<<<<<-+-         |
-|         -+-<<(8)<<<< redirect <<<-+-          |  (7) login           |          |
-+---|------+                        +-----------+                      +--|-----|-+
+|(Browser) |                        | (Backend) | <(6)< UserID <<<<<<< |          |
+|          | <<(8)<<<< redirect <<< |           |  (7) login           |          |
++----------+                        +-----------+                      +----------+
     ^                                                                     ^     v
     ^                                                                     ^     v
     ^                                                                     ^     v
     ^                                +---------+                          ^     v
-    ^                                |        -+->>(1)> Grant Request >>>>'     v
+    ^                                |         | >>(1)> Grant Request >>>>'     v
     ^                                | App-    |                                v
     ^                                | Client  |                                v
-    '<(3)<<<<<< login/redirect<<<<<<-+-       -+-<<(2)< Access-Token <<<<<<<<<<<'
+    '<(3)<<<<<< login/redirect<<<<<< |         | <<(2)< Access-Token <<<<<<<<<<<'
                     +token           +---------+

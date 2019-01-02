@@ -1,1 +1,29 @@
 \chapter{Anhang}
+\begin{figure}[h]
+    \scalebox{.6} {
+        \lstinputlisting[nolol]{Dokument/JWECalc/main.ascii}
+    }
+    \caption{main-Methode zur ver- und entschlüsselung eines JWEs in Java mit nimbusds}\label{fig: main}
+\end{figure}
+
+\begin{figure}
+    \scalebox{.6} {
+        \lstinputlisting[nolol]{Dokument/JWECalc/keyGenerator.ascii}
+    }
+    \caption{Asymmetrischer Key Generator, RSA}\label{fig: keyGenerator}
+\end{figure}
+
+\begin{figure}
+    \scalebox{.6} {
+        \lstinputlisting[nolol]{Dokument/JWECalc/jweGenerator1.ascii}
+        }
+    \caption{Klasse zur ver- und entschlüsselung eines JWE-Tokens mit
+    nimbusds}\label{fig: jweDecrypt}
+\end{figure}
+\begin{figure}[t]
+    \scalebox{.6} {
+        \lstinputlisting[nolol]{Dokument/JWECalc/jweGenerator2.ascii}
+        }
+    \caption{Klasse zur ver- und entschlüsselung eines JWE-Tokens mit
+    nimbusds}\label{fig: jweEncrypt}
+\end{figure}

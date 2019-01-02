@@ -5,13 +5,12 @@
     \item [Resource Server] hostet geschützte Ressourcen, nimmt Requests auf
     geschützte Ressourcen entgegen und gewährt Zugriff, sofern der übermittelte
     Access-Token valide ist.
-    \item [Client Application] ist eine vom Resource Owner genutzte Anwendung,
-    die Zugriff auf geschützte Ressourcen anfragt und entsprechende Requests an
-    den Resource Server stellt. Jeder Client muss sich am Authorization Server
-    registrieren, woraufhin ihm eine Client-ID und ein Client-Secret zugewiesen
-    werden.
+    \item [Client Application] ist eine Anwendung, die Zugriff auf geschützte
+    Ressourcen anfragt und entsprechende Requests an den Resource Server stellt.
+    Jeder Client muss sich am Authorization Server registrieren, woraufhin ihm
+    eine Client-ID und ein Client-Secret zugewiesen werden.
     \item[Authorization Server] authentifiziert den Resource Owner anhand seiner
-    Zugangsdaten und stellt dem Client je nach \gls{Grant Type} einen
+    Zugangsdaten und stellt dem Client, je nach \gls{Grant Type}, einen
     Authorization Code oder einen Access-Token auf die angefragte Ressource zur
     Verfügung. \citevgl[S.~6]{RFC6749}
 \end{labeling}

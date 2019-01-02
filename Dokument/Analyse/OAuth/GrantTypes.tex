@@ -1,25 +1,25 @@
 \section{\glspl{Grant Type}}\label{GrantTypes} \glspl{Grant Type}, auch Flows
 genannt, beschreiben die Interaktionen der vier Parteien untereinander, die
 notwendig sind, um Zugriff auf eine geschützte Ressource zu erhalten.
-Abbildung~\ref{fig: Protocol Flow} stellt den grundlegenden
-Kommunikationsablaufzwischen dem Client auf der einen, sowie Resource Owner,
-Authorization Server und Resource Server auf der anderen Seite dar. Jegliche
-Netzwerkkommunikation zwischen den Parteien sollte hierbei unbedingt durch TLS
-geschützt werden\citevgl[S.~99]{Siriwardena.2014}. Der Protocol Flow lässt sich
-auf drei grundlegende Schritte reduzieren.
+Abbildung~\ref{fig: Protocol Flow} stellt den grundlegenden Kommunikationsablauf
+zwischen dem Client auf der einen, sowie Resource Owner, Authorization Server
+und Resource Server auf der anderen Seite dar. Jegliche Netzwerkkommunikation
+zwischen den Parteien sollte hierbei unbedingt durch TLS geschützt
+werden~\citevgl[S.~99]{Siriwardena.2014}. Der Protocol Flow (Abbildung~\ref{fig:
+Protocol Flow}) lässt sich auf drei grundlegende Schritte reduzieren.
 
 \begin{labeling}{Access-Token Retrieval}
     \item [Authorization Grant] der Client stößt einen der vier spezifizierten
-    \glspl{Grant Type} an. Wichtig an Grants ist, dass Resource
-    Owner-Credentials immer nur an den Authorization-Server übermittelt werden,
-    nie an den Client.
+    \glspl{Grant Type} an. Interessant an Grants ist, dass Resource
+    Owner-Credentials in den meisten \glspl{Grant Type} nur an den
+    Authorization Server übermittelt werden, nicht an den Client.
     \item [Access-Token Retrieval] vorausgesetzt, der Grant war erfolgreich,
-    erhält der Client einen Access-Token. In einigen Grant Types spiele
+    erhält der Client einen Access-Token. In einigen \glspl{Grant Type} spiele
     Refresh-Tokens eine Rolle, in dieser Arbeit spielen sie keine\ldots
     \item [Resource Access] durch Vorlage des Access-Tokens erhält der Client
     Zugriff auf die entsprechende Ressource.
 \end{labeling} Im Folgenden werden insbesondere der~\nameref{ssec:authcode}
-sowie der \nameref{ssec:implicit} erläutert werden. Resource Owner Password
+sowie der \nameref{ssec:implicit} erläutert. Resource Owner Password
 Credentials Grant und Client Credentials Grant sind Reduktionen der beiden
 vorgestellten \glspl{Grant Type} und werden nicht weiter behandelt.
 
@@ -27,37 +27,40 @@ vorgestellten \glspl{Grant Type} und werden nicht weiter behandelt.
     \scalebox{.5} {
         \lstinputlisting[nolol]{Dokument/Analyse/OAuth/Flows/protocol-flow.ascii}
     }
-    \caption{Protocol Flow}\label{fig: Protocol Flow}
+    \caption{Protocol Flow~\protect\citevgl[S.~7]{RFC6749}}\label{fig: Protocol Flow}
 \end{figure} \noindent
 \subsection{Authorization Code Grant}\label{ssec:authcode} Der Authorization
 Code Grant ist immer dann möglich, wenn der Client auf einen Web-Browser
 zugreifen kann und über ein eigenes Backend verfügt oder anderweitig dazu in der
-Lage ist, sein Client Secret  geheimzuhalten. Zwar ist der Authorization Code
-Grant, aufgrund der vielen Authentifizierungszwischenschritte der
-umfangreichste, hierdurch aber auch der sicherste der in \gls{OAuth} genutzten
-\glspl{Grant Type}. Vorausgesetzt, die Übermittlung der Daten erfolgt per
-\gls{TLS}, ist die Zuverlässigkeit des Authorization Code Grant formal gesichert
-\cite{Chari.2011}. Wie schon der~\nameref{fig: Protocol Flow}, lässt sich der
-Authorization Code Grant leicht herunterbrechen. Er verfolgt zwei zentrale
-Ziele: zum einen, den Erwerb eines Authorization Codes, zum anderen das Einlösen
-dieses Authorization Codes gegen einen Access-Token.
+Lage ist, sein Client Secret geheimzuhalten~\citevgl[S.~24ff.]{RFC6749}. Zwar
+ist der Authorization Code Grant, aufgrund der vielen
+Authentifizierungszwischenschritte der umfangreichste, hierdurch aber auch der
+sicherste der in \gls{OAuth} genutzten \glspl{Grant Type}. Vorausgesetzt, die
+Übermittlung der Daten erfolgt per \gls{TLS}, ist die Zuverlässigkeit des
+Authorization Code Grant formal gesichert~\cite{Chari.2011}. Wie schon
+der~\nameref{fig: Protocol Flow}, lässt sich der Authorization Code Grant leicht
+herunterbrechen. Er verfolgt zwei zentrale Ziele: zum einen, den Erwerb eines
+Authorization Codes, zum anderen das Einlösen dieses Authorization Codes gegen
+einen Access-Token. Abbildung~\ref{fig: Authorization Code Grant} zeigt den
+Authorization Code Flow.
 
 \begin{figure}[h]
     \scalebox{.5}{
         \lstinputlisting[nolol]{Dokument/Analyse/OAuth/Flows/authorization-code-grant.ascii}
     }
-    \caption{Authorization Code Grant}\label{fig: Authorization Code Grant}
+    \caption{Authorization Code
+    Grant~\protect\citevgl[S.~24]{RFC6749}}\label{fig: Authorization Code Grant}
 \end{figure}
 
-\subsubsection{\textit{Authorization Code Retrieval (1--6)}} Um Zugriff auf einen
+\subsubsection{\textit{(1--6) Authorization Code Retrieval}} Um Zugriff auf einen
 Authorization Code zu erlangen, redirectet der Client den Resource Owner im
-ersten Schritt an den Authorization Server. Aufgabe des Authorization
-Servers ist es, die Identität des Clients sicherzustellen. In der Regel
-geschieht dies über einen Login am Authorization Server oder eine bereits
-bestehende Session. Ist die Identität des Resource Owners verifiziert, führt
-wiederum der Authorization Server einen Redirect auf die vom Client
-angegebene Redirect URI. Der Request des Redirects besteht aus zwei
-erforderlichen Query Parameter:
+ersten Schritt an den Authorization Server. Aufgabe des Authorization Servers
+ist es, die Identität des Clients sicherzustellen. In der Regel geschieht dies
+über einen Login am Authorization Server oder eine bereits bestehende Session,
+die Authentifizierung ist grundsätzlich aber nicht Thema des Protokolls. Wie in
+den meisten \glspl{Grant Type}, hat der Client selbst nie Zugriff auf die
+Credentials des Resource Owners. Der Redirect besteht aus zwei erforderlichen Query
+Parameter~\citevgl[S.~25ff.]{RFC6749}:
 \begin{labeling}{response}
     \item [response\_type] um einen Authorization Code zu erhalten,
     muss der Wert `code' gewählt werden.
@@ -65,36 +68,39 @@ erforderlichen Query Parameter:
     beschrieben. Der erhaltene Authorization Code kann nur mit dem
     zugehörigen Client Secret eingelöst werden.
 \end{labeling}
-Weitere Parameter wie redirect\_uri, scope und state sind optional.
+Weitere Parameter wie redirect\_uri, scope und state sind optional. Abbildung
+~\ref{ls: Authorization Request} zeigt einen beispielhaften Request.
 \begin{figure}[h]
     \scalebox{.8}{
         \lstinputlisting[xleftmargin=2.7cm]{Dokument/Analyse/OAuth/HTTPListings/AuthorizeRequest.ascii}
     }
-    \caption{Authorization Request}\label{ls: Authorization Request}
-\end{figure}
-Vorausgesetzt, der Grant war erfolgreich, so wird der User Agent an die bei
-der Client-Registrierung angegebene Redirect URI weitergeleitet, wobei der
-Authorization Code im URI Fragment gesetzt ist. Wie der Client auf den
-Parameter zugreift, ist nicht Teil der Spezifikation. Zu beachten ist, dass
-der Authorization Code auf diesem Weg auch für den Nutzer und im Falle eines
-manipulierten Browsers auch für etwaige Angreifer sichtbar ist. Um
-Replay-Angriffen vorzubeugen, sollte jeder Authorization Code nur ein
-einziges Mal genutzt werden können. Falls der Authorization Server eine
-erneute Nutzung desselben Authorization Codes festellt, sollten alle bereits
-ausgestellten Access-Tokens invalidiert werden.
+    \caption{Authorization Request~\protect\citevgl[S.~97]{Siriwardena.2014}}\label{ls: Authorization Request}
+\end{figure}\noindent
+Vorausgesetzt, der Grant war erfolgreich, wird der User Agent an die bei der
+Client-Registrierung angegebene Redirect URI weitergeleitet, wobei der
+Authorization Code im URI Fragment oder als Query Parameter gesetzt
+ist~\citevgl[S.~25]{RFC6749} (Abbildung~\ref{ls: Authorization Response}). Wie
+der Client auf den Parameter zugreift ist nicht Teil der Spezifikation. Zu
+beachten ist, dass der Authorization Code auf diesem Weg auch für den Nutzer und
+im Falle eines manipulierten Browsers auch für etwaige Angreifer sichtbar ist.
+Um Replay-Angriffen vorzubeugen, sollte jeder Authorization Code nur ein
+einziges Mal genutzt werden können~ \citevgl[S.~97]{Siriwardena.2014}. Falls der
+Authorization Server eine erneute Nutzung desselben Authorization Codes
+feststellt, sollten alle bereits ausgestellten Access-Tokens invalidiert werden.
 \citevgl[S.~97]{Siriwardena.2014}
 \begin{figure}[h]
     \scalebox{.8}{
         \lstinputlisting[xleftmargin=2.7cm]{Dokument/Analyse/OAuth/HTTPListings/AuthorizeResponse.ascii}
     }
-    \caption{Authorization Response}\label{ls: Authorization Response}
+    \caption{Authorization
+    Response~\protect\citevgl[S.~98]{Siriwardena.2014}}\label{ls: Authorization Response}
 \end{figure}
 
-\subsubsection{\textit{Access-Token Retrieval (7--8)}}
-Abschließend muss der Client den erhaltenen Authorization Code gegen
-einen Access-Token eintauschen. Hierzu ist ein POST auf den Access-Token-
-Endpoint des Authorization Servers auszuführen, der zwei erforderliche
-Parameter entgegennimmt.
+\subsubsection{\textit{(7--8) Access-Token Retrieval}} Abschließend muss der
+Client den erhaltenen Authorization Code gegen einen Access-Token eintauschen.
+Hierzu ist ein POST (Abbildung~\ref{ls: Access-Token cURL}) auf den
+Access-Token-Endpoint des Authorization Servers auszuführen, der zwei
+erforderliche Parameter entgegennimmt~\citevgl[S.~29]{RFC6749}:
 
 \begin{labeling}{grant}
     \item [grant\_type] um zwischen dem Authorization Code Grant und
@@ -104,66 +110,71 @@ Parameter entgegennimmt.
     Code.
 \end{labeling}
 Der Access-Token Endpoint sollte mindestens per HTTP Basic Authentication
-abgesichert werden. Client ID und Client Secret dienen als Zugangsdaten.
-Da die Zugangsdaten in der Basic Authentication nicht verschlüsselt
-übertragen werden, ist eine Übermittlung ausschließlich per HTTPS anzuraten.
-Nur falls der Client nicht in der Lage sein sollte, HTTP Basic Authentication
-auszuführen, dürfen Client ID und Client Secret im Body des Requests
-übertragen werden \citevgl[S.~15f.]{RFC6749}.
+abgesichert werden. Client ID und Client Secret dienen als Zugangsdaten. Da die
+Zugangsdaten in der Basic Authentication nicht verschlüsselt übertragen werden,
+ist eine Übermittlung ausschließlich per HTTPS
+anzuraten~\citevgl[S.~97]{Siriwardena.2014} Nur falls der Client nicht in der
+Lage sein sollte, HTTP Basic Authentication auszuführen, dürfen Client ID und
+Client Secret im Body des Requests übertragen werden~\citevgl[S.~15f.]{RFC6749}.
 
 \begin{figure}[h]
     \scalebox{.8}{
         \lstinputlisting[xleftmargin=2.7cm]{Dokument/Analyse/OAuth/HTTPListings/AccessTokenCurl.ascii}
     }
-    \caption{Access-Token cURL}\label{ls: Access-Token cURL}
-\end{figure}
-
-Auf das vorangegangene cURL-Kommando sollte der Authorization Server mit
-einem HTTP 200 OK und einem JSON-Body antworten. Die möglichen Token Types
-werden in Kapitel~\ref{accessTokens} näher erläutert. Neben dem Access-Token
-enthält das JSON Gültigkeitsdauer des Access-Tokens in Sekunden sowie
-den weiter oben bereits kurz erwähnten Refresh-Token, der in dieser Arbeit
-jedoch keine weitere Rolle spielt.
+    \caption{Access-Token
+    cURL~\protect\citevgl[S.~98]{Siriwardena.2014}}\label{ls: Access-Token cURL}
+\end{figure} \noindent
+Auf das vorangegangene cURL-Kommando in Abbildung~\ref{ls: Access-Token cURL}
+sollte der Authorization Server mit einem HTTP 200 OK und einem JSON-Body
+(Abbildung~\ref{ls: Authorization Response}) antworten~\citevgl[S.~31]{RFC6749}.
+Die möglichen Token Types werden in Kapitel~\ref{accessTokens} näher erläutert.
+Neben dem Access-Token enthält das JSON Informationen über die Gültigkeitsdauer
+des Access-Tokens in Sekunden sowie den weiter oben bereits kurz erwähnten
+Refresh-Token (ebd.), der in dieser Arbeit jedoch keine weitere Rolle spielt.
 
 \begin{figure}[h]
     \scalebox{.8}{
         \lstinputlisting[xleftmargin=2.7cm]{Dokument/Analyse/OAuth/HTTPListings/AccessTokenCurlResponse.ascii}
     }
-    \caption{Access-Token Response}\label{ls: Access-Token Response}
+    \caption{Access-Token
+    Response~\protect\citevgl[S.~98]{Siriwardena.2014}}\label{ls: Access-Token Response}
 \end{figure}
 
 \subsection{Implicit Grant}\label{ssec:implicit}
-Anders als der \nameref{ssec:authcode} richtet sich der Implicit Grant an
-unsichere Clients, die über kein eigenes Backend verfügen und auch anderweitig
-nicht dazu in der Lage sind, ihr Client Secret zu schützen. Da Authorization
-Codes nur mittels Client Secret in Access Codes eingetauscht werden können,
-entfällt dieser Mechanismus für den Implicit Grant.
-
+Anders als der \nameref{ssec:authcode} richtet sich der Implicit Grant
+(Abbildung~\ref{fig: Implicit Grant} unsichere Clients, die über kein eigenes
+Backend verfügen und auch anderweitig nicht dazu in der Lage sind, ihr Client
+Secret zu schützen~\citevgl[S.~98]{Siriwardena.2014}. Da Authorization Codes nur
+mittels Client Secret in Access Tokens eingetauscht werden können, entfallen
+Authorization Codes für den Implicit Grant.
 \begin{figure}[h]
     \scalebox{.5} {
         \lstinputlisting[nolol]{Dokument/Analyse/OAuth/Flows/implicit-grant.ascii}
     }
-    \caption{Implicit Grant}\label{fig: Implicit Grant}
+    \caption{Implicit Grant~\protect\citevgl[S.~32]{RFC6749}}\label{fig: Implicit Grant}
 \end{figure} \noindent
-Der Request an den Authorization Server ist in seinem Aufbau ident zu Listing~\ref{ls: Authorization Request}. Der Wert des response\_type ist auf `token'
-anzupassen.
-
+Der Request an den Authorization Server (Abbildung~\ref{ls: Implicit
+Authorization Request} ist in seinem Aufbau ident zu Abbildung~\ref{ls:
+Authorization Request}. Der Wert des response\_type ist auf `token'
+anzupassen~\citevgl[S.~19]{RFC6749}.
 \begin{figure}[h]
     \scalebox{.8}{
         \lstinputlisting[xleftmargin=2.7cm]{Dokument/Analyse/OAuth/HTTPListings/ImplicitAuthorizeRequest.ascii}
     }
-    \caption{Implicit Authorization Request}\label{ls: Implicit Authorization Request}
+    \caption{Implicit Authorization
+    Request~\protect\citevgl[S.~98]{Siriwardena.2014}}\label{ls: Implicit Authorization Request}
 \end{figure} \noindent
 Nach erfolgreicher Authentifizierung des Resource Owners in Schritt 1--4
-antwortet der Authentication Server direkt mit einem Access-Token. Die Schritte
-7--8 des \nameref{fig: Authorization Code Grant}s entfallen also.
-Refresh-Token, die in dieser Arbeit ohnehin keine weitere Rolle spielen, werden
-in Reaktion auf die geminderte Vertraulichkeit des Implicit Grants nicht mehr
-bereitgestellt.
-
+antwortet der Authorization Server direkt mit einem Access-Token
+(Abbildung~\ref{ls: Implicit Authorization Response}). Die Schritte 7--8 des
+Authorization Code Grants entfallen also. Refresh-Tokens, die in dieser Arbeit
+ohnehin keine weitere Rolle spielen, werden in Reaktion auf die geminderte
+Vertraulichkeit des Implicit Grants nicht mehr bereitgestellt.
 \begin{figure}[h]
     \scalebox{.8}{
         \lstinputlisting[xleftmargin=2.7cm]{Dokument/Analyse/OAuth/HTTPListings/ImplicitAuthorizeResponse.ascii}
     }
-    \caption{Implicit Authorization Response}\label{ls: Implicit Authorization Response}
+    \caption{Implicit Authorization
+    Response~\protect\citevgl[S.~99]{Siriwardena.2014}}\label{ls: Implicit
+    Authorization Response}
 \end{figure}

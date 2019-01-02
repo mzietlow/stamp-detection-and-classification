@@ -1,1 +1,15 @@
 \chapter{Fazit}
+Diese Arbeit gibt eine Übersicht, über die zwei grundlegenden OAuth Grant Types,
+Authorization Code Grant und Implicit Grant. Es wurde diskutiert, wie OAuth
+trotz unsichere User-Agents implementiert werden kann. Durch Betrachtung
+beispielhafter Flow-Diagramme wurde die Übermittlung von Tokens im Klartext
+ausgeschlossen. Aufgrund der besonderen Situation, dass die Websession zu Beginn
+nicht auf den Nutzer bezogen werden kann, wurden auch MAC-Tokens verworfen. Die
+Übermittlung wurde schließlich durch asymmetrisch verschlüsselte JWE Container
+gelöst. Von der Übermittlung eines unverschlüsselten Access-Keys ist in jedem
+Fall abzuraten. Eine Kopplung zwischen App- und Web-Client, wie in
+Kapitel~\ref{ch:GekoppelteFlows} vorgeschlagen, ist zu empfehlen, da sie das
+Risiko, das von entwendeten Parametern ausgeht, minimiert. Eine Verbesserung
+würde die Erweiterung des vorgeschlagenen Flows (Abbildung~\ref{ls: Extended
+Implicit Authorization TK}) auf einen Authorization Code Grant bieten. Aufgrund
+der erhöhten Komplexität wurde davon in dieser Arbeit letztlich abgesehen.

@@ -1,0 +1,15 @@
+import com.nimbusds.jose.JOSEException;
+
+import java.security.KeyPair;
+import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
+
+public class Main {
+    public static void main(String[] args) throws NoSuchAlgorithmException, JOSEException, ParseException {
+        KeyGenerator keyGenerator = new KeyGenerator();
+        JweGenerator jweGenerator = new JweGenerator();
+        KeyPair keyPair = keyGenerator.generateKeyPair();
+        String jweInText = jweGenerator.buildEncryptedCompactJWT(keyPair.getPublic());
+        jweGenerator.decryptJWT(jweInText, keyPair.getPrivate());
+    }
+}

@@ -1,11 +1,24 @@
 \chapter{Einleitung}
-Moderne Softwareentwicklung orientiert sich seit spätestens \todo{Belege} 2013
-an agilen Arbeitsmodellen, um \todo{rechtfertigen, wozu, weshalb, warum}.
-So auch das Projekt-Team, das mit der Konzeption und Entwicklung der TK-App
-betraut ist. Teil der agilen Planung ist das \gls{mvp}. Da \glspl{mvp} bewusst
-unvollständig sind, d.i.\ kleine Teile der Nutzergruppe werden, gerade in den
-ersten Zyklen, nicht abgebildet.
-\todo{Hypothese (begründete Vermutung über die Relation von mindestens zwei Prämissen) oder Forschungsfragen formulieren?}
-
-Die Frage, ob sich OAuth, das als Autentisierungsverfahren gedacht ist, für die
-authentifizierung eines eignet, wird in dieser Arbeit elegant umschifft.
+Seit ungefähr 2016 erprobt die TK Softwareentwicklung in agilen Teams.
+Das Team Online and Mobile Projects, in dem diese Arbeit entstand, ist eines der
+Pilotprojekte dieses Vorstoßes. Das Team ist unter anderem mit der Betreuung und
+Weiterentwicklung der TK-App betraut. Die TK-App versucht, Verwaltungsprozesse,
+Kundeninteraktion im Allgemeinen, nutzerfreundlich umzusetzen.\\
+In Meine TK, der Web-Plattform für Versicherte der TK, sind einige der von uns
+für die App geplanten Prozesse bereits existent. Teil der agilen Planung ist das
+\gls{mvp}. \glspl{mvp} sind minimal nutzbare Produkte, das bedeutet auch, das
+kleine Teile der Nutzergruppe, gerade in den ersten Zyklen der Umsetzung, nur
+teilweise abgebildet werden können. Denkbar ist es, einen Prozess im ersten
+Schritt nur teilweise in der App zu verwirklichen und den Nutzer ab einem
+bestimmten Punkt an Meine TK weiterzuleiten und den Prozess dort fortzusetzen.
+Hierzu müssen Nutzer sich derzeit stets erneut einloggen. Ziel dieser Arbeit
+ist, den Prozess der Weiterleitung für Nutzer angenehmer zu gestalten, indem die
+erneute Eingabe seiner Daten für ihn entfällt.\\
+Die Weiterleitung von Zugriffsrechten ist seit 2012 mit der Veröffentlichung von
+\gls{OAuth}~\cite{RFC6749} \textit{grundsätzlich} keine schwere Aufgabe mehr. Da
+die TK jedoch hohe Ansprüche an ihrer Sicherheitsstandards stellt und die
+Sicherheit der Implementierung eines Protokolls nicht durch die Sicherheit des
+Protokolls sichergestellt ist, wie~\cite{Sun.2012,Hu.2014,Yang.2016} zeigten,
+ist diese Arbeit entstanden.\\
+Die Frage, ob sich OAuth, das als Authentisierungsverfahren gedacht ist, für die
+Authentifizierung eines Nutzers eignet, wird in dieser Arbeit elegant umschifft.
