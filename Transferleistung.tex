@@ -1,31 +1,49 @@
 \documentclass[12pt,oneside,ams,a4paper]{hepthesis}
 
-\usepackage{polyglossia} % Alternative zu Babel
-\usepackage{harvard}
+% Language-Encoding und Font
+\usepackage{polyglossia}        % Alternative zu Babel
 \setmainlanguage[babelshorthands=true]{german}
 \setotherlanguage[variant=british]{english}
-\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
-\usepackage{pdfpages}   % Paket zum Einfügen von PDFs
-\usepackage{ulem}       % Unterstreichen von Text
-\usepackage{hyperref}   % Einträge im Inhaltsverzeichnis werden zu Links,
-                        % muss das letzte Package sein
-\usepackage{nameref}
-\KOMAoption{numbers}{noenddot} % Keine End-Punkte (4., 4.1.) in Nummerierungen???
 \addtokomafont{labelinglabel}{\sffamily} % ???
-\usepackage{booktabs}   % Tabellenpaket, Keine vertikal und dicken Linien
-\usepackage{datetime}   % Gerade gar nicht genutzt?!
-\usepackage{fontspec}
+\usepackage{fontspec}           %
+\setmainfont{Times New Roman}   % Unverhältnismäßig hässlich. Besser keine Font
+                                % setzen.
+
+% Formatierung
+\usepackage{geometry}           % Paket für Änderung der Seitenränder
+\usepackage{setspace}           % Paket für Zeilenabstand
+\spacing{1.25}
+\geometry{a4paper,left=20mm,right=20mm, top=20mm, bottom=20mm, headsep=7mm}
+\raggedbottom{}
+
+% Citation, Verweise
+\usepackage{harvard}
+\usepackage{nameref}
+\usepackage{glossaries}         % \gls{<golssary-entry>} makeglossaries <dateiname> per cmd
+\usepackage{listings}           % Paket zum Einfügen von Source Code.
+                                % REPLACE https://tex.stackexchange.com/questions/102596/minted-vs-texments-vs-verbments/103471#103471:
+
+% Fileinsertion
+\usepackage{pdfpages}           % Paket zum Einfügen von PDFs
+\usepackage{hyperref}           % Einträge im Inhaltsverzeichnis werden zu Links,
+                                % muss das letzte Package sein
+% Tabellen etc
+\KOMAoption{numbers}{noenddot}  % Keine End-Punkte (4., 4.1.) in Nummerierungen???
+\usepackage{booktabs}           % Tabellenpaket, Keine vertikal und dicken Linien
+
+% Sonstiges
+\usepackage{ulem}               % Unterstreichen von Text
 \usepackage{titling}
-\usepackage{glossaries} % \gls{<golssary-entry>} makeglossaries <dateiname> per cmd
-\usepackage{blindtext}  % Repräsentativer als Lorem Ipsum
-\usepackage{geometry}   % Paket für Änderung der Seitenränder
-\usepackage{setspace}   % Paket für Zeilenabstand
-\usepackage{listings}   % Paket zum Einfügen von Source Code. REPLACE https://tex.stackexchange.com/questions/102596/minted-vs-texments-vs-verbments/103471#103471:
-\usepackage{todonotes}  % Einfügen von Todos
+\usepackage[german]{datetime2}  % Gerade gar nicht genutzt?!
+\usepackage{blindtext}          % Repräsentativer als Lorem Ipsum
+\usepackage{todonotes}          % Einfügen von Todos
 
 %%%% <Workarounds> %%%%
 % Für Package:todonotes
 \setlength {\marginparwidth}{2cm}
+
+% Fix für unbekannten Fehler
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
 
 % stoppt Floats an Section-Grenzen
 \usepackage[section]{placeins}
@@ -42,12 +60,7 @@
 
 
 \makeglossaries{}
-\setmainfont{Times New Roman}   % Unverhältnismäßig hässlich. Besser keine Font
-                                % setzen.
-% Dimensionen %
-\spacing{1.25}
-\geometry{a4paper,left=20mm,right=20mm, top=20mm, bottom=20mm, headsep=7mm}
-\raggedbottom{}
+
 
 % Metadaten %
 \author{8323}
