@@ -1,9 +1,10 @@
 # Fdb version 3
-["cusdep glo gls Transferleistung"] 0 "Transferleistung.glo" "Transferleistung.gls" "Transferleistung" 1553371929
-  "Transferleistung.glo" 1553371927 0 d41d8cd98f00b204e9800998ecf8427e ""
+["cusdep glo gls Transferleistung"] 0 "Transferleistung.glo" "Transferleistung.gls" "Transferleistung" 1553425685
+  "Transferleistung.glo" 1553425684 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
   "Transferleistung.gls"
-["lualatex"] 1553371922 "Transferleistung.tex" "Transferleistung.pdf" "Transferleistung" 1553371929
+["lualatex"] 1553425679 "Transferleistung.tex" "Transferleistung.pdf" "Transferleistung" 1553425685
+  "/AM@currentdocname " 0 -1 0 ""
   "C:/texlive/2018/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-bold.luc" 1553363410 127488 2b2f090b9d38bb4003ac93f3d2cf4450 ""
   "C:/texlive/2018/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-italic.luc" 1553363410 134397 4b2b17a0bec36b0a227cac21042823cd ""
   "C:/texlive/2018/texmf-var/luatex-cache/generic/fonts/otl/lmroman12-regular.luc" 1553363406 126839 d085a478e95c9f333743064fe287adfd ""
@@ -13,12 +14,12 @@
   "C:/texlive/2018/texmf-var/luatex-cache/generic/fonts/otl/timesbd.luc" 1553369877 702377 9ddbe65ea51afb0a51cc2d2e923804d0 ""
   "C:/texlive/2018/texmf-var/luatex-cache/generic/fonts/otl/timesbi.luc" 1553369876 540281 c8ba97811c43c003e0be91631eb4ce02 ""
   "C:/texlive/2018/texmf-var/luatex-cache/generic/fonts/otl/timesi.luc" 1553369878 544397 21973badd280f3d865a9b047490f78eb ""
-  "Transferleistung.aux" 1553371928 1341 1513628ebe3a42ca50ce95740a68b7f4 ""
-  "Transferleistung.gls" 1553368959 7 9f404503043ec80c08484be9f659189e "cusdep glo gls Transferleistung"
-  "Transferleistung.glsdefs" 1546434281 5389 242c99e3d46ce9b586844e19893e03b6 ""
-  "Transferleistung.lof" 1553371928 26 be83d42eadc6906463c0d8182f8688cc ""
-  "Transferleistung.out" 1553371928 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Transferleistung.tex" 1553371920 2717 7eaece9bf081ff2782e23154deafd6a5 ""
+  "Transferleistung.aux" 1553425685 1341 1513628ebe3a42ca50ce95740a68b7f4 ""
+  "Transferleistung.gls" 1553423242 7 9f404503043ec80c08484be9f659189e "cusdep glo gls Transferleistung"
+  "Transferleistung.glsdefs" 1553423242 5389 242c99e3d46ce9b586844e19893e03b6 ""
+  "Transferleistung.lof" 1553425685 26 be83d42eadc6906463c0d8182f8688cc ""
+  "Transferleistung.out" 1553425684 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Transferleistung.tex" 1553425670 2815 4ac35be4e85d3cac7c37f0db5f04933b ""
   "c:/Windows/Fonts/timesbd.ttf" 1536992914 1175904 ce1ec21514f3b4389faa1aea7b15df02 ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1553357530 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1553357530 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -263,14 +264,13 @@
   "c:/texlive/texmf-local/tex/latex/local/microtype/microtype.cfg" 1553368188 24293 a476ddd756680fbcb9069ebeb6d3924f ""
   "c:/texlive/texmf-local/tex/latex/local/microtype/microtype.sty" 1553368188 70989 103a1397bac5d973ce7b0cd08f1b6f15 ""
   "c:/texlive/texmf-local/tex/latex/local/microtype/mt-cmr.cfg" 1553368188 22870 180ea2dc1e81d6b0ff570aa0250865ae ""
-  "comment.cut" 1553371928 32 4987d81de26a530c079b5ba93e8cb4d3 ""
-  "misc/deckblattTerminiert.pdf" 1546106954 138458 9e7b945b760386254807a8be03f3b580 ""
+  "comment.cut" 1553425685 32 4987d81de26a530c079b5ba93e8cb4d3 ""
   (generated)
-  "Transferleistung.pdf"
-  "Transferleistung.log"
-  "Transferleistung.aux"
   "Transferleistung.lof"
-  "Transferleistung.ist"
+  "Transferleistung.pdf"
   "Transferleistung.glo"
   "Transferleistung.out"
+  "Transferleistung.aux"
+  "Transferleistung.ist"
   "comment.cut"
+  "Transferleistung.log"

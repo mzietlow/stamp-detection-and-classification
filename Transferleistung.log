@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2019.3.23)  23 MAR 2019 21:12
+This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2019.3.23)  24 MAR 2019 12:07
  restricted system commands enabled.
  file:line:error style messages enabled.
 **Transferleistung.tex
@@ -34,7 +34,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.357 seconds
+luaotfload | main : initialization completed in 0.403 seconds
 (c:/texlive/2018/texmf-dist/tex/latex/hepthesis/hepthesis.cls
 Document Class: hepthesis 2017/09/20 HEP thesis class by Andy Buckley (v1.5.1)
 (c:/texlive/2018/texmf-dist/tex/latex/koma-script/scrbook.cls
@@ -405,16 +405,14 @@ Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
 LaTeX Info: Redefining \titlepage on input line 687.
 \@oldparindent=\skip92
 LaTeX Info: Redefining \dedication on input line 741.
-) (c:/texlive/2018/texmf-dist/tex/latex/placeins/placeins.sty
-Package: placeins 2005/04/18  v 2.2
 ) (c:/texlive/2018/texmf-dist/tex/latex/polyglossia/polyglossia.sty
 Package: polyglossia 2018/04/07 v1.43 Alternative to Babel for XeLaTeX and LuaLaTeX
  (c:/texlive/2018/texmf-dist/tex/latex/makecmds/makecmds.sty
 Package: makecmds 2009/09/03 v1.0a extra command making commands
-)
-(c:/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+) (c:/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
- (c:/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex (c:/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+
+(c:/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex (c:/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks23
 \XKV@tempa@toks=\toks24
 )
@@ -624,28 +622,28 @@ Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
 \CatcodeTableExpl=\catcodetable7
 )
 luatex-hyphen: using data file: c:/texlive/2018/texmf-var/tex/generic/config/language.dat.lua
-Lua module: polyglossia 2013/05/11 1.3 Polyglossia)
-(c:/texlive/2018/texmf-dist/tex/latex/harvard/harvard.sty
+Lua module: polyglossia 2013/05/11 1.3 Polyglossia) (c:/texlive/2018/texmf-dist/tex/latex/harvard/harvard.sty
 Package: harvard 
-) (c:/texlive/2018/texmf-dist/tex/latex/polyglossia/gloss-german.ldf
+)
+(c:/texlive/2018/texmf-dist/tex/latex/polyglossia/gloss-german.ldf
 File: gloss-german.ldf polyglossia: module for german
 Module polyglossia Info: Language data for german
-(polyglossia)            synonyms	table: 078C0A98
 (polyglossia)            righthyphenmin	2
-(polyglossia)            loader	loadhyph-de-1901.tex
-(polyglossia)            patterns	hyph-de-1901.pat.txt
-(polyglossia)            hyphenation	
 (polyglossia)            lefthyphenmin	2
+(polyglossia)            hyphenation	
+(polyglossia)            loader	loadhyph-de-1901.tex
+(polyglossia)            synonyms	table: 07E5C008
+(polyglossia)            patterns	hyph-de-1901.pat.txt
 (polyglossia)            patterns: hyph-de-1901.pat.txt on input line 6
 Module polyglossia Info: Language german was not yet loaded; created with id 4 on input line 6
 Module polyglossia Info: Language german already loaded; id is 4 on input line 6
 Module polyglossia Info: Language data for ngerman
-(polyglossia)            synonyms	table: 078C0868
 (polyglossia)            righthyphenmin	2
-(polyglossia)            loader	loadhyph-de-1996.tex
-(polyglossia)            patterns	hyph-de-1996.pat.txt
-(polyglossia)            hyphenation	
 (polyglossia)            lefthyphenmin	2
+(polyglossia)            hyphenation	
+(polyglossia)            loader	loadhyph-de-1996.tex
+(polyglossia)            synonyms	table: 07E5BCE8
+(polyglossia)            patterns	hyph-de-1996.pat.txt
 (polyglossia)            patterns: hyph-de-1996.pat.txt on input line 68
 Module polyglossia Info: Language ngerman was not yet loaded; created with id 8 on input line 68
 Module polyglossia Info: Language ngerman already loaded; id is 8 on input line 68
@@ -661,16 +659,16 @@ File: gloss-english.ldf polyglossia: module for english
 )
 Package polyglossia Info: Option: english variant=british.
 Module polyglossia Info: Language data for ukenglish
-(polyglossia)            synonyms	table: 078C0610
 (polyglossia)            righthyphenmin	3
-(polyglossia)            loader	loadhyph-en-gb.tex
-(polyglossia)            patterns	hyph-en-gb.pat.txt
-(polyglossia)            hyphenation	hyph-en-gb.hyp.txt
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            patterns: hyph-en-gb.pat.txt on input line 23
-Module polyglossia Info: Language ukenglish was not yet loaded; created with id 12 on input line 23
-Module polyglossia Info: Language ukenglish already loaded; id is 12 on input line 23
-LaTeX Info: Redefining \bf on input line 24.
+(polyglossia)            hyphenation	hyph-en-gb.hyp.txt
+(polyglossia)            loader	loadhyph-en-gb.tex
+(polyglossia)            synonyms	table: 07E5BA40
+(polyglossia)            patterns	hyph-en-gb.pat.txt
+(polyglossia)            patterns: hyph-en-gb.pat.txt on input line 6
+Module polyglossia Info: Language ukenglish was not yet loaded; created with id 12 on input line 6
+Module polyglossia Info: Language ukenglish already loaded; id is 12 on input line 6
+LaTeX Info: Redefining \bf on input line 7.
  (c:/texlive/2018/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
  (c:/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
@@ -734,10 +732,10 @@ Package: ulem 2012/05/18
 \ULdepth=\dimen178
 ) (c:/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
-
-(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+ (c:/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
- (c:/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+
+(c:/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -1274,6 +1272,8 @@ File: tikzlibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
 File: pgflibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
 )))
 \c@@todonotes@numberoftodonotes=\count397
+) (c:/texlive/2018/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
 )
 \glswrite=\write5
 \glo@main@file=\write6
@@ -1535,41 +1535,143 @@ Package auxhook Info: \AddLineBeginMainAux comes a little late,
 
 \c@lstlisting=\count411
 ABD: EveryShipout initializing macros
-<misc/deckblattTerminiert.pdf, id=31, 597.45204pt x 845.1575pt>
-File: misc/deckblattTerminiert.pdf Graphic file (type pdf)
-<use misc/deckblattTerminiert.pdf>
-Package luatex.def Info: misc/deckblattTerminiert.pdf  used on input line 66.
-(luatex.def)             Requested size: 597.45058pt x 845.15544pt.
-File: misc/deckblattTerminiert.pdf Graphic file (type pdf)
-<use misc/deckblattTerminiert.pdf>
-Package luatex.def Info: misc/deckblattTerminiert.pdf  used on input line 66.
-(luatex.def)             Requested size: 597.45058pt x 845.15544pt.
-<misc/deckblattTerminiert.pdf, id=34, page=1, 597.45204pt x 845.1575pt>
-File: misc/deckblattTerminiert.pdf Graphic file (type pdf)
-<use misc/deckblattTerminiert.pdf, page 1>
-Package luatex.def Info: misc/deckblattTerminiert.pdf , page1 used on input line 66.
-(luatex.def)             Requested size: 597.45058pt x 845.15544pt.
-File: misc/deckblattTerminiert.pdf Graphic file (type pdf)
-<use misc/deckblattTerminiert.pdf, page 1>
-Package luatex.def Info: misc/deckblattTerminiert.pdf , page1 used on input line 66.
-(luatex.def)             Requested size: 597.47792pt x 845.19412pt.
-File: misc/deckblattTerminiert.pdf Graphic file (type pdf)
-<use misc/deckblattTerminiert.pdf, page 1>
-Package luatex.def Info: misc/deckblattTerminiert.pdf , page1 used on input line 66.
-(luatex.def)             Requested size: 597.47792pt x 845.19412pt.
-File: misc/deckblattTerminiert.pdf Graphic file (type pdf)
-<use misc/deckblattTerminiert.pdf, page 1>
-Package luatex.def Info: misc/deckblattTerminiert.pdf , page1 used on input line 66.
-(luatex.def)             Requested size: 597.47792pt x 845.19412pt.
-File: misc/deckblattTerminiert.pdf Graphic file (type pdf)
-<use misc/deckblattTerminiert.pdf, page 1>
-Package luatex.def Info: misc/deckblattTerminiert.pdf , page1 used on input line 66.
-(luatex.def)             Requested size: 597.47792pt x 845.19412pt.
- [1
+
+./Transferleistung.tex:66: Package pdfpages Error: Cannot find file `misc/deckblattTerminiert.pdf'.
+
+See the pdfpages package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66 ...depdf[pages=1]{misc/deckblattTerminiert.pdf}
+                                                  
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+./Transferleistung.tex:66: Undefined control sequence.
+\AM@checkpagenumber #1->\ifnum #1>\AM@pagecount 
+                                                \relax \ifthenelse {\boolean...
+l.66 ...depdf[pages=1]{misc/deckblattTerminiert.pdf}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Transferleistung.tex:66: Missing number, treated as zero.
+<to be read again> 
+\relax 
+l.66 ...depdf[pages=1]{misc/deckblattTerminiert.pdf}
+                                                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./Transferleistung.tex:66: Package pdfpages Error: Page 1 of `\AM@currentdocname ' does not exist.
+
+See the pdfpages package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66 ...depdf[pages=1]{misc/deckblattTerminiert.pdf}
+                                                  
+You have set a wrong page number in the `pages' option. Document 
+`\AM@currentdocname ' does not have 1 pages.
+
+
+./Transferleistung.tex:66: LaTeX Error: File `\AM@currentdocname ' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66 ...depdf[pages=1]{misc/deckblattTerminiert.pdf}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./Transferleistung.tex:66: Arithmetic overflow.
+<recently read> \calc@Acount 
+             
+l.66 ...depdf[pages=1]{misc/deckblattTerminiert.pdf}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+./Transferleistung.tex:66: Arithmetic overflow.
+<recently read> \calc@Acount 
+             
+l.66 ...depdf[pages=1]{misc/deckblattTerminiert.pdf}
+                                                  
+I can't carry out that multiplication or division,
+since the result is out of range.
+
+
+./Transferleistung.tex:66: LaTeX Error: File `\AM@currentdocname ' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66 ...depdf[pages=1]{misc/deckblattTerminiert.pdf}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Transferleistung.tex:66: LaTeX Error: File `\AM@currentdocname ' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66 ...depdf[pages=1]{misc/deckblattTerminiert.pdf}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Transferleistung.tex:66: LaTeX Error: File `\AM@currentdocname ' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66 ...depdf[pages=1]{misc/deckblattTerminiert.pdf}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./Transferleistung.tex:66: LaTeX Error: File `\AM@currentdocname ' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66 ...depdf[pages=1]{misc/deckblattTerminiert.pdf}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[1
 
 
 \openout5 = Transferleistung.ist
-<./misc/deckblattTerminiert.pdf>] Processing 'frontmatter' comment.
+] Processing 'frontmatter' comment.
 \c@iterlist=\count412
 
 \openout3 = comment.cut
@@ -1617,19 +1719,19 @@ Package rerunfilecheck Info: File `Transferleistung.out' has not changed.
 ### bottom level
 
 Here is how much of LuaTeX's memory you used:
- 44933 strings out of 494383
+ 45024 strings out of 494383
  100000,1373583 words of node,token memory allocated
  1164 words of node memory still in use:
    15 hlist, 2 vlist, 11 rule, 2 glue, 4 kern, 1 glyph, 49 attribute, 101 glue_spec, 49 attribute_list, 1 write, 16 pdf_literal, 16 pdf_colorstack nodes
-   avail lists: 1:5,2:155,3:55,4:11,5:64,6:12,7:115,8:7,9:84,11:5
- 47467 multiletter control sequences out of 65536+600000
+   avail lists: 1:7,2:155,3:47,4:12,5:64,6:12,7:115,8:7,9:68,11:5
+ 47460 multiletter control sequences out of 65536+600000
  57 fonts using 13105215 bytes
- 73i,18n,85p,9095b,2991s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 73i,15n,85p,9095b,2986s stack positions out of 5000i,500n,10000p,200000b,100000s
 <c:/Windows/Fonts/timesbd.ttf>
-Output written on Transferleistung.pdf (3 pages, 158173 bytes).
+Output written on Transferleistung.pdf (3 pages, 25647 bytes).
 
-PDF statistics: 93 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+PDF statistics: 59 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  4 named destinations out of 1000 (max. 131072)
  184 words of extra memory for PDF output out of 10000 (max. 100000000)
 
