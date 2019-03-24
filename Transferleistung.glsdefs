@@ -1,0 +1,210 @@
+\ifglsentryexists{ietf}{}%
+{%
+\gls@defglossaryentry{ietf}%
+{%
+name={\glsentrylong {ietf}\space (\acronymfont {\glsentryshort {ietf}})},%
+sort={Internet Engineering Task Force},%
+type={main},%
+first={IETF},%
+firstplural={IETFs},%
+text={IETF},%
+plural={IETFs},%
+description={Organisation von Workinggroups, die sich mit je einem spezifischen Thema befassen. Teil der Internet Society (ISOC)},%
+descriptionplural={Organisation von Workinggroups, die sich mit je einem spezifischen Thema befassen. Teil der Internet Society (ISOC)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Internet Engineering Task Force},%
+longplural={Internet Engineering Task Forces},%
+short={IETF},%
+shortplural={IETFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{idp}{}%
+{%
+\gls@defglossaryentry{idp}%
+{%
+name={\glsentrylong {idp}\space (\acronymfont {\glsentryshort {idp}})},%
+sort={Identity Provider},%
+type={main},%
+first={IdP},%
+firstplural={IdPs},%
+text={IdP},%
+plural={IdPs},%
+description={hostet Nutzerinformationen},%
+descriptionplural={hostet Nutzerinformationen},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Identity Provider},%
+longplural={Identity Providers},%
+short={IdP},%
+shortplural={IdPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{mvp}{}%
+{%
+\gls@defglossaryentry{mvp}%
+{%
+name={\glsentrylong {mvp}\space (\acronymfont {\glsentryshort {mvp}})},%
+sort={Minimal Viable Product},%
+type={main},%
+first={MVP},%
+firstplural={MVPs},%
+text={MVP},%
+plural={MVPs},%
+description={Umsetzung eines Features oder Produktes mit zwar minimalem Funktionsumfang, aber dennoch konkretem Mehrwert für den Nutzer},%
+descriptionplural={Umsetzung eines Features oder Produktes mit zwar minimalem Funktionsumfang, aber dennoch konkretem Mehrwert für den Nutzer},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Minimal Viable Product},%
+longplural={Minimal Viable Products},%
+short={MVP},%
+shortplural={MVPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{TLS}{}%
+{%
+\gls@defglossaryentry{TLS}%
+{%
+name={\glsentrylong {TLS}\space (\acronymfont {\glsentryshort {TLS}})},%
+sort={Transport Layer Security},%
+type={main},%
+first={TLS},%
+firstplural={TLSs},%
+text={TLS},%
+plural={TLSs},%
+description={Protokoll zur hybriden Verschlüsselung von Datenübertragungen, Grundlage für HTTPS},%
+descriptionplural={Protokoll zur hybriden Verschlüsselung von Datenübertragungen, Grundlage für HTTPS},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Transport Layer Security},%
+longplural={Transport Layer Securitys},%
+short={TLS},%
+shortplural={TLSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{OAuth}{}%
+{%
+\gls@defglossaryentry{OAuth}%
+{%
+name={OAuth 2.0},%
+sort={OAuth 2.0},%
+type={main},%
+first={OAuth 2.0},%
+firstplural={OAuth 2.0s},%
+text={OAuth 2.0},%
+plural={OAuth 2.0s},%
+description={Protokoll zur API-basierten Autorisierung},%
+descriptionplural={Protokoll zur API-basierten Autorisierung},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{RO}{}%
+{%
+\gls@defglossaryentry{RO}%
+{%
+name={Resource Owner},%
+sort={Resource Owner},%
+type={main},%
+first={Resource Owner},%
+firstplural={Resource Owners},%
+text={Resource Owner},%
+plural={Resource Owners},%
+description={Im \gls {OAuth}-Kontext, Besitzer einer oder mehrer Ressourcen, auf die eine andere Anwendung Zugriff erhalten möchte.},%
+descriptionplural={Im \gls {OAuth}-Kontext, Besitzer einer oder mehrer Ressourcen, auf die eine andere Anwendung Zugriff erhalten möchte.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Grant Type}{}%
+{%
+\gls@defglossaryentry{Grant Type}%
+{%
+name={Grant Type},%
+sort={Grant Type},%
+type={main},%
+first={Grant Type},%
+firstplural={Grant Types},%
+text={Grant Type},%
+plural={Grant Types},%
+description={{bestimmt, wie Clients Authorization Grants von Resource Ownern erhalten können. Die vier Grant Types\: Authorization Code, Implicit, Resource Owner Password Credentials sowie Client Credentials wurden in RFC 6749 definiert; auch eigene Grant Types zu definieren ist möglich~\citevgl [S.~23ff.]{RFC6749}}.},%
+descriptionplural={{bestimmt, wie Clients Authorization Grants von Resource Ownern erhalten können. Die vier Grant Types\: Authorization Code, Implicit, Resource Owner Password Credentials sowie Client Credentials wurden in RFC 6749 definiert; auch eigene Grant Types zu definieren ist möglich~\citevgl [S.~23ff.]{RFC6749}}.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

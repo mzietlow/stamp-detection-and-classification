@@ -1,8 +1,0 @@
-{
-  "header":{"enc":"A128GCM","alg":"RSA-OAEP"},
-  "encrypted_key":"G41Y2aizjBW5bFqEYWhIL84bVBbcuaHXB1szgFPEKfqJIMfcUZ
-                   faeNqG2B9Cxo7Q",
-  "initialization_vector":"3THSMF4n786zAUim204dhgknnJz85FkP",
-  "ciphertext":"YXBKFvHo6nxQICZ3jTC1jIYhyHoDGwTDPuFzx2YgWCF39dP2Y6SFzCW24BzpiD0A",
-  "tag":"gVYxhN5OVTAWcYub"
-}
