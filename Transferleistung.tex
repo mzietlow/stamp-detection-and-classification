@@ -1,4 +1,4 @@
-\documentclass[12pt,oneside,ams,a4paper]{hepthesis}
+\documentclass[12pt,oneside,a4paper]{hepthesis}
 
 % Language-Encoding und Font
 \usepackage{polyglossia}        % Alternative zu Babel
@@ -6,6 +6,7 @@
 \setotherlanguage[variant=british]{english}
 \addtokomafont{labelinglabel}{\sffamily} % ???
 \usepackage{fontspec}           %
+\usepackage{unicode-math}
 \setmainfont{Times New Roman}   % Unverhältnismäßig hässlich. Besser keine Font
                                 % setzen.
 
@@ -15,6 +16,7 @@
 \spacing{1.25}
 \geometry{a4paper,left=20mm,right=20mm, top=20mm, bottom=20mm, headsep=7mm}
 \raggedbottom{}
+\usepackage{microtype}
 
 % Citation, Verweise
 \usepackage{harvard}
@@ -25,7 +27,7 @@
 
 % Fileinsertion
 \usepackage{pdfpages}           % Paket zum Einfügen von PDFs
-\usepackage{hyperref}           % Einträge im Inhaltsverzeichnis werden zu Links,
+\usepackage{hyperref}[]         % Einträge im Inhaltsverzeichnis werden zu Links,
                                 % muss das letzte Package sein
 % Tabellen etc
 \KOMAoption{numbers}{noenddot}  % Keine End-Punkte (4., 4.1.) in Nummerierungen???
@@ -33,7 +35,7 @@
 
 % Sonstiges
 \usepackage{ulem}               % Unterstreichen von Text
-\usepackage{titling}
+\usepackage{titling}  
 \usepackage[german]{datetime2}  % Gerade gar nicht genutzt?!
 \usepackage{blindtext}          % Repräsentativer als Lorem Ipsum
 \usepackage{todonotes}          % Einfügen von Todos
@@ -56,6 +58,10 @@
   }%
 }
 \makeatother
+
+% Math-Bugfixes
+\usepackage{lualatex-math}
+
 %%%% </Workarounds> %%%%
 
 
