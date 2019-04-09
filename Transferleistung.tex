@@ -7,13 +7,13 @@
 \addtokomafont{labelinglabel}{\sffamily} % ???
 \usepackage{fontspec}           %
 \usepackage{unicode-math}
-\setmainfont{Times New Roman}   % Unverhältnismäßig hässlich. Besser keine Font
+% \setmainfont{Times New Roman}   % Unverhältnismäßig hässlich. Besser keine Font
                                 % setzen.
 
 % Formatierung
 \usepackage{geometry}           % Paket für Änderung der Seitenränder
 \usepackage{setspace}           % Paket für Zeilenabstand
-\spacing{1.25}
+\spacing{1.25}                  % Zeilenabstand setzen
 \geometry{a4paper,left=20mm,right=20mm, top=20mm, bottom=20mm, headsep=7mm}
 \raggedbottom{}
 \usepackage{microtype}
@@ -42,7 +42,7 @@
 
 %%%% <Workarounds> %%%%
 % Für Package:todonotes
-\setlength {\marginparwidth}{2cm}
+\setlength{\marginparwidth}{2cm}
 
 % Fix für unbekannten Fehler
 \DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
@@ -54,7 +54,7 @@
 \makeatletter
 \AtBeginDocument{%
   \expandafter\renewcommand\expandafter\subsection\expandafter{%
-    \expandafter\@fb@secFB\subsection
+  \expandafter\@fb@secFB\subsection{}
   }%
 }
 \makeatother
@@ -67,10 +67,9 @@
 
 \makeglossaries{}
 
-
 % Metadaten %
-\author{8323}
 \title{Stempelerkennung in Antragsformularen durch Machine Learning}
+\author{8323}
 \date{\today}
 \hypersetup{
  pdfauthor = {\theauthor},
@@ -79,27 +78,49 @@
  bookmarksopen=true
 }
 
+
+% Eigene Variablen und Commands %
+\newcommand{\theLocationAndDate}{Hamburg, den \thedate}
+
+
 \begin{document}
 
 %\input{Dokument/GlossarMetadaten}
 \includepdf[pages=1]{misc/deckblattTerminiert.pdf}
 \newpage
+
+
 \begin{frontmatter}
-%    \input{Dokument/Vorspann}
+% Enthält:
+  \input{Dokument/01_Frontmatter/00_Deckblatt}
+  \input{Dokument/01_Frontmatter/01_Abstract}
+  \input{Dokument/01_Frontmatter/02_Inhaltsverzeichnis}
+  \input{Dokument/01_Frontmatter/03_Tabellenverzeichnis}
+  \input{Dokument/01_Frontmatter/04_Abbildungsverzeichnis}
+  \input{Dokument/01_Frontmatter/05_Abkuerzungsverzeichnis}
+  \input{Dokument/01_Frontmatter/06_Glossar}
+  \input{Dokument/01_Frontmatter/07_Sperrvermerk}
+  \newpage
+  \thispagestyle{empty}
+  \addtocounter{page}{-3}
 \end{frontmatter}
 
 \begin{mainmatter}
-%    \input{Dokument/Hauptteil}
+  \blindtext[5]
+  %\input{Dokument/02_Einleitung}
+  %\input{Dokument/03_Hauptteil}
+  %\input{Dokument/04_Fazit}
 \end{mainmatter}
 
 \begin{appendices}
-%    \input{Dokument/Anhang}
-    \listoffigures
-    \printglossaries{}% \newpage \thispagestyle{empty}
+ % \input{Dokument/Anhang}
+  
 \end{appendices}
 
 \begin{backmatter}
-%    \input{Dokument/Nachspann}
+
+
+  %\input{Dokument/Nachspann}
 \end{backmatter}
 
 \end{document}
