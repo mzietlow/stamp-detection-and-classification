@@ -2,43 +2,51 @@
 
 % Language-Encoding und Font
 \usepackage{polyglossia}        % Alternative zu Babel
-\setmainlanguage[babelshorthands=true]{german}
-\setotherlanguage[variant=british]{english}
+\setmainlanguage[variant=british]{english}
+\setotherlanguage[babelshorthands=true]{german}
 \addtokomafont{labelinglabel}{\sffamily} % ???
-\usepackage{fontspec}           %
-\usepackage{unicode-math}
-% \setmainfont{Times New Roman}   % Unverhältnismäßig hässlich. Besser keine Font
-                                % setzen.
+\usepackage{fontspec}
+\usepackage{unicode-math} % fontspec wird auch von unicode-math geladen
+\setmainfont{TeX Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}   
+% \setmainfont{Times New Roman} - Unverhältnismäßig hässlich. Besser keine Font
+% setzen.
 
 % Formatierung
 \usepackage{geometry}           % Paket für Änderung der Seitenränder
-\usepackage{setspace}           % Paket für Zeilenabstand
+\usepackage{setspace}           % Paket für Zeilenabstand 
 \spacing{1.25}                  % Zeilenabstand setzen
 \geometry{a4paper,left=20mm,right=20mm, top=20mm, bottom=20mm, headsep=7mm}
 \raggedbottom{}
 \usepackage{microtype}
 
 % Citation, Verweise
-\usepackage{harvard}
+\usepackage[style=ieee,backend=biber]{biblatex}
+\addbibresource{BibLaTex/citation_db.bib}
 \usepackage{nameref}
-\usepackage{glossaries}         % \gls{<golssary-entry>} makeglossaries <dateiname> per cmd
+\usepackage[acronym]{glossaries}% \gls{<golssary-entry>}
+\makeglossaries{}               % makeglossaries <dateiname> per cmd
 \usepackage{listings}           % Paket zum Einfügen von Source Code.
-                                % REPLACE https://tex.stackexchange.com/questions/102596/minted-vs-texments-vs-verbments/103471#103471:
+                                % refer to 'minted vs. texments vs. verbments'
 
 % Fileinsertion
 \usepackage{pdfpages}           % Paket zum Einfügen von PDFs
-\usepackage{hyperref}[]         % Einträge im Inhaltsverzeichnis werden zu Links,
+\usepackage{hyperref}         % Einträge im Inhaltsverzeichnis werden zu Links,
                                 % muss das letzte Package sein
 % Tabellen etc
-\KOMAoption{numbers}{noenddot}  % Keine End-Punkte (4., 4.1.) in Nummerierungen???
-\usepackage{booktabs}           % Tabellenpaket, Keine vertikal und dicken Linien
+\KOMAoption{numbers}{noenddot}  % Keine End-Punkte (4., 4.1.) in Nummerierungen?
+\usepackage{booktabs}           % Tabellenpaket-keine vertikal und dicken Linien
+\usepackage[inline]{enumitem}
 
 % Sonstiges
-\usepackage{ulem}               % Unterstreichen von Text
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}     % Unterstreichen von Text mit \uline
 \usepackage{titling}  
 \usepackage[german]{datetime2}  % Gerade gar nicht genutzt?!
 \usepackage{blindtext}          % Repräsentativer als Lorem Ipsum
-\usepackage{todonotes}          % Einfügen von Todos
+\usepackage{kantlipsum}         % Cooler als blindtext
+\usepackage{todonotes} % Einfügen von Todos, Option: [disable]
+
 
 %%%% <Workarounds> %%%%
 % Für Package:todonotes
@@ -65,10 +73,8 @@
 %%%% </Workarounds> %%%%
 
 
-\makeglossaries{}
-
 % Metadaten %
-\title{Stempelerkennung in Antragsformularen durch Machine Learning}
+\title{A~Generic~Method~for Stamp~Segmentation~and~Classification with Machine~Learning Object~Detection~Frameworks}
 \author{8323}
 \date{\today}
 \hypersetup{
@@ -85,42 +91,23 @@
 
 \begin{document}
 
-%\input{Dokument/GlossarMetadaten}
+\input{Dokument/05_GlossarMetadaten}
 \includepdf[pages=1]{misc/deckblattTerminiert.pdf}
-\newpage
 
-
-\begin{frontmatter}
-% Enthält:
-  \input{Dokument/01_Frontmatter/00_Deckblatt}
-  \input{Dokument/01_Frontmatter/01_Abstract}
-  \input{Dokument/01_Frontmatter/02_Inhaltsverzeichnis}
-  \input{Dokument/01_Frontmatter/03_Tabellenverzeichnis}
-  \input{Dokument/01_Frontmatter/04_Abbildungsverzeichnis}
-  \input{Dokument/01_Frontmatter/05_Abkuerzungsverzeichnis}
-  \input{Dokument/01_Frontmatter/06_Glossar}
-  \input{Dokument/01_Frontmatter/07_Sperrvermerk}
-  \newpage
-  \thispagestyle{empty}
-  \addtocounter{page}{-3}
+\begin{frontmatter}  %% Deckblatt, Abstract, diverse Verzeichnisse, Glossar.
+\input{Dokument/01_Frontmatter}  
 \end{frontmatter}
 
 \begin{mainmatter}
-  \blindtext[5]
-  %\input{Dokument/02_Einleitung}
-  %\input{Dokument/03_Hauptteil}
-  %\input{Dokument/04_Fazit}
+\input{Dokument/02_Mainmatter}
 \end{mainmatter}
 
-\begin{appendices}
- % \input{Dokument/Anhang}
-  
+\begin{appendices} %% Anhänge die nicht zwingend für die Arbeit notwendig sind
+\input{Dokument/03_Appendices}
 \end{appendices}
 
-\begin{backmatter}
-
-
-  %\input{Dokument/Nachspann}
+\begin{backmatter} %% bibliography, tables of figures etc., index...)
+\input{Dokument/04_Backmatter}
 \end{backmatter}
 
 \end{document}
