@@ -20,10 +20,10 @@ stamp detection is split into two major- and several sub-categories.
                     XY-Cut algorithm proposed in~\cite{Krishnamoorthy.1993} is
                     applied. For classification an ensemble of geometric-
                     (pixel density, skew, etc.) and color-related features
-                    (standard deviation of hue) is compared to empirically set
-                    thresholds. By treating stamps as chromatic objects, they
-                    are unable to detect black stamps and face problems when
-                    colored fonts are used. In~\cite{Micenkova.2015},
+                    (standard deviation of hue) is compared with empirically
+                    set thresholds. By treating stamps as chromatic objects, 
+                    they are unable to detect black stamps and face problems 
+                    when colored fonts are used. In~\cite{Micenkova.2015},
                     \citeauthor*{Micenkova.2015} improved upon their method by
                     applying additional geometric features. Although
                     applicability of the updated approach on black stamps is
@@ -59,7 +59,7 @@ stamp detection is split into two major- and several sub-categories.
         \citeauthor*{Nandedkar.16.12.201519.12.2015} extend an approach they
         suggested in~\cite{Nandedkar.23.08.201526.08.2015}. They analyse spatial
         frequency components in document images, finding text to be the major
-        contributor. In order to segment a given image, they first conceal
+        contributor. To segment a given image, they first conceal
         text-components by removing objects with high spatial frequencies and
         further apply a Gaussian filter. To prevent textual stamps from being
         removed, a chromaticity threshold is applied on the removal of spatial
@@ -86,20 +86,19 @@ stamp detection is split into two major- and several sub-categories.
         validated using additional empirically set thresholds.\\
 
         A sliding window approach using the AdaBoost algorithm on cascaded
-        decision trees has been proposed in~\cite{Forczmanski.2016}. In order
-        to train AdaBoost, a labeled training set is constructed. For each
-        training sample, haar-like features are extracted. AdaBoost then
-        constructs a set of consecutive decision trees to optimize stamp
-        classification of training samples. Each decision tree takes in a
-        haar-like feature from a fixed position inside the sliding window.
-        Based on the input feature value the tree decides whether to accept or
-        reject a given window as stamp-candidate. A set of consecutive decision
-        trees with such property (accept or completely reject) is called a
-        cascade. In order for a sliding window to become a valid
-        stamp-candidate it has to survive this cascade of decision trees. The
-        set of generated candidates is then verified using a broader set of
-        features. Several algorithms are compared for verification including
-        1NN, decision trees, and SVMs.\\
+        decision trees has been proposed in~\cite{Forczmanski.2016}. To train 
+        AdaBoost, a labeled training set is constructed. For each training 
+        sample, haar-like features are extracted. AdaBoost then constructs a 
+        set of consecutive decision trees to optimize stamp classification of 
+        training samples. Each decision tree takes in a haar-like feature from 
+        a fixed position inside the sliding window. Based on the input feature 
+        value the tree decides whether to accept or reject a given window as 
+        stamp-candidate. A set of consecutive decision trees with such property 
+        (accept or completely reject) is called a cascade. In order for a 
+        sliding window to become a valid stamp-candidate it has to survive this 
+        cascade of decision trees. The set of generated candidates is then 
+        verified using a broader set of features. Several algorithms are 
+        compared for verification including 1NN, decision trees, and SVMs.\\
 
         In~\cite{Younas.09.11.201715.11.2017},
         \citeauthor*{Younas.09.11.201715.11.2017} propose an approach using a
@@ -120,27 +119,14 @@ objects~\cite{Nandedkar.23.08.201526.08.2015, Nandedkar.16.12.201519.12.2015,
 Forczmanski.2016, Ahmed.25.08.201328.08.2013, Dey.16.12.201519.12.2015, 
 Forczmanski.2015, Forczmanski.2016} or logo misclassification~\cite
 {Ahmed.25.08.201328.08.2013, Dey.16.12.201519.12.2015, 
-Micenkova.18.09.201121.09.2011}, some approaches fall short\todo{falling short does not exactly fit here}
-on runtime, operating for more than 13 Seconds per evaluation~\cite{Ahmed.2016, 
+Micenkova.18.09.201121.09.2011}. Some approaches are limited by runtime, 
+operating for more than 13 Seconds per evaluation~\cite{Ahmed.2016, 
 Nandedkar.23.08.201526.08.2015}.\\
-Besides, classification of stamps is observed to be a common task in 
-literature. Classes are usually either binary (Stamp and non-Stamp), 
+Besides segmentation, classification of stamps is observed to be a common task 
+in literature. Classes are usually either binary (Stamp and non-Stamp), 
 object-related (Stamp, Logo, Text, Tables)~\cite{Forczmanski.2016,
 Nandedkar.23.08.201526.08.2015, Nandedkar.16.12.201519.12.2015, 
 Dey.16.12.201519.12.2015}, or shape-dependent (Circle, Ellipse, Square, etc.)
-~\cite{Forczmanski.2015}. However, classification of similar stamps, i.e. 
-stamps belonging to the same shape-class but differing in text and décor, as is 
-often the case when dealing with different actors in business contexts, was not 
-found.
-
-\todo{Keine absoluten Aussagen.}
-\todo{Deckblatt anpassen}
-\todo{Arab. Nummerierung im Appendix, Backmatter?}
-\todo{Datum auf dem Titelblatt ist denglisch}
-\todo{Double check spatial frequency paper [8, 9]}
-\todo{Glossar füllen, PCA etc.}
-\todo{include kaggle approach}
-\todo{extract best practices from dissertation}
-\todo{Cite FAST and ORB, Gaussian, mean shift, PCA, K-NN, decision tree, SVM, 
-VGG16, FCN, deconvolution, VOC2011?}
-\todo{PCA is in math environment...}
+\cite{Forczmanski.2015}. However, research on classification of similar stamps 
+i.e. stamps belonging to the same shape-class but differing in text and décor, 
+has so far only been reported on by~\cite{Petej.07.07.201310.07.2013}.
