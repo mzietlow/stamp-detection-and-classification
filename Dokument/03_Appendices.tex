@@ -1,19 +1,55 @@
 \chapter{Basic Concepts}\todo{Exchange for a better title}
 \blindtext[1]
 
-\section{Concepts of Bounding Box Encoding}
+\chapter{Algorithms used in related work}
 \blindtext[2]
+
+\section{Concepts of Bounding Box Encoding}\label{append:Concepts of Bounding Box Encoding}
+\todo{Consider explaining log space, stripping into positive space, encoding in width-height}
+\(box = {x_{min}, x_{max}, y_{min}, y_{max}}\)
+\(box = {anchor, height, width}\)
+\blindtext[1]
+
+\section{Intersect Over Union}\label{sect:Intersect Over Union}
+Let bounding box \(bbox=\{bbox_{center}, bbox_{height}, bbox_{height}\}\) and let default box \(dbox=\{dbox_{center}, dbox_{height}, dbox_{height}\}\).
+The Intersect Over Union\todo{gls} is defined as
+\begin{equation}
+    IoU=\frac{bbox\cup dbox}{bbox\cap dbox}
+\end{equation}
+where
+\begin{equation}
+    bbox\cup dbox=bbox_{height}*bbox_{width} - dbox_{height}*dbox_{width} - bbox\cap dbox
+\end{equation}
+and
+\begin{equation}
+   bbox\cap dbox = \max\{height_{bbox, dbox}\}*\max\{width_{bbox, dbox}\}\\
+\end{equation}
+with
+\begin{equation}
+    \max\{height_{bbox, dbox}\} = (\max{bbox_{ymax}, dbox_{ymax}}-\min{bbox_{ymin}, dbox_{ymin}})\\
+    \max\{width_{bbox, dbox}\}= \max\{bbox_{xmax}, dbox_{xmax}\}-\min\{bbox_{xmin}, dbox_{xmin}\}
+\end{equation}
+
+\section{K-Means Clustering}\label{append:K-Means Clustering}
+~\cite[386-390]{James.2017}
+\section{Bounding Box Offsets}
+\blindtext[1]
 
 \section{Preprocessing}
 \blindtext[3]
 
 \section{Concepts of Neural Network Architectures}
-\blindtext[4]
+\subsection{Convolutional Layer}\label{append:Convolutional Layer}
+https://cs231n.github.io/convolutional-networks/
+receptive field~\cite[335-345]{IanGoodfellow.2016}
+\todo{mentioned that the convolutional operation preserves spatial structure}
+\blindtext[1]
+\blindtext[3]
 
 \section{Loss Functions}
 \blindtext[2]
 
-\section{VGG16 and ResNet}
+\section{VGG16 and ResNet (Base Networks)}
 \blindtext[3]
 
 
@@ -29,6 +65,6 @@ VGG16, FCN, deconvolution, VOC2011?}
 \todo{PCA is in math environment\dots}
 \todo{Generate a `class prototype' for stamp and no-stamp classes. (what is the
 perfect stamp picture)}
-\todo{Write a colour shifter for preprocessing, s.t. every colour is trained
+\todo{Write a colour shifter for preprocessing, s.t.\ every colour is trained
 and maybe even consider a color gradient shifter}
 \todo{Why combine localization and classification, why not split both? Is it speed only?}

@@ -1,38 +1,56 @@
 \setacronymstyle{long-short}
 
 % ----------------------------- Acronyms -----------------------------
-\newacronym[description={Organisation von
-Workinggroups, die sich mit je einem spezifischen Thema befassen. Teil der
-Internet Society (ISOC)}]{ietf}{IETF}{Internet Engineering Task Force}
-\newacronym[description={hostet Nutzerinformationen}]{idp}{IdP}{Identity
-Provider}
-\newacronym[description={Umsetzung eines Features oder Produktes mit zwar
-minimalem Funktionsumfang, aber dennoch konkretem Mehrwert für den Nutzer},
-plural={MVPs}] {mvp}{MVP}{Minimal Viable Product}
-\newacronym[description={Protokoll zur hybriden Verschlüsselung von
-Datenübertragungen, Grundlage für HTTPS}]{TLS}{TLS}{Transport Layer Security}
-
-% ----------------------------- Glossary Entries -----------------------------
-
 \newacronym{ml} {ML} {Machine Learning}
 \newacronym{skcm} {SKCM} {Simple K-Counting Machine}
 \newacronym{ai} {AI} {Artificial Intelligence}
 \newacronym{rnn} {RNN} {Recurrent Neural Network}
 \newacronym{cnn} {CNN} {Convolutional Neural Network}
 \newacronym{fcnn} {FCNN} {Fully Convolutional Neural Network}
-\newglossaryentry{OAuth} {
-    name={OAuth 2.0},
-    description={Protokoll zur API-basierten Autorisierung}
+\newacronym{yolo} {YOLO} {You Only Look Once}
+\newacronym{ssd} {SSD} {Single Shot MultiBox Detector}
+\newacronym[description={A common activation function for neural neworks.
+\(f(x)=\max(0, x)\)}] {relu} {ReLU} {Rectified Linear Unit}
+
+\newacronym[description={Umsetzung eines Features oder Produktes mit zwar
+minimalem Funktionsumfang, aber dennoch konkretem Mehrwert für den Nutzer},
+plural={MVPs}] {mvp}{MVP}{Minimal Viable Product}
+
+% ----------------------------- Glossary Entries -----------------------------
+
+\newglossaryentry{feature map} {
+    name={feature map},
+    description={Output of a convolutional layer after applying an activation function like \gls{relu}}
 }
-\newglossaryentry{RO} {
-    name={Resource Owner},
-    description={Im \gls{OAuth}-Kontext, Besitzer einer oder mehrerer
-    Ressourcen, auf die eine andere Anwendung Zugriff erhalten möchte.}
+
+\newglossaryentry{anchor} {
+    name={anchor},
+    description={Center of a bounding box},
 }
-\newglossaryentry{Grant Type} {
-    name={Grant Type},
-    plural={Grant Types},
-    description={bestimmt, wie Clients Authorization Grants von Resource Ownern
-    erhalten können. Die vier Grant Types\: Authorization Code, Implicit, Resource Owner Password Credentials sowie Client Credentials wurden in RFC 6749
-    definiert; auch eigene Grant Types zu definieren ist möglich~\citevgl[S.~23ff.]{RFC6749}.}
+
+\newglossaryentry{layer} {
+    name={layer},
+    description={Contextsensitive, either dense- or \gls{convolutional layer} 
+    as defined by in}}
+
+\newglossaryentry{convolutional layer} {
+    name={convolutional layer},
+    description={Composition of the convolutional operation and nonlinearity, 
+    partially referring to the `complex layer terminology' 
+    in~\cite[341]{IanGoodfellow.2016}}
+}
+
+\newglossaryentry{dense layer} {
+    name={dense layer},
+    description={Also: fully connected layer. Composition of the matrix operation and nonlinearity, partially referring to the `complex layer terminology' 
+    in~\cite[341]{IanGoodfellow.2016}} \todo{refine.~explain also conv in appendix.}
+}
+
+\newglossaryentry{deconvolutional layer} {
+    name={deconvolutional layer},
+    description={Deconvolutional layer. Composition of the deconvolutional 
+    operation and nonlinearity, partially referring to the `complex layer 
+    terminology' 
+    in~\cite[341]{IanGoodfellow.2016}} \todo{refine.~explain also conv in 
+    appendix.}
 }

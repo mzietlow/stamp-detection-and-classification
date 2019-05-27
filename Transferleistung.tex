@@ -1,4 +1,19 @@
+% Ignorierte Warnings
+\RequirePackage{silence}
+\WarningFilter{scrbook}{Usage of package `fancyhdr'}  % Hepthesis issues
+\WarningFilter{scrbook}{Usage of package `tocbibind'} % Hepthesis issues
+\WarningFilter{biblatex}{File }  % Bei Gelegenheit gegenprüfen!
+\WarningFilter{tocbasic}{`tocbibind' redefinition of `\listoffigures'}
+\WarningFilter{tocbasic}{`tocbibind' redefinition of `\listoftables'} 
+\WarningFilter{chktex}{You should perhaps use `\min' instead.} % unfortunately -
+\WarningFilter{chktex}{You should perhaps use `\max' instead.} % - doesn't work
+
+
 \documentclass[12pt,oneside,a4paper]{hepthesis}
+
+% Debug
+%\usepackage{lua-visual-debug}
+%\usepackage{endfloat}
 
 % Language-Encoding und Font
 \usepackage{polyglossia}        % Alternative zu Babel
@@ -8,9 +23,13 @@
 \usepackage{fontspec}
 \usepackage{unicode-math} % fontspec wird auch von unicode-math geladen
 \setmainfont{TeX Gyre Pagella}
-\setmathfont{TeX Gyre Pagella Math}   
+\setmathfont[ItalicFont=*, BoldFont=*]{TeX Gyre Pagella Math}
 % \setmainfont{Times New Roman} - Unverhältnismäßig hässlich. Besser keine Font
 % setzen.
+
+% Math-Packages und Fonts
+\usepackage{physics} % ||norm|| und |abs|
+\usepackage{amsmath}
 
 % Formatierung
 \usepackage{geometry}           % Paket für Änderung der Seitenränder
@@ -19,6 +38,10 @@
 \geometry{a4paper,left=20mm,right=20mm, top=20mm, bottom=20mm, headsep=7mm}
 \raggedbottom{}
 \usepackage{microtype}
+
+% Subsections
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
 
 % Citation, Verweise
 \usepackage[style=ieee,backend=biber]{biblatex}
@@ -31,14 +54,16 @@
 
 % Fileinsertion
 \usepackage{pdfpages}           % Paket zum Einfügen von PDFs
-\usepackage{hyperref}         % Einträge im Inhaltsverzeichnis werden zu Links,
+\usepackage{hyperref}           % Einträge im Inhaltsverzeichnis werden zu Links,
                                 % muss das letzte Package sein
 % Tabellen etc
 \KOMAoption{numbers}{noenddot}  % Keine End-Punkte (4., 4.1.) in Nummerierungen?
 \usepackage{booktabs}           % Tabellenpaket-keine vertikal und dicken Linien
 \usepackage[inline]{enumitem}
 
-% Sonstiges
+% Sonstiges                     % Einfügen von Grafiken
+\usepackage{graphicx}
+\graphicspath{ {./bilder/} }
 \usepackage{xcolor}
 \usepackage[normalem]{ulem}     % Unterstreichen von Text mit \uline
 \usepackage{titling}  
@@ -55,20 +80,16 @@
 % Fix für unbekannten Fehler
 \DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
 
-% stoppt Floats an Section-Grenzen
+% stoppt Floats mit \FloatBarrier. Subsections sind NICHT enthalten
+% Ein Fix ist mit erheblichem Zeitinvest verbunden.
 \usepackage[section]{placeins}
-
-% Fügt \FloatBarrier an subsections. Hält Floats davon ab, zu verrutschen.
-\makeatletter
-\AtBeginDocument{%
-  \expandafter\renewcommand\expandafter\subsection\expandafter{%
-  \expandafter\@fb@secFB\subsection{}
-  }%
-}
-\makeatother
 
 % Math-Bugfixes
 \usepackage{lualatex-math}
+
+% fancyhdr und KOMA-Script Klassen sollten nicht gemeinsam genutzt werden
+% ich habe noch keine Zeit für einen Fix gefunden. scrhack ist ein quickfix.
+\usepackage{scrhack}
 
 %%%% </Workarounds> %%%%
 

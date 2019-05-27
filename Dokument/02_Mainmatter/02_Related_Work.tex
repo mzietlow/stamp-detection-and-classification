@@ -2,7 +2,7 @@
 In the past, a variety of methods for stamp detection have been proposed.
 A patent on page segmentation, a closely related topic, dates back as far as
 1985 on Google Patents. A typical strategy found in most publications is to
-first seperate a set of stamp-candidates from text and background, followed by
+first separate a set of stamp-candidates from text and background, followed by
 a verification of those candidates by applying thresholds on multiple
 previously chosen features. To provide an overview of the topic, recent work on
 stamp detection is split into two major- and several sub-categories.
@@ -15,7 +15,7 @@ stamp detection is split into two major- and several sub-categories.
                     approach based on color clustering and geometric features.
                     To extract a set of stamp-candidates from a given image,
                     they assume stamps to be chromatic objects. In consequence,
-                    all achromatic parts are dropped off the image. To seperate
+                    all achromatic parts are dropped off the image. To separate
                     the remaining candidates for individual analysis, the
                     XY-Cut algorithm proposed in~\cite{Krishnamoorthy.1993} is
                     applied. For classification an ensemble of geometric-
@@ -30,12 +30,12 @@ stamp detection is split into two major- and several sub-categories.
                     assumed, this hypothesis is not verified.\\A predecessor of
                     the approach in~\cite{Micenkova.18.09.201121.09.2011}
                     is~\cite{Forczmanski.2010} which employs less
-                    verificationfeatures and is only applicable to blue or red
+                    verification features and is only applicable to blue or red
                     stamps.\\
                 \item [Geometrically restricted]
                     An early geometric analysis technique was formulated by
                     ~\citeauthor*{Zhu.2006} in~\cite{Zhu.2006}, utilizing a
-                    novel ellipse detection algorithm inspired by houghes
+                    novel ellipse detection algorithm inspired by Hough
                     transform. However, this method is solely suitable for
                     elliptical stamps.
         \end{enumerate*}
@@ -57,29 +57,30 @@ stamp detection is split into two major- and several sub-categories.
         overlapping stamps.\\
         In~\cite{Nandedkar.16.12.201519.12.2015},
         \citeauthor*{Nandedkar.16.12.201519.12.2015} extend an approach they
-        suggested in~\cite{Nandedkar.23.08.201526.08.2015}. They analyse spatial
+        suggested in~\cite{Nandedkar.23.08.201526.08.2015}. They analyze spatial
         frequency components in document images, finding text to be the major
         contributor. To segment a given image, they first conceal
         text-components by removing objects with high spatial frequencies and
         further apply a Gaussian filter. To prevent textual stamps from being
         removed, a chromaticity threshold is applied on the removal of spatial
-        frequency components. To identifiy stamp-candidates, mean-shift
+        frequency components. To identify stamp-candidates, mean-shift
         segmentation is applied. Small regions are filtered with an empirically
         set threshold, the largest region is considered to be the background.
         For verification of stamp-candidates, AlexNet is used, producing three
-        classes (logo, stamp and noise) in the final dense layer. Even though
-        untreated in the paper, the presented approach of filtering spatial
-        frequency components faces limitations regarding black textual stamps
-        which might turn out to be removed by the spatial frequency filter.\\
+        classes (logo, stamp and noise) in the final \gls{dense layer}. Even 
+        though untreated in the paper, the presented approach of filtering 
+        spatial frequency components faces limitations regarding black textual 
+        stamps which might turn out to be removed by the spatial frequency 
+        filter.\\
         \item [Mixed features]
         \citeauthor*{Dey.16.12.201519.12.2015} propose an outliers-based
         method in~\cite{Dey.16.12.201519.12.2015}. To segment a given image,
-        it is seperated in foreground and background using binarization. To
+        it is separated in foreground and background using binarization. To
         retain color information the obtained foreground-values are applied as
         a mask to the original image. Color information is reduced from
         three-dimensional \(RGB\) color space to a one-dimensional principal
         component using the Principal Component Algorithm (\(PCA\)).
-        Stamp-candidates are obtained using a connected componets algorithm on
+        Stamp-candidates are obtained using a connected components algorithm on
         the first principal component. To filter out false positives,
         thresholds on features such as stroke width, bounding box width and
         height are applied. For verification a set of features is extracted and
@@ -88,9 +89,9 @@ stamp detection is split into two major- and several sub-categories.
         A sliding window approach using the AdaBoost algorithm on cascaded
         decision trees has been proposed in~\cite{Forczmanski.2016}. To train 
         AdaBoost, a labeled training set is constructed. For each training 
-        sample, haar-like features are extracted. AdaBoost then constructs a 
+        sample, Haar-like features are extracted. AdaBoost then constructs a 
         set of consecutive decision trees to optimize stamp classification of 
-        training samples. Each decision tree takes in a haar-like feature from 
+        training samples. Each decision tree takes in a Haar-like feature from 
         a fixed position inside the sliding window. Based on the input feature 
         value the tree decides whether to accept or reject a given window as 
         stamp-candidate. A set of consecutive decision trees with such property 
@@ -103,12 +104,12 @@ stamp detection is split into two major- and several sub-categories.
         In~\cite{Younas.09.11.201715.11.2017},
         \citeauthor*{Younas.09.11.201715.11.2017} propose an approach using a
         Fully Convolutional Network (FCN), built upon the VGG-16 network
-        architecture. In this approach, the final dense layers of VGG-16 are
-        replaced a deconvolution layer. By doing this, a prediction map is
-        received as output instead of classification scores. To reduce training
-        time, transfer learning from the VOC2011 dataset is applied. However,
-        no preprocessing is mentioned. Using 90\% of their dataset for training
-        and 10\% for verification they report state-of-the-art results,
+        architecture. In this approach, the final \glspl{dense layer} of VGG-16 
+        are replaced a \gls{deconvolutional layer}. By doing this, a prediction 
+        map is received as output instead of classification scores. To reduce 
+        training time, transfer learning from the VOC2011 dataset is applied. 
+        However, no preprocessing is mentioned. Using 90\% of their dataset for 
+        training and 10\% for verification they report state-of-the-art results,
         although noticing difficulties with tabular stamps.
     \end{enumerate*}
 \end{description}
@@ -128,5 +129,5 @@ object-related (Stamp, Logo, Text, Tables)~\cite{Forczmanski.2016,
 Nandedkar.23.08.201526.08.2015, Nandedkar.16.12.201519.12.2015, 
 Dey.16.12.201519.12.2015}, or shape-dependent (Circle, Ellipse, Square, etc.)
 \cite{Forczmanski.2015}. However, research on classification of similar stamps 
-i.e. stamps belonging to the same shape-class but differing in text and décor, 
+i.e. stamps belonging to the same shape-class but differing in text and decor, 
 has so far only been reported on by~\cite{Petej.07.07.201310.07.2013}.
