@@ -1,0 +1,177 @@
+% Ignorierte Warnings
+\RequirePackage{silence}
+\WarningFilter{scrbook}{Usage of package `fancyhdr'}  % Hepthesis issues
+\WarningFilter{scrbook}{Usage of package `tocbibind'} % Hepthesis issues
+\WarningFilter{biblatex}{File }  % Bei Gelegenheit gegenprüfen!
+\WarningFilter{tocbasic}{`tocbibind' redefinition of `\listoffigures'}
+\WarningFilter{tocbasic}{`tocbibind' redefinition of `\listoftables'} 
+\WarningFilter{chktex}{You should perhaps use `\min' instead.} % unfortunately -
+\WarningFilter{chktex}{You should perhaps use `\max' instead.} % - doesn't work
+\WarningFilter{latex}{Marginpar on page} % due to todonotes
+
+
+\documentclass[12pt,oneside,a4paper]{hepthesis}
+
+% Language-Encoding und Font
+\usepackage{polyglossia}        % Alternative zu Babel
+\setmainlanguage[variant=british]{english}
+\setotherlanguage[babelshorthands=true]{german}
+\addtokomafont{labelinglabel}{\sffamily} % ???
+
+% Citation, Verweise
+\usepackage[style=ieee,backend=biber]{biblatex}
+\addbibresource{BibLaTex/citation_db.bib}
+\usepackage{listings}           % refer to 'minted vs. texments vs. verbments'
+\usepackage{hyperref}           % Verlinkungen im Dokument
+\usepackage{nameref}
+\usepackage{booktabs}           % Tabellenpaket-keine vertikal und dicken Linien
+\usepackage[inline]{enumitem}
+\usepackage[acronym]{glossaries}		% \gls{<golssary-entry>}
+\setacronymstyle{long-short}
+
+% Fonts
+\usepackage{fontspec}
+\usepackage{unicode-math} % fontspec wird auch von unicode-math geladen?
+\setmainfont{TeX Gyre Pagella}
+\setmathfont[ItalicFont=*, BoldFont=*]{TeX Gyre Pagella Math}
+
+% Math-Packages und Fonts
+\usepackage{physics} % ||norm|| und |abs|
+\usepackage{amsmath}
+
+% Formatierung
+\usepackage{geometry}           % Paket für Änderung der Seitenränder
+\usepackage{setspace}           % Paket für Zeilenabstand 
+\spacing{1.25}                  % Zeilenabstand setzen
+\geometry{a4paper,left=20mm,right=20mm, top=20mm, bottom=20mm, headsep=7mm}
+\raggedbottom{}
+\usepackage{microtype}
+
+% Subsections
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+
+% Fileinsertion
+\usepackage{pdfpages}           % Paket zum Einfügen von PDFs
+
+% Tabellen etc
+\KOMAoption{numbers}{noenddot}  % Keine End-Punkte (4., 4.1.) in Nummerierungen?
+
+% Sonstiges                     % Einfügen von Grafiken
+\usepackage{graphicx}
+\graphicspath{ {./bilder/} }
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}     % Unterstreichen von Text mit \uline
+\usepackage{titling}  
+\usepackage[de-DE]{datetime2}   % Kalenderdaten in deutschem Format
+\usepackage{blindtext}          % Repräsentativer als Lorem Ipsum
+\usepackage{kantlipsum}         % Cooler als blindtext
+\usepackage{todonotes} % Einfügen von Todos, Option: [disable]
+\usepackage[shortcuts]{extdash} % \=/ for nonbreaking dash
+\usepackage{url}
+\usepackage{cleveref}
+\crefname{const}{constraint}{constraints}
+\usepackage{xifthen}
+\usepackage{xargs}
+
+
+
+%%%% <Workarounds> %%%%
+% Für Package:todonotes
+\setlength{\marginparwidth}{2cm}
+
+% Fix für unbekannten Fehler
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+
+% stoppt Floats mit \FloatBarrier. Subsections sind NICHT enthalten
+% Ein Fix ist mit erheblichem Zeitinvest verbunden.
+\usepackage[section]{placeins}
+
+% Math-Bugfixes
+\usepackage{lualatex-math}
+
+% fancyhdr und KOMA-Script Klassen sollten nicht gemeinsam genutzt werden
+% ich habe noch keine Zeit für einen Fix gefunden. scrhack ist ein quickfix.
+\usepackage{scrhack}
+
+%%%% </Workarounds> %%%%
+
+
+
+%%%%% Custom Commands %%%%%
+
+% Add labels to description-environment:
+% #1 is the label, #2 is the item-name, #3 is an optional name for \ref
+% Unfortunately, optional arguments won't work in the description-environment :(
+\makeatletter
+\newcommand*{\namedlabel}[3]{%
+  \begingroup%
+    #2%
+    \ifthenelse{\isempty{#3}}%
+      {\def\@currentlabel{#2}}%
+      {\def\@currentlabel{#3}}%
+    \phantomsection\label{#1}%
+  \endgroup%
+}
+\makeatother
+
+% ref with both chapter number & chapter name
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\ref*{#1} \nameref*{#1}}} 
+
+% cite the authors name and also the work; fcite stands for fullcite
+% #2 is the author, #1 is the optional parameter, e.g. fcite[2]{ttt.} for p. 2
+\newcommandx{\fcite}[3][1=,2=]{%
+  \ifthenelse{\isempty{#2}}%
+    {\citeauthor{#3}~\cite[#1]{#3}}%
+    {\citeauthor{#3}~\cite[#1][#2]{#3}}%
+} 
+% example \fcite[see][15--20\psq]{WojciechSamek.2015} 
+% biblatex provides macros for sq. sqq. which are equal to f. ff.
+% please see: https://texwelt.de/fragen/14065/seitenzahlsequenz-mit-biblatex-kennzeichnen 
+% and also http://ctan.ebinger.cc/tex-archive/macros/latex/contrib/biblatex/doc/biblatex.pdf
+
+
+%%%%% /Custom Commands %%%%%
+
+% Metadaten %
+\makeglossaries{}               % makeglossaries <dateiname> per cmd
+\title{A~Generic~Method~for Stamp~Detection~and~Classification using Machine~Learning Object~Detection~Frameworks}
+\author{8323}
+\date{\today}
+\hypersetup{
+ pdfauthor = {\theauthor},
+ pdftitle = {\thetitle},
+ pdfsubject = {Transferleistung, Techniker Krankenkasse/Nordakademie, 2018},
+ bookmarksopen=true
+}
+
+
+% Eigene Variablen und Commands %
+\newcommand{\theLocationAndDate}{Hamburg, den \thedate}
+
+
+\begin{document}
+
+\input{Dokument/05_GlossarMetadaten}
+\includepdf[pages=1]{misc/deckblattTerminiert.pdf}
+
+\begin{frontmatter}  %% Deckblatt, Abstract, diverse Verzeichnisse, Glossar.
+\input{Dokument/01_Frontmatter}
+\listoftodos{}
+\end{frontmatter}
+
+\begin{mainmatter}
+\input{Dokument/02_Mainmatter}
+\todo{Mention Buda 2018, A systematic study of the class imbalance problemin convolutional neural networks}
+\end{mainmatter}
+
+\begin{appendices} %% Anhänge die nicht zwingend für die Arbeit notwendig sind
+\input{Dokument/03_Appendices}
+\end{appendices}
+
+\begin{backmatter} %% bibliography, tables of figures etc., index...)
+\input{Dokument/04_Backmatter}
+\end{backmatter}
+
+\end{document}
