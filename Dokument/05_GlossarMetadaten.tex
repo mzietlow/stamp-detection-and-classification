@@ -1,6 +1,8 @@
 \setacronymstyle{long-short}
 
 % ----------------------------- Acronyms -----------------------------
+% \glslongpluralkey and glsshortpluralkey for plural. might night work betimes
+% deleting _all_ auxiliary files _might_ help.
 \newacronym{ml} {ML} {Machine Learning}
 \newacronym{skcm} {SKCM} {Simple K-Counting Machine}
 \newacronym{ai} {AI} {Artificial Intelligence}
@@ -14,7 +16,13 @@
 \newacronym{map} {mAP} {mean Average Precision}
 \newacronym{svm}{SVM}{Support Vector Machine}
 \newacronym{fcn}{FCN}{Fully Convolutional Neural Network}
-
+\newacronym{iou}{IoU}{Intersection over Union}
+\newacronym{ap}{AP}{Average Precision}
+\newacronym[\glslongpluralkey={Bounding Boxes}, \glsshortpluralkey={bboxes}]{bbox}{bbox}{Bounding Box}
+\newacronym{fp}{FP}{False Positive}
+\newacronym{tp}{TP}{True Positive}
+\newacronym{fn}{FN}{False Negative}
+\newacronym{tn}{TN}{True Negative}
 
 \newacronym[description={Umsetzung eines Features oder Produktes mit zwar
 minimalem Funktionsumfang, aber dennoch konkretem Mehrwert für den Nutzer},
@@ -25,6 +33,24 @@ plural={MVPs}] {mvp}{MVP}{Minimal Viable Product}
 \newglossaryentry{feature map} {
     name={feature map},
     description={Output of a convolutional layer after applying an activation function like \gls{relu}}
+}
+
+\newglossaryentry{coco} {
+    name={COCO},
+    description={Common Objects in Context (COCO) is a well known dataset for
+    object detection, segmentation and captioning dataset}
+}
+
+\newglossaryentry{voc} {
+    name={Pascal VOC},
+    description={Pascal VOC is a well known dataset/challenge object detection
+    and classification}
+}
+
+\newglossaryentry{oi} {
+    name={Open Images},
+    description={Google Open Images is a well known dataset/challenge for
+    object detection and classification}
 }
 
 \newglossaryentry{anchor} {

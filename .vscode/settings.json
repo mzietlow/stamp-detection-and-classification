@@ -1,4 +1,25 @@
 {
     "workbench.list.openMode": "doubleClick",
-    "workbench.editor.closeEmptyGroups": false
+    "workbench.editor.closeEmptyGroups": false,
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "handlebars",
+        "html",
+        "java",
+        "latex",
+        "plaintext",
+        "python",
+        "text"
+    ],
+    "cSpell.words": [
+        "binarization",
+        "binarized",
+        "convolutional",
+        "datapoints",
+        "dataset",
+        "deconvolutional",
+        "groundtruth",
+        "upscaling"
+    ]
+
 }

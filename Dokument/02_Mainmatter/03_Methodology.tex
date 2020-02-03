@@ -9,7 +9,7 @@ one- and two-staged approaches is, what are the parts that are calculated
 (conf and loc)}
 
 \section{Single Shot MultiBox Detector} Two common one-stage architectures are
-\gls{yolo}~\cite{Redmon.08.06.2015, Redmon.25.12.2016, Redmon.09.04.2018} and
+\gls{yolo}~\cite{Redmon.20150608, Redmon.20161225, Redmon.20180409} and
 \gls{ssd}~\cite{Liu.2016}. However, \gls{yolo} uses a singular base network
 (Darknet \cite{JosephRedmon.20132016}). Therefore, \gls{ssd} was chosen over
 \gls{yolo} for this paper, retaining the ability to quickly exchange base
@@ -92,9 +92,9 @@ width \(m_w\times m_h=19\times 19\).
 \verysubsection{Default box size and aspect ratio}\label{verysubsect:Default box size and aspect ratio}
 Suppose \(n=\abs{L}\). We calculate the size of default boxes for a feature map
 \(m\) by \autoref{eq:default box size} as proposed in \cite{Liu.2016}
-\begin{align}
+\begin{equation}
     s_m=s_{_\text{min}} + \frac{s_{_\text{max}}-s_{_\text{min}}}{n-1}(b-1)
-\end{align}\label{eq:default box size}
+\end{equation}\label{eq:default box size}
 Where \(d\in [1, n]\), \(s_{_\text{min}}=0.2\) and \(s_{_\text{max}}=0.9\). To improve 
 convergence, we find \(k\)-default box aspect ratios \(R\) by employing K-Means 
 Clustering as described in \autoref{append:K-Means Clustering}, where \(k\) is 
