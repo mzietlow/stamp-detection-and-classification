@@ -1,0 +1,20 @@
+\usepackage{geometry}           % Paket für Änderung der Seitenränder
+\usepackage{setspace}           % Paket für Zeilenabstand 
+\usepackage{microtype}
+
+\usepackage{subcaption}         % Replacement for subfig package which is broken
+
+\usepackage{etoolbox}           % make authblk work with silence package:
+\makeatletter
+\robustify\@latex@warning@no@line{}
+\makeatother
+\usepackage{authblk}
+
+% new line after paragraph:
+\makeatletter
+\renewcommand\paragraph{%
+    \@startsection{paragraph}{4}{0mm}%
+       {-\baselineskip}%
+       {.001\baselineskip}%
+       {\normalfont\normalsize\bfseries}}
+\makeatother

@@ -1,0 +1,5 @@
+\let\oldequation\equation
+\let\oldendequation\endequation
+\renewenvironment{equation}
+  {\setbox0=\vbox\bgroup\oldequation}
+  {\oldendequation\egroup\[\hbox{[Equation \theequation\ here]}\]}

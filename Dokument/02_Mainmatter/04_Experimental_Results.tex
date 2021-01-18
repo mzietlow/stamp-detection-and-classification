@@ -1,16 +1,16 @@
-\chapter{Experimental Results}
+\section{Experimental Results}
 This chapter gives an overview of the experimental setup, applied metrics
 (\cref{sect:metrics}), and data sets (\cref{sect:staver,sect:tkstede}). Summary
 and conclusion are given in \cref{sect:results-and-discussion}.
 
-\section{Metrics}\label{sect:metrics}
+\subsection{Metrics}\label{sect:metrics}
 To evaluate and compare approaches described in \cref{chap:Methodology} we
 discuss a set of metrics in this section. We consider
 \nameref{subsect:pixel-wise-metrics}, \nameref{subsect:mAP} and also
 introduce \nameref{subsect:normalized-iou}.
 
-\subsection{Pixel-wise Metrics}\label{subsect:pixel-wise-metrics}
-In this subsection we briefly explain pixel-wise metrics such as
+\subsubsection{Pixel-wise Metrics}\label{subsect:pixel-wise-metrics}
+In this subsubsection we briefly explain pixel-wise metrics such as
 \nameref{par:precision-recall}, \nameref{par:f-scores} and \nameref{par:iou}.
 
 \paragraph{Precision \& Recall}\label{par:precision-recall}
@@ -66,15 +66,15 @@ given by
 \end{equation}
 Visually, this relation is shown in \cref{fig:visual-precision-recall}.
 
-\subsection{Class-wise Mean Average Precision}\label{subsect:mAP}
+\subsubsection{Class-wise Mean Average Precision}\label{subsect:mAP}
 \Gls{map} is a widely used metric in object detection that was also adopted in
 challenges such as \gls{coco}, \gls{voc}, and \gls{oi}. We define \gls{map} in
 context of a multi-classification setting, where \gls{map} represents the
 arithmetic mean of \gls{ap} over the set of all classes. Next up we will
 redefine confusion matrix-values, then average precision will be explained.
 
-\subsubsection{Confusion Matrix}
-Unlike in \fullref{subsect:pixel-wise-metrics}, confusion matrix-values
+\paragraph{Confusion Matrix}
+Unlike in \fref{subsect:pixel-wise-metrics}, confusion matrix-values
 (\glspl{tp}, \glspl{fp} \& \glspl{fn}) are attributed not per individual pixel,
 but per \gls{bbox}. A predicted \gls{bbox} is considered a \gls{tp}, if its
 (pixel-wise) \gls{iou} with a groundtruth \gls{bbox} is greater than some
@@ -130,13 +130,13 @@ because
     \item oftentimes stamp detection is framed as a binary problem.
 \end{enumerate*} 
 
-\subsection{Normalized Intersection Over Union}\label{subsect:normalized-iou}
+\subsubsection{Normalized Intersection Over Union}\label{subsect:normalized-iou}
 \blindtext[1]
 \todo{This kind of has the same issues as accuracy. Imagine, 99\% of images are
 in the lower left corner, the a System that learns this would have a high 
 average IoU. Maybe combine this from ideas of the F-Score.}
 
-\section{StaVer}\label{sect:staver}
+\subsection{StaVer}\label{sect:staver}
 ``The presented method is evaluated on a publicly available dataset (StaVer1) for stamp
 detection and verication [sic!]. This dataset contains 400 scanned document images. Out
 of these 400 documents, 80 documents contain black stamps whereas the remaining 320
@@ -154,10 +154,7 @@ whereas the remaining 30 are with colored stamps. Testing is performed on the re
 364 documents (74 documents with black stamps, 290 documents with colored stamps).
 All the results are reported for 200 dpi documents.''~\cite{Ahmed.2016}
 
-\section{TKStede}\label{sect:tkstede}
-\blindtext[1]
-
-\section{Results \& Discussion}\label{sect:results-and-discussion}
+\subsection{Results \& Discussion}\label{sect:results-and-discussion}
 Goals: 
     a.) How good can stamp detection get with current frameworks
     b.) How good can classification of a vast variety of similar classes get

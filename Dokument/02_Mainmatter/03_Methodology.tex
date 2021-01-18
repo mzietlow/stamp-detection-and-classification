@@ -1,4 +1,4 @@
-\chapter{Methodology}\label{chap:Methodology}
+\section{Methodology}\label{chap:Methodology}
 To address the challenges identified in~\cref{chap:Related Work}, namely
 evaluation-speed and categorization of near-classes, recent advances in machine
 learning are considered. Contrary to most approaches in the field which perform
@@ -8,7 +8,7 @@ or two-staged approaches. \todo{Shortly descripe what the difference between
 one- and two-staged approaches is, what are the parts that are calculated 
 (conf and loc)}
 
-\section{Single Shot MultiBox Detector} Two common one-stage architectures are
+\subsection{Single Shot MultiBox Detector} Two common one-stage architectures are
 \gls{yolo}~\cite{Redmon.20150608, Redmon.20161225, Redmon.20180409} and
 \gls{ssd}~\cite{Liu.2016}. However, \gls{yolo} uses a singular base network
 (Darknet \cite{JosephRedmon.20132016}). Therefore, \gls{ssd} was chosen over
@@ -16,7 +16,7 @@ one- and two-staged approaches is, what are the parts that are calculated
 networks.\\
 This section describes central concepts of \gls{ssd}.
 
-\subsection{SSD Architecture}\label{subsect:SSD Architecture}
+\subsubsection{SSD Architecture}\label{subsect:SSD Architecture}
 As mentioned in the introduction to this section, \gls{ssd} is independent of a
 specific base network. Exemplary, \autoref{fig:ssd-vgg} shows the architecure of
 SSD for VGG16. Fully connected \glspl{layer} of VGG16 are dropped and replaced
@@ -52,7 +52,7 @@ In \gls{ssd}, each window is a prediction with an \gls{anchor} whereas
     \label{fig:ssd-vgg}
 \end{figure}\todo{cite}
 
-\subsection{Build up Default Boxes}\label{subsect:Build up Default Boxes}
+\subsubsection{Build up Default Boxes}\label{subsect:Build up Default Boxes}
 As described in \autoref{subsect:SSD Architecture}, a prediction is the output 
 over all chosen \glspl{layer} \(L\subseteq Network\). Output of a \gls{layer} is 
 a set of class predictions with respective default box offsets. However, 
@@ -60,7 +60,7 @@ convolutional \glspl{layer} in VGG16 decrease in size, either by pooling or
 stride. Therefore, a set of bounding boxes has to be computed for every chosen 
 \gls{layer}.\\
 
-\verysubsection{Anchor generation} \todo{Anchor does not use glossary here!}
+\paragraph{Anchor generation} \todo{Anchor does not use glossary here!}
 As mentioned in \autoref{append:Convolutional Layer} the convolutional 
 operation preserves spatial structure of a convolved image \(I\). To evenly 
 tile the image with \glspl{anchor} in every \gls{layer} we make use of this property. 
@@ -89,7 +89,7 @@ width \(m_w\times m_h=19\times 19\).
     \label{fig:vgg16-anchors}
 \end{figure}\todo{cite}
 
-\verysubsection{Default box size and aspect ratio}\label{verysubsect:Default box size and aspect ratio}
+\paragraph{Default box size and aspect ratio}\label{verysubsect:Default box size and aspect ratio}
 Suppose \(n=\abs{L}\). We calculate the size of default boxes for a feature map
 \(m\) by \autoref{eq:default box size} as proposed in \cite{Liu.2016}
 \begin{equation}
@@ -110,7 +110,7 @@ encoded as described in \autoref{append:Concepts of Bounding Box Encoding}, such
 that default box
 \(\text{dbox} = \{\text{dbox}_{x_\text{min}}, \text{dbox}_{x_\text{max}}, \text{dbox}_{y_\text{min}}, \text{dbox}_{y_\text{max}}\}\)
 
-\subsection{Encoding Ground Truth} For training, ground truth bounding boxes \(B\)
+\subsubsection{Encoding Ground Truth} For training, ground truth bounding boxes \(B\)
 are encoded with respect to the concatenated default boxes as calculated in
 \autoref{verysubsect:Default box size and aspect ratio}. \gls{ssd} is supposed
 to infer offsets to default boxes (cf. \autoref{subsect:SSD Architecture}). To
@@ -132,10 +132,10 @@ is the amount of classes. Every row is now in the form of
     \left\{x_{_\text{min}}, x_{_\text{max}}, y_{_\text{min}}, y_{_\text{max}}, \text{one\_hot\_classes} \right\}
 \end{equation}
 
-\subsection{Train}
+\subsubsection{Train}
 \blindtext[1]
 
-\section{Faster R-CNN}
+\subsection{Faster R-CNN}
 \blindtext[1]
 
 \todo{Autoref does not work on equations - and verysubsect!!}
