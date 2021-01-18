@@ -1,25 +1,247 @@
 {
-    "workbench.list.openMode": "doubleClick",
-    "workbench.editor.closeEmptyGroups": false,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "latex-workshop.chktex.enabled": true,
+    "latex-workshop.message.information.show": true,
+    "latex-workshop.chktex.args.active": [
+        "-wall",
+        "-n21",
+        "-n22",
+        "-n27",
+        "-n30",
+        "-n41",
+        "-e16",
+        "-q"
+        ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "lualatex->biber->makeglossaries->lualatex",
+            "tools": [
+                "lualatex",
+                "biber",
+                "makeglossaries",
+                "lualatex",
+            ]
+        },
+        {
+            "name": "lualatex",
+            "tools": [
+                "lualatex"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+
+        }
+    ],
+    "cSpell.ignoreRegExpList": ["{.*}", "%.*"],
+    "cSpell.ignoreWords": ["pdftitle", "pdfsubject"],
+    "cSpell.ignorePaths": [
+        "**/package-lock.json",
+        "**/node_modules/**",
+        "**/vscode-extension/**",
+        "**/.git/**",
+        ".vscode",
+        ".json",
+        "./Citavi"
+    ],
+    "spellchecker.ignoreRegExp": ["{.*}"],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "makeglossaries",
+            "command": "makeglossaries",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.mouseWheelZoom": true,
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "workbench.statusBar.feedback.visible": false,
+    "git.autofetch": true,
+    "editor.rulers": [
+        80
+    ],
+    "window.zoomLevel": 0,
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "cSpell.userWords": [
+
+    ],
     "cSpell.enabledLanguageIds": [
         "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "dockerfile",
+        "git-commit",
+        "go",
         "handlebars",
         "html",
+        "ini",
         "java",
+        "javascript",
+        "json",
+        "jsonc",
         "latex",
+        "latex-expl3",
+        "makefile",
+        "markdown",
+        "pdf",
         "plaintext",
         "python",
-        "text"
+        "tex",
+        "text",
+        "yaml",
+        "yml"
     ],
+    "workbench.editor.enablePreview": false,
+    "window.openFoldersInNewWindow": "on",
+    "latex-utilities.countWord.format": "${words} Words",
+    "local-history.exclude": [
+        "**/.history/**",
+        "**/.Citavi/**",
+        "**/.vscode/**",
+        "**/node_modules/**",
+        "**/typings/**",
+        "**/out/**",
+        "**/Code/User/**",
+        "**/*.pdf",
+        "**/*.acn",
+        "**/*.acr",
+        "**/*.alg",
+        "**/*.bbl",
+        "**/*.bcf",
+        "**/*.blg",
+        "**/*.glg",
+        "**/*.glo",
+        "**/*.gls",
+        "**/*.glsdefs",
+        "**/*.ist",
+        "**/*.log",
+        "**/*.out",
+        "**/*.tdo",
+        "**/*.synctex.gz",
+        "**/*.run.xml",
+    ],
+    "files.autoSave": "afterDelay",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "explorer.confirmDelete": false,
+    "latex-workshop.intellisense.commandsJSON.replace": {
+    
+    },
+    "latex-workshop.bibtex-format.surround": "Quotation marks",
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.intellisense.unimathsymbols.enabled": true,
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.synctex(busy)",
+        "*.synctex.gz(busy)",
+        "*.nav",
+        "*.fff",
+        "*.bcf",
+        "*.cut",
+        "*.ist",
+        "*.glsdefs",
+        "*.run.xml",
+        "*.synctex.gz",
+        "*.tdo",
+        "*.ttt",
+        "*.lol"
+    ],
+    "local-history.maxDisplay": 2000,
+    "local-history.saveDelay": 120,
+    "local-history.treeLocation": "localHistory",
+    "workbench.list.openMode": "doubleClick",
+    "workbench.editor.closeEmptyGroups": false,
     "cSpell.words": [
-        "binarization",
-        "binarized",
-        "convolutional",
-        "datapoints",
-        "dataset",
-        "deconvolutional",
-        "groundtruth",
-        "upscaling"
-    ]
-
+        "ARIMA",
+        "Literatekey",
+        "Numenta",
+        "basicstyle",
+        "breakatwhitespace",
+        "breaklines",
+        "captionpos",
+        "captionsetup",
+        "citecolor",
+        "cyclicity",
+        "deletekeywords",
+        "escapeinside",
+        "evergrowing",
+        "extendedchars",
+        "fullflexible",
+        "ifxliterate",
+        "keepspaces",
+        "keywordstyle",
+        "labelsep",
+        "labelwidth",
+        "mainmatterfalse",
+        "mainmattertrue",
+        "numbersep",
+        "numberstyle",
+        "otherkeywords",
+        "rulecolor",
+        "showspaces",
+        "showstringspaces",
+        "stringstyle",
+        "subfigure",
+        "tabsize",
+        "textunderscore",
+        "upscaling",
+        "urlcolor"
+    ],
+    "cSpell.language": "en", // cspell:de requires an npm package: use google
+    "ltex.language": "en"
 }

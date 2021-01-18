@@ -1,7 +1,10 @@
+## VSCode history
+.history
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
 *.log
+*.crdownload
 *.lot
 *.fls
 *.out
@@ -13,6 +16,7 @@
 .*.lb
 *.pdf
 *.cut
+*.html
 ## Intermediate documents:
 *.dvi
 *.xdv
