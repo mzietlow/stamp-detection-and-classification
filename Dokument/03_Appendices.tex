@@ -1,4 +1,4 @@
-\section{Basic Concepts}\todo{Exchange for a better title}
+\section{Basic Concepts}
 \blindtext[1]
 
 \section{Algorithms of related work}
@@ -10,33 +10,33 @@
 \(box = {anchor, \text{height}, width}\)
 \blindtext[1]
 
-\subsection{Intersect Over Union}\label{sect:Intersect Over Union}
-Let the bounding box be 
+\subsection{Intersection Over Union for Bounding Boxes}\label{sect:Intersect Over Union}
+Let the \gls{bbox} be 
 \begin{equation}
-    \text{bbox}=\{bbox_\text{center}, bbox_{\text{height}}, bbox_\text{height}\}
+    \text{bbox}=\left\{\text{bbox}_\text{center}, \text{bbox}_{\text{height}}, \text{bbox}_\text{height}\right\}
 \end{equation}
 and let default box be 
 \begin{equation}
-    \text{dbox}=\{\text{dbox}_\text{center}, \text{dbox}_\text{height}, \text{dbox}_\text{height}\}.
+    \text{dbox}=\left\{\text{dbox}_\text{center}, \text{dbox}_\text{height}, \text{dbox}_\text{height}\right\}.
 \end{equation}
 
-The Intersect Over Union\todo{gls} is defined as
+The \gls{iou} is defined as
 \begin{equation}
     IoU=\frac{\text{bbox}\cup \text{dbox}}{\text{bbox}\cap \text{dbox}}
 \end{equation}
 where
 \begin{equation}
-    \text{bbox}\cup \text{dbox}=\text{bbox}_{\text{height}}*\text{bbox}_{\text{width}} - \text{dbox}_{\text{height}}*\text{dbox}_{\text{width}} - \text{bbox}\cap \text{dbox}
+    \text{bbox}\cup \text{dbox}=\left(\text{bbox}_{\text{height}}*\text{bbox}_{\text{width}}\right) - \left(\text{dbox}_{\text{height}}*\text{dbox}_{\text{width}}\right) - \left(\text{bbox}\cap \text{dbox}\right)
 \end{equation}
 and
 \begin{equation}
-   \text{bbox}\cap \text{dbox} = \max\{\text{height}_{\text{bbox}, \text{dbox}}\}*\max\{\text{width}_{\text{bbox}, \text{dbox}}\}\\
+   \text{bbox}\cap \text{dbox} = \max\left\{\text{height}_{\text{bbox}, \text{dbox}}\right\}*\max\left\{\text{width}_{\text{bbox}, \text{dbox}}\right\}\\
 \end{equation}
 with
-\begin{equation}
-    \max\{\text{height}_{\text{bbox}, \text{dbox}}\} = (\max{\text{bbox}_{y_\text{max}}, \text{dbox}_{y_\text{max}}}-\min{\text{bbox}_{y_\text{min}}, \text{dbox}_{y_\text{min}}})\\
-    \max\{\text{width}_{\text{bbox}, \text{dbox}}\}= \max\{\text{bbox}_{x_\text{max}}, \text{dbox}_{x_\text{max}}\}-\min\{\text{bbox}_{x_\text{min}}, \text{dbox}_{x_\text{min}}\}
-\end{equation}
+\begin{align}
+    \max\left\{\text{height}_{\text{bbox}, \text{dbox}}\right\} &= \max\left\{\text{bbox}_{y_\text{max}}, \text{dbox}_{y_\text{max}}\right\}-\min\left\{\text{bbox}_{y_\text{min}}, \text{dbox}_{y_\text{min}}\right\}\\
+    \max\left\{\text{width}_{\text{bbox}, \text{dbox}}\right\} &= \max\left\{\text{bbox}_{x_\text{max}}, \text{dbox}_{x_\text{max}}\right\}-\min\left\{\text{bbox}_{x_\text{min}}, \text{dbox}_{x_\text{min}}\right\}
+\end{align}
 
 \subsection{K-Means Clustering}\label{append:K-Means Clustering}
 ~\cite[386-390]{James.2017}

@@ -1,0 +1,2 @@
+{"rule":"PUNCTUATION_PARAGRAPH_END","sentence":"^\\QAll the results are reported for 200 dpi documents.” \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}
+{"rule":"THEY_WHERE","sentence":"^\\QRemove we where possible.\\E$"}

@@ -35,10 +35,10 @@
 
 
 % Placeholder Text
-\usepackage{blindtext}          % I like it better than lorem ipsum
+\usepackage{blindtext}          % I like it better than lorem - but distubs some
 \usepackage{kantlipsum}         % 20% cooler than blindtext
 
-\usepackage[disable,textwidth=15mm]{todonotes} % Insert von Todos - [disable]
+\usepackage[textwidth=15mm]{todonotes} % Insert von Todos - [disable]
 \input{preamble/references-and-citation.tex}
 \setlength{\marginparwidth}{20mm} % For todonotes
 \usepackage{hyperref}           % Verlinkungen im Dokument
@@ -112,8 +112,6 @@
   \endgroup
 }
 \setcounter{roman-pagenumber}{\value{page}} % save pagenumber in counter
-\input{Dokument/01_Frontmatter}
-\input{Dokument/01_Frontmatter/07_Sperrvermerk}
 \listoftodos{}
 %%%% Mainmatter %%%%
 \clearpage
@@ -135,5 +133,5 @@
 \input{Dokument/03_Appendices}
 
 %%%% General Todos: %%%%
-
+\todo{Remove \emph{we} where possible.}
 \end{document}

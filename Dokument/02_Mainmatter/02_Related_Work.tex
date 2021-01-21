@@ -10,8 +10,8 @@ stamp detection is split into two major- and several sub-categories.
     \item [Restricted approaches]
         \begin{enumerate*}[label={\alph*)},font={\color{red!50!black}\bfseries}]
             \item [Color restricted]
-                    In~\cite{Micenkova.2011091820110921},
-                    ~\citeauthor{Micenkova.2011091820110921} present an
+                    In~\cite{Micenkova.2011},
+                    ~\citeauthor{Micenkova.2011} present an
                     approach based on color clustering and geometric features.
                     To extract a set of stamp-candidates from a given image,
                     they assume stamps to be chromatic objects. In consequence,
@@ -28,7 +28,7 @@ stamp detection is split into two major- and several sub-categories.
                     applying additional geometric features. Although they assume
                     applicability of the updated approach on black stamps,
                     this hypothesis is not verified.\\A predecessor of the
-                    approach in~\cite{Micenkova.2011091820110921}
+                    approach in~\cite{Micenkova.2011}
                     is~\cite{Forczmanski.2010} which employs less verification
                     features and is only applicable to blue or red stamps.\\
                 \item [Geometrically restricted]
@@ -42,21 +42,21 @@ stamp detection is split into two major- and several sub-categories.
     \begin{enumerate*}[label={\alph*)},font={\color{red!50!black}\bfseries}]
         \item [Geometric features]
         A more versatile method than~\cite{Zhu.2006} was proposed in
-        \cite{Ahmed.2013082520130828, Ahmed.2016}.
-        \citeauthor*{Ahmed.2013082520130828} make use of advances in
+        \cite{Ahmed.2013, Ahmed.2016}.
+        \citeauthor*{Ahmed.2013} make use of advances in
         feature detectors and feature descriptors. In a first step, the
         image is binarized and connected components are extracted. For each
         connected component, feature key points and feature descriptors are
-        computed via the FAST and ORB algorithms. In addition, bounding box
+        computed via the FAST and ORB algorithms. In addition, \gls{bbox}
         height and width of each connected component are extracted.
         Verification is performed by comparing the extracted features of each
         connected component to a (remarkably) small training set. However,
-        ~\citeauthor*{Ahmed.2013082520130828} notice low precision-
+        ~\citeauthor*{Ahmed.2013} notice low precision-
         and recall-rates, caused by their inability to recognize severely
         overlapping stamps.\\
-        In~\cite{Nandedkar.2015121620151219},
-        \citeauthor*{Nandedkar.2015121620151219} extend an approach they
-        suggested in~\cite{Nandedkar.2015082320150826}. They analyze spatial
+        In~\cite{Nandedkar.2015b},
+        \citeauthor*{Nandedkar.2015b} extend an approach they
+        suggested in~\cite{Nandedkar.2015}. They analyze spatial
         frequency components in document images, finding text to be the major
         contributor. To segment a given image, they first conceal
         text-components by removing objects with high spatial frequencies and
@@ -72,8 +72,8 @@ stamp detection is split into two major- and several sub-categories.
         stamps which might turn out to be removed by the spatial frequency 
         filter.\\
         \item [Mixed features]
-        \citeauthor*{Dey.2015121620151219} propose an outlier-based
-        method in~\cite{Dey.2015121620151219}. To segment a given image,
+        \citeauthor*{Dey.2015} propose an outlier-based
+        method in~\cite{Dey.2015}. To segment a given image,
         it is separated in foreground and background using binarization. To
         retain color information the obtained foreground-values are applied as
         a mask to the original image. Color information is reduced from
@@ -81,7 +81,7 @@ stamp detection is split into two major- and several sub-categories.
         component using the Principal Component Algorithm (\(PCA\)).
         Stamp-candidates are obtained using a connected components algorithm on
         the first principal component. To filter out false positives,
-        thresholds on features such as stroke width, bounding box width and
+        thresholds on features such as stroke width, \gls{bbox} width and
         height are applied. For verification a set of features is extracted and
         validated using additional empirically set thresholds.\\
 
@@ -100,11 +100,10 @@ stamp detection is split into two major- and several sub-categories.
         verified using a broader set of features. Several algorithms are 
         compared for verification including 1NN, decision trees, and \glspl{svm}.\\
 
-        In~\cite{Younas.2017110920171115}, \citeauthor*{Younas.2017110920171115}
-        propose an approach using a \gls{fcn}, built upon the VGG-16 network
-        architecture. In this approach, the final \glspl{dense layer} of VGG-16
-        are replaced with a \gls{deconvolutional layer}. By doing this, a
-        prediction map is received as output instead of classification scores.
+        \textcite{Younas.2017} propose an approach using a \gls{fcn}, built upon
+        the VGG-16 network architecture. In this approach, the final \glspl{dense layer}
+        of VGG-16 are replaced with a \gls{deconvolutional layer}. By doing this,
+        a prediction map is received as output instead of classification scores.
         To reduce training time, transfer learning from the VOC2011 dataset is
         applied. However, no preprocessing is mentioned. Using 90\% of their
         dataset for training and 10\% for verification they report 
@@ -115,17 +114,17 @@ stamp detection is split into two major- and several sub-categories.
 
 Despite numerous research carried out on stamp segmentation, most of the 
 approaches examined in this chapter either face limitations with overlapping 
-objects~\cite{Nandedkar.2015082320150826, Nandedkar.2015121620151219, 
-Forczmanski.2016, Ahmed.2013082520130828, Dey.2015121620151219, 
+objects~\cite{Nandedkar.2015, Nandedkar.2015b, 
+Forczmanski.2016, Ahmed.2013, Dey.2015, 
 Forczmanski.2015, Forczmanski.2016} or logo misclassification~\cite
-{Ahmed.2013082520130828, Dey.2015121620151219,Micenkova.2011091820110921}. Some
+{Ahmed.2013, Dey.2015,Micenkova.2011}. Some
 approaches are limited by runtime, operating for more than 13 Seconds per
-evaluation~\cite{Ahmed.2016,Nandedkar.2015082320150826}.
+evaluation~\cite{Ahmed.2016,Nandedkar.2015}.
 \par
 Besides segmentation, classification of stamps is observed to be a common task 
 in literature. Classes are usually either binary (Stamp and non-Stamp), 
 object-related (Stamp, Logo, Text, Tables)~\cite{Forczmanski.2016,
-Nandedkar.2015082320150826, Nandedkar.2015121620151219, Dey.2015121620151219},
+Nandedkar.2015, Nandedkar.2015b, Dey.2015},
 or shape-dependent (Circle, Ellipse, Square, etc.)~\cite{Forczmanski.2015}.
 However, research on classification of similar stamps i.e.\ stamps belonging to
 the same shape-class but differing in text and decor, has so far only been

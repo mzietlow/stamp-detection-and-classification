@@ -18,7 +18,6 @@
 \newacronym{fcn}{FCN}{Fully Convolutional Neural Network}
 \newacronym{iou}{IoU}{Intersection over Union}
 \newacronym{ap}{AP}{Average Precision}
-\newacronym[\glslongpluralkey={Bounding Boxes}, \glsshortpluralkey={bboxes}]{bbox}{bbox}{Bounding Box}
 \newacronym{fp}{FP}{False Positive}
 \newacronym{tp}{TP}{True Positive}
 \newacronym{fn}{FN}{False Negative}
@@ -30,8 +29,23 @@ plural={MVPs}] {mvp}{MVP}{Minimal Viable Product}
 
 % ----------------------------- Glossary Entries -----------------------------
 
+\newglossaryentry{gt}{name={Ground truth},
+    text={ground truth},
+    description={The correct labels for an example}
+}
+
+\newglossaryentry{bbox}{
+    name={Bounding Box},
+    text={bounding box},
+    description={The smallest rectangle that can be drawn around an object,
+    s.t.\ all pixels from that object are contained},
+    plural={bounding boxes}
+}
+
+
 \newglossaryentry{feature map} {
-    name={feature map},
+    name={Feature Map},
+    text={feature map},
     description={Output of a convolutional layer after applying an activation function like \gls{relu}}
 }
 
@@ -54,33 +68,35 @@ plural={MVPs}] {mvp}{MVP}{Minimal Viable Product}
 }
 
 \newglossaryentry{anchor} {
-    name={anchor},
+    name={Anchor},
+    text={anchor},
     description={Center of a bounding box},
 }
 
 \newglossaryentry{layer} {
-    name={layer},
+    name={Layer},
+    text={layer},
     description={Contextsensitive, either dense- or \gls{convolutional layer} 
     as defined by in}}
 
 \newglossaryentry{convolutional layer} {
-    name={convolutional layer},
+    name={Convolutional Layer},
+    text={convolutional layer},
     description={Composition of the convolutional operation and nonlinearity, 
     partially referring to the `complex layer terminology' 
     in~\cite[341]{Goodfellow.2016}}
 }
 
 \newglossaryentry{dense layer} {
-    name={dense layer},
+    name={Dense Layer},
+    text={dense layer},
     description={Also: fully connected layer. Composition of the matrix operation and nonlinearity, partially referring to the `complex layer terminology' 
     in~\cite[341]{Goodfellow.2016}} \todo{refine.~explain also conv in appendix.}
 }
 
 \newglossaryentry{deconvolutional layer} {
-    name={deconvolutional layer},
-    description={Deconvolutional layer. Composition of the deconvolutional 
-    operation and nonlinearity, partially referring to the `complex layer 
-    terminology' 
-    in~\cite[341]{Goodfellow.2016}} \todo{refine.~explain also conv in 
-    appendix.}
+    name={Deconvolutional Layer},
+    text={deconvolutional layer},
+    description={Composition of the deconvolutional operation and nonlinearity,
+    partially referring to the `complex layer terminology' in~\cite[341]{Goodfellow.2016}}
 }
