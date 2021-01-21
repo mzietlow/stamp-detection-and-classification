@@ -200,22 +200,6 @@ Finally, the sets of default boxes per \gls{layer} are concatenated and further
 encoded as described in \cref{append:Concepts of Bounding Box Encoding}, such
 that default box
 
-Digressing slightly, a common method in statistics (especially bayesian~\cite[cf.][165\psqq]{Murphy.2012})
-is the usage of \textbf{priors} as a means to express \textit{a priori} beliefs about a task.
-Such a prior is then (given that the expressed belief holds) able to help improve
-model fit\footnotemark. In \gls{ssd},
-default boxes are a prior that is expressing \textit{a priori} information about
-the dimensions of cars, pets, pedestrians, objects from the real world in general
-(or whatever else is found within training data).
-
-\footnotetext{Note that this is a simplification. The concept of priors is
-a central part of bayesian statistics and not merely a way to improving model
-fit. Please consider \cite[165\psqq]{Murphy.2012} for details.}
-
-To ease this challenge of finding the coordinates of such a \gls{bbox} a
-\textbf{prior} is deployed. \textbf{This} is the purpose of \textbf{default boxes}
-and \textbf{anchors}.
-
 \subsection{Encoding Ground Truth} For training, ground truth \glspl{bbox}
 are encoded with respect to the concatenated default boxes as calculated in
 \cref{par:default-boxes}. 
