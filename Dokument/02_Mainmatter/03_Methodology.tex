@@ -1,4 +1,4 @@
-\section{Methodology}\label{chap:Methodology}
+\section{Methodology}\label{sect:methodology}
 To address the challenges identified in~\cref{chap:Related Work}, namely
 evaluation-speed and categorization of near-classes, recent advances in machine
 learning are considered. Contrary to most approaches in the field which perform
@@ -121,143 +121,116 @@ A possible solution to these flaws are \textbf{default boxes}.
 
 \paragraph{Default Boxes}\label{par:default-boxes}
 Default boxes are used to assign spatial representation to anchors. With such a
-representation, every \gls{gt} \gls{bbox} can be matched to the set of regions
-(related to the receptive fields) that have a large overlap\footnote{The overlap
-could then be computed via \gls{iou} for example --- as is done in \cref{eq:bbox-matcher}.}.
+representation, every \gls{gt} \gls{bbox} can be matched to a set of anchors
+more precisely (by overlap\footnote{The overlap could then be computed via
+\gls{iou} for example --- as is done in \cref{eq:bbox-matcher}.} with respective
+default boxes).
 
-As a starting point, so far a set of chosen layers \(L = \left\{l_0, l_1, \ldots, l_{n-1}\right\}\)
-and a set of anchors for every such layer \(\mathbf{A} = \left\{A_0, A_1, \ldots, A_{n-1}\right\}\)
+As a starting point, so far a set of chosen layers \(\mathbf{L} = \left\{L_0, L_1, \ldots, L_{n-1}\right\}\)
+and a set of anchors for every such layer\footnotemark{} \(\mathbf{A} = \left\{A_0, A_1, \ldots, A_{n-1}\right\}\)
 were constructed.
 
-Now, although the exact receptive fields of the chosen layers are uncertain, 
-we \emph{do} know that their sizes \(\abs*{recept\left(l\right)}\), are strictly
-increasing with subsequent layers, i.e.\ \(\abs*{recept\left(l_0\right)} < \ldots < \abs*{recept\left(l_{n-1}\right)}\).
+\footnotetext{More precisely, a set of anchors for the \glspl{feature map} produced
+by such layer.}
+
+Now, although the exact receptive fields of the chosen \glspl{layer} are uncertain,
+their sizes, \(\abs*{recept\left(L\right)}\), \emph{are} known to be strictly
+increasing with subsequent layers, i.e.\ \(\abs*{recept\left(L_0\right)} < \ldots < \abs*{recept\left(L_{n-1}\right)}\).
 
 Fortunately, \textcite{Liu.2016} claim that the exact size of the receptive field is of
 subordinate importance. Instead of calculating the exact receptive field, they
-propose to assign a fixed size to every chosen \gls{layer} per \cref{eq:default-box-size}:
+propose to assign a fixed edge length \(s_k\) for every chosen \gls{layer} per \cref{eq:default-box-size}:
 \begin{equation}\label{eq:default-box-size}
     s_k=s_{_\text{min}} + k * \frac{s_{_\text{max}}-s_{_\text{min}}}{n-1}
 \end{equation}
-Where
+where:
 \begin{conditions}
-    n               &:= & \(\abs*{L}\)\\
+    n               &:= & \(\alphaAbs{L}\)\\
     k               &\in & [0, n-1]\\
     s_{_\text{min}} &=& 0.2\\
     s_{_\text{max}} &=& 0.9
 \end{conditions}
-A default box \(d_{i,j}\) for a pixel \(p_{i,j}\) within a given layer \(l_k\)
-can then be computed as given in \cref{eq:dbox}.
+A default box \(d_{i,j}\) for a pixel \(p_{i,j}\) within a given layer \(L_k\)
+can then be computed as given in \cref{eq:dbox} (with h: height, w: width, x:
+x-coordinate of the box's center, y: y-coordinate of the box's center).
 \begin{align}
     \begin{split}\label{eq:dbox}
-        d_{i,j}^h  &= s_k * h_I\\
-        d_{i, j}^w &= s_k * w_I\\
-        d_{i,j}^x  &= x_i \text{ (see \cref{eq:anch-x})}\\
-        d_{i,j}^y  &= y_j \text{ (see \cref{eq:anch-y})}
+        d_{i,j}^h   &= s_k * h_I\\
+        d_{i,j}^w   &= s_k * w_I\\
+        d_{i,j}^x   &= x_i \text{ (see \cref{eq:anch-x})}\\
+        d_{i,j}^y   &= y_j \text{ (see \cref{eq:anch-y})}
     \end{split}
 \end{align}
 It is now possible to match every \gls{gt} \gls{bbox} to a set of default boxes
-(see \cref{eq:bbox-matcher}).
+per \cref{eq:bbox-matcher}.
 \begin{equation}\label{eq:bbox-matcher}
-    match(\text{bbox}, \text{dbox}) =
+    match(b, d) =
     \begin{cases}
-        1 & \text{if } \text{IoU}\left(\text{bbox, dbox}\right) > 0.5\\
+        1 & \text{if } \text{IoU}\left(b, d\right) > 0.5\\
         0 & \text{otherwise}
     \end{cases}
 \end{equation}
 where:
 \begin{conditions}
-    \text{bbox} & := & coordinates of the bounding box\\
-    \text{dbox} & := & coordinates of the default box
+    b & := & coordinates of a given bounding box\\
+    d & := & coordinates of a given default box
 \end{conditions}
-Thereby, \hyperref[itm:anchor-flaw1]{\(\left.\text{flaw 1}.\right)\)} from anchor
+Thereby\footnotemark, \hyperref[itm:anchor-flaw1]{\(\left.\text{flaw 1}.\right)\)} from anchor
 construction can be considered as solved.
+
+\footnotetext{--- by matching \gls{gt} \glspl{bbox} to anchors based on their
+related default boxes which in turn are coarsely based on receptive fields.}
 
 \hyperref[itm:anchor-flaw2]{\(\left.\text{Flaw 2}.\right)\)} can now be tackled
 multiple ways. The most obvious would be to convert \gls{gt} \glspl{bbox} and
-default boxes into the \textit{percental} space (i.e. \(\left[0, 1\right]\)).
-Yet, this again would require the model to learn different semantics per pixel
-within a \gls{feature map}. For example, the upper left pixel/region would produce predictions
-within \(\left[0,0.2\right]\times \left[0,0.2\right]\), while the lower right
-region would produce predictions within \(\left[0.8,1.0\right]\times \left[0.8,1.0\right]\).
+default boxes into the \textit{percental} space (i.e. \(\left[0, 1\right]\))
+and predict percental coordinates of the \gls{gt} \glspl{bbox}. Hower, this would
+again require the model to learn different semantics per pixel within a \gls{feature map}.
+For example, the upper left pixel/region would produce predictions within
+\(\left[0,0.2\right]\times \left[0,0.2\right]\), while the lower right region
+would produce predictions within \(\left[0.8,1.0\right]\times \left[0.8,1.0\right]\).
 This is problematic, because \glspl{convolutional layer} share weights\footnotemark{}
 between inputs (i.e. such pixels/regions)~\cite[cf.][564\psqq]{Murphy.2012}.
 \footnotetext{In fact, sharing weights between inputs is the key distinguishing
 feature between \glspl{convolutional layer} and \glspl{dense layer}.}
 Requiring different semantics \emph{between} these pixels introduces additional
-complexity to the \glspl{convolutional layer}.
+complexity to the model. To alleviate this complexity, rather than coordinates,
+the offset \emph{between} the coordinates (of \gls{gt} \glspl{bbox} and the
+related default boxes) are predicted. This aligns the task between all pixels of
+a \gls{feature map}. Normalized offsets \(o\) can be computed via \cref{eq:offset-calc}.
+\begin{equation}
+    \begin{alignedat}{5}\label{eq:offset-calc}
+        &o^h &=& \log\left({b^h}\right) - \log\left({d^h}\right) &=& \log\left({{b^h} \divslash {d^h}}\right)\\
+        &o^w &=& \log\left({b^w}\right) - \log\left({d^w}\right) &=& \log\left({{b^w} \divslash {d^w}}\right)\\
+        &o^x &=& \left(b^x - d^x\right) \divslash d^x&&\\
+        &o^y &=& \left(b^y - d^y\right) \divslash d^y&&
+    \end{alignedat}
+\end{equation}
 
-To alleviate this complexity, rather than coordinates, the offset \emph{between}
-the coordinates (of \gls{gt} \glspl{bbox} and the related default boxes) are predicted.
-This aligns the task between all pixels of a \gls{feature map}.
+    where:
+\begin{conditions}
+    b & := & A \gls{gt} \gls{bbox}\\
+    d & := & A default box
+\end{conditions}
+
 
 \Textcite{Liu.2016} introduce a last quirk inspired by the concept of priors
 from bayesian statistics~\cite[cf.][165\psqq]{Murphy.2012}. To improve convergence
 they choose multiple aspect ratios (i.e.\ 1:1, 1:2, 1:3, 2:1, 3:1) for their
-default boxes. Reducing extent of this paper, the reader is referred to \cite{Liu.2016}.
+default boxes. In an attempt to reduce the extent of this paper, the reader is
+referred to \cite{Liu.2016}. In the following, the number of aspect ratios \(r\),
+and thereby the number of default boxes per anchor, will be omitted from all equations.
 
-Finally, the sets of default boxes per \gls{layer} are concatenated and further
-encoded as described in \cref{append:Concepts of Bounding Box Encoding}, such
-that default box
-
-\subsection{Encoding Ground Truth} For training, ground truth \glspl{bbox}
-are encoded with respect to the concatenated default boxes as calculated in
-\cref{par:default-boxes}. 
-
-
-\gls{ssd} is supposed to infer offsets to default
-boxes (cf. \cref{subsect:SSD Architecture}). To simplify inference only default
-boxes with an \gls{iou} greater than 0.5 are chosen (cf. \cref{sect:Intersect Over Union}). For a \gls{bbox}
-\(\text{bbox}=\{\text{bbox}_{x_\text{min}}, \text{bbox}_{x_\text{max}}, \text{bbox}_{y_\text{min}}, \text{bbox}_{y_\text{max}}\}\), default box
-\(\text{dbox}=\{\text{dbox}_{x_\text{min}}, \text{dbox}_{x_\text{max}}, \text{dbox}_{y_\text{min}}, \text{dbox}_{y_\text{max}}\}\) we compute the
-encoded box \(\text{ebox}\) with \cref{eq:encoded box}
-\begin{equation}
-    \text{ebox}=\{(\text{bbox}_{x_\text{min}}-\text{dbox}_{x_\text{min}}), (\text{bbox}_{x_\text{min}}-\text{dbox}_{x_\text{max}}), (\text{bbox}_{y_\text{min}}-\text{dbox}_{y_\text{max}})\}\label{eq:encoded box}
-\end{equation}
-We receive a matrix of dimensions \(\sum_{m\in M}{A_m}\times \sum_{m\in M}{k_m*4}\),
-where \(M\) is the set fo all \glspl{feature map}, \(A_m\) is the set of all anchors per
-\gls{feature map} and \(k_m\) is the amount of aspect ratios per \gls{feature map}. Finally
-we concatenate the class label to every encoded \gls{bbox}, such that the matrix
-dimensions now are \(\sum_{m\in M}{A_m}\times \sum_{m\in M}{k_m*4+c}\), where c
-is the amount of classes. Every row is now in the form of
-\begin{equation}
-    \left\{x_{_\text{min}}, x_{_\text{max}}, y_{_\text{min}}, y_{_\text{max}}, \text{one\_hot\_classes} \right\}
-\end{equation}
-
+This finalizes the introduction to anchors and default boxes. For reference,
+confer~\cite{Liu.2016}. Following, the concrete architecture of \gls{ssd} is discussed.
 
 \subsection{SSD Architecture}\label{subsect:SSD Architecture}
 As mentioned in the introduction to this section, \gls{ssd} is independent of any
-specific base network. Exemplary, \cref{fig:ssd-vgg} shows the architecure of
-SSD for VGG16~\cite{Simonyan.2015}. Fully connected \glspl{layer} of VGG16 are
-dropped and replaced with additional \glspl{convolutional layer}. We denote: 
-\(\text{Network}:=\text{Base Network}\rightarrow \text{Additional Layers}\).
-
-Then, a set of \glspl{convolutional layer} \(L\) (blue and yellow in \cref{fig:ssd-vgg})
-is chosen from the network (i.e.\ \(L\subseteq \text{Network}\))\footnote{\label{foot:receptive}The motivation
-behind choosing multiple layers \(L\) from the network is as follows: the \glspl{feature map}
-produced by the \glspl{convolutional layer} get smaller with every additional layer.
-Colloquially speaking, the relationship between such a small \gls{feature map} and
-the input image is, that one pixel within the small \gls{feature map} is related
-to multiple pixels within the original input image. Therefore, when looking at the
-\glspl{feature map} from subsequent \glspl{convolutional layer}, one is looking
-at information that is extracted from the image at different scales.
-
-Making this logic concrete, in a larger \gls{feature map}, one pixel might contain
-condensed information about objects like wheels or headlights, whereas in a smaller
-\gls{feature map} one pixel might contain  condensed information about the entire
-car. This concept is called the \textit{receptive field}~\cite[cf.][331\psq]{Goodfellow.2016}.}.
-
-To produce class- and \gls{bbox} predictions, every chosen \glspl{layer} \(l\in L\)
-is directed into a final additional \gls{convolutional layer} (i.e.\ one additional
-\gls{convolutional layer} per \gls{layer} in \(L\), depicted green in \cref{fig:ssd-vgg}).
-
-Das hier setzt halt alles Wissen voraus, das noch gar nicht aufgebaut wurde!
-
-The number of filters for these subsequent \glspl{layer} is chosen as \((4+c)*k\)
-with \(c\) classes\footnote{Actually, \(c+1\) classes. This additional class is
-the \textit{no-class}-prediction, because obviously most areas within the image
-contain no classifiable object.} and \(k\) default boxes per \gls{anchor}.
-\begin{figure}[ht]
+specific base network. Exemplary, \cref{fig:ssd-vgg} shows the architecture of
+\gls{ssd} for VGG16~\cite{Simonyan.2015}. Fully connected \glspl{layer} of VGG16
+are dropped and replaced with additional \glspl{convolutional layer} (blue in \cref{fig:ssd-vgg}).
+Let now \(\text{Network}:=\text{Base Network}\rightarrow \text{Additional Layers}\).
+\begin{figure}[th!]
     \centering
     \includegraphics[width=1\textwidth]{vgg16-ssd}
     \caption[Example of the SSD architecture using VGG16 as its base network]{Example
@@ -269,35 +242,121 @@ contain no classifiable object.} and \(k\) default boxes per \gls{anchor}.
     the classes- and \gls{bbox} predictions.}
     \label{fig:ssd-vgg}
 \end{figure}
+Then (as briefly addressed in \cref{subsect:default-boxes}), a set of
+\glspl{convolutional layer} \(\mathbf{L}\) is chosen from the network (i.e.\
+\(\mathbf{L}\subseteq \text{Network}\))\footnote{\label{foot:receptive}The motivation
+behind choosing multiple layers \(\mathbf{L}\) from the network is as follows:
+the \glspl{feature map} produced by the \glspl{convolutional layer} get smaller
+with every additional layer. Colloquially speaking, the relationship between such
+a small \gls{feature map} and the input image is, that one pixel within the small
+\gls{feature map} is related to multiple pixels within the original input image.
+Therefore, when looking at the \glspl{feature map} from subsequent
+\glspl{convolutional layer}, one is looking at information that is extracted from
+the image at different scales.
 
-\subsection{Training}
-\ldots
+Making this logic concrete, in a larger \gls{feature map}, one pixel might contain
+condensed information about objects like wheels or headlights, whereas in a smaller
+\gls{feature map} one pixel might contain  condensed information about the entire
+car. This concept is called the \textit{receptive field}~\cite[cf.][331\psq]{Goodfellow.2016}.}.
 
-\subsubsection{Loss Function}
-The loss is a composite of two separate loss functions:
+To produce class- and \gls{bbox} predictions, every chosen \glspl{layer} \(L\in \mathbf{L}\)
+is fed into a final additional \gls{convolutional layer} (i.e.\ one additional
+\gls{convolutional layer} per \gls{layer} in \(\mathbf{L}\), depicted green in \cref{fig:ssd-vgg}).
 
-\begin{align}
-    L_{\text{conf}(x, c)}\\
-    L_{\text{loc}(x, l, g)}\\
-    L(x,c,l,g) = \frac{1}{N}*\left(L_{\text{conf}(x, c)} + \alpha * L_{\text{loc}(x, l, g)}\right)
-\end{align}
+As discussed in \cref{subsect:default-boxes}, the model prediction is supposed
+to be the quadruple \(o = \left(o^h, o^w, o^x, o^y\right)\). To enable also the
+prediction of different object classes, \(c\) is appended to the quadruple
+\(o\), where \(c\) is a one-hot encoded vector~\cite[cf.][35]{Murphy.2012} of all
+classes\footnotemark.
+The output size per chosen layer \(L\in \mathbf{L}\), with \gls{feature map} size
+\(m\times n\) can be determined as \(m\times n\times \left(4 + \abs*{c}\right)\).
 
-\begin{equation}
-    \begin{cases}
-        L(x,c,l,g) = \frac{1}{N}*\left(L_{\text{conf}(x, c)} + \alpha * L_{\text{loc}(x, l, g)}\right),& \text{if } N \geq 1\\
-        0, & \text{otherwise}
-    \end{cases}
-\end{equation}
-
-\begin{equation}
-    L_{\text{loc}(x, l, g)} = \sum_{i \in Pos }^{N}
+The output size of a 2D-\gls{convolutional layer} is the triplet
+\(\left(\text{width}\times \text{height}\times \text{filter size}\right)\). Width
+and height are calculated via \cref{eq:conv-output}, the filter size is chosen
+without constraints.
+\begin{equation}\label{eq:conv-output}
+    W' = (W - F + 2P) \divslash S + 1
 \end{equation}
 where:
 \begin{conditions}
-    N & := & number of matched boxes\\
-    x & := & pixel under consideration\\
-    c & := & class scores\\
-    l & := & Predicted Boxes\\
-    g & := & Ground Truth Boxes\\
-    \alpha & := & weighting parameter, increase to put importance on the localization loss.
+    W & := & input size\\
+    K & := & kernel size\\
+    P & := & padding size\\
+    S & := & stride size
 \end{conditions}
+To produce an output of size \(m\times n \times \left(4 + \abs*{c}\right)\),
+kernel, padding, and stride sizes are therefore chosen \(K = 3, P = 1, S = 1\);
+filter size is chosen as \(\left(4 + \abs*{c}\right)\).
+
+This concludes the overall \gls{ssd} architecture.
+
+\footnotetext{Actually, \(c\) is the one-hot encoded vector of all classes \(+1\).
+This additional class is the \textit{no-object}-prediction. This is required because
+obviously most areas within the image contain no classifiable object, and it is
+desirable that the model is able to identify areas not containing an object.}
+
+\subsection{Loss Function}
+From previous subsections, a set of layers \(\mathbf{L}\) has been chosen from
+the network \(\mathbf{L}\subseteq \text{Network}\). For the output (i.e.\ the
+\gls{feature map}) of every such layer a set of default boxes \(D\in \mathbf{D}\)
+has been generated. Also, for every image a set of \gls{gt} \glspl{bbox} \(B\) is
+given from which the offsets \(O\) are computed following \cref{eq:offset-calc}
+and \(o_{b,d}\) is the offset related to \gls{bbox} \mathvar{b} and default box
+\mathvar{d}.
+Next, a set of matching \gls{gt} \gls{bbox} offsets and default boxes is built in
+\cref{eq:positives}:
+\begin{align}
+    \begin{split}\label{eq:positives}
+        &\text{Let}\ \left(D\in \mathbf{D}\right)\land \left(d\in D\right)\land \left(b\in B\right)\\
+        &\text{Then:}\\
+        &\quad \text{Pos} = \left\{\left(d, o_{b,d}\right) \,\middle|\, \text{IoU}\left(d, b\right) > 0.5 \lor \forall{D'\in\mathbf{D}}\ldotp\nexists{d'\in{}D'}: \text{IoU}\left(d,b,\right) > \text{IoU}\left(d',b,\right)\right\}
+    \end{split}
+\end{align}
+That is, \(\left(d,b\right)\) are added to Pos if their \gls{iou} is either greater than 0.5
+or if no other default box (out of all default boxes over all layers) has a larger
+\gls{iou}. The set of negative default boxes is then simply the complement as per
+\cref{eq:negatives}:
+\begin{equation}\label{eq:negatives}
+    \text{Neg} = \left\{d \,\middle|\, \left(D\in \mathbf{D}\right)\land \left(d\in D\right)\land d \notin \text{Pos}\right\}
+\end{equation}
+From the model architecture \cref{subsect:SSD Architecture} it becomes apparent,
+that the \(\abs*{\text{Negatives}} \gg \abs*{\text{Positives}}\). To prevent
+overfitting~\cite[cf.][111\psqq]{Goodfellow.2016} the model, for example s.t.\
+it detects only negatives, the \emph{amount} of negatives is pruned\footnotemark{}
+to be only three times greater than the number of positives.
+\footnotetext{This process is also called hard negatives mining, please
+confer~\cite{Liu.2016}.}
+Therefore, the set of negatives is ordered by their class confidence score\footnotemark{} and then cut off at index
+\(\left\lfloor 3*\abs*{Positives}\right\rfloor\).
+
+\footnotetext{In order to spare the reader, the exact derivation of the relation
+which specifies the order required for pruning is omitted.}
+
+Finally, the loss is the weighted sum of the confidence loss (\cref{eq:conf-loss}) and the
+location loss \cref{eq:loc-loss}. Let \(\mathds{1}_{b}^p = \{0, 1\}\) indicate, that
+\gls{gt} \gls{bbox} \mathvar{b} is of class \mathvar{p}.
+The confidence loss 
+\begin{alignat}{3}
+    \label{eq:conf-loss}&L_{\text{conf}}(l)     &=& - \sum_{p=1}^{\alphaAbs{C}} \left[ \sum_{\left(d,o\right)\in \text{Pos}} \mathds{1}_{o}^p * \log\left(\sigma\left(l_d^p\right)\right)\right] - \sum_{i\in \text{Neg}}\log\left(\sigma\left(l_d^0\right)\right)\\
+    \label{eq:loc-loss}&L_{\text{loc}}(l)       &=& \sum_{\left(d,o\right)\in \text{Pos}} \sum_{m\in \left\{ h,w,x,y \right\}} \operatorname{smooth_{L1}}\left(l_d^m - o_d^m\right)\\
+    \label{eq:softmax}&\sigma\left(l_d^p\right) &=& \frac{\exp{\left(l_d^p\right)}}{\sum_{p'}{\exp\left(l_d^{p'}\right)}}
+\end{alignat}
+where:
+\begin{conditions}
+    C &:= & is the set of all n-classes \(\left[1, n\right]\) without the \textit{no-object} class \(0\)\\
+    l &:= & Prediction produced by the model\\
+    l_d^p &:= & Prediction associated with default box \mathvar{d} and class \mathvar{p}\\
+    l_d^m &:= & Prediction associated with default box \mathvar{d} and dimension \(m\in \left\{h,w,x,y\right\}\)\\
+    o_d^m &:= & Offset (see \cref{eq:offset-calc}) associated with default box \mathvar{d} and dimension \(m\in \left\{h,w,x,y\right\}\)
+
+
+\end{conditions}
+The final loss is now given in \cref{eq:loss}.
+\begin{equation}\label{eq:loss}
+    L(l) =
+    \begin{cases}
+        \frac{1}{\alphaAbs{\mathrm{Pos}}}\left(L_{\text{conf}(l)} + \alpha L_{\text{loc}}(l)\right),& \text{if }  \geq 1\\
+        0, & \text{otherwise}
+    \end{cases}
+\end{equation}

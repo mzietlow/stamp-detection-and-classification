@@ -46,4 +46,11 @@
 %   S_{d} & \propto &  damage level
 % \end{conditions}
 
+% Formatting %
+\usepackage{xstring,xifthen}
+\newcommand{\mathvar}[1]{%
+  \StrLen{#1}[\mystrlen]%
+  \ifthenelse{\mystrlen>1}{\(\mathrm{#1}\)}{\(#1\)}%
+}
+
 %%%%% /Custom Commands %%%%%

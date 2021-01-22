@@ -1,9 +1,15 @@
 % Math-Packages und Fonts
-\usepackage{physics}            % good for ||norm|| und |abs|
-\usepackage{amsmath}
+%\usepackage{physics}            % good for ||norm|| und |abs|
+\usepackage{mathtools}          % also loads amsmath
 \usepackage{mathrsfs}           % for \mathscr font
 \usepackage{lualatex-math} % Math-Bugfixes
-
+\usepackage{dsfont}
 \usepackage{amsthm}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\newcommand{\alphaAbs}[1]{%
+    \big|#1\big|
+}
