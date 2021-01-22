@@ -4,10 +4,10 @@ This chapter gives an overview of the experimental setup, applied metrics
 are given in \cref{sect:results-and-discussion}.
 
 \subsection{Metrics}\label{sect:metrics}
-To evaluate and compare approaches described in \cref{chap:Methodology} we
-discuss a set of metrics in this section. We consider
-\nameref{subsect:pixel-wise-metrics}, \nameref{subsect:mAP} and also
-introduce \nameref{subsect:normalized-iou}.
+To evaluate the results achieved by \gls{ssd} (see \cref{sect:methodology}) and
+make them comparable to diverging approaches a set of metrics is introduced in
+this section. We consider \nameref{subsect:pixel-wise-metrics}, \nameref{subsect:mAP}
+and also introduce \nameref{subsect:normalized-iou}.
 
 \subsubsection{Pixel-wise Metrics}\label{subsect:pixel-wise-metrics}
 In this subsubsection we briefly explain pixel-wise metrics such as
@@ -42,7 +42,7 @@ A visual example of recall and precision is given in
 \cref{fig:visual-precision-recall}.
 \begin{figure}
     \center
-    \includegraphics[width=\textwidth]{Metrics2.png}
+    \includegraphics[width=.6\textwidth]{Metrics2.png}
     \caption[short={Visual example of pixel-wise recall, precision and \gls{iou}}]
     {Visual example of pixel-wise recall, precision and \gls{iou}, with
     groundtruth (red) and inferred detection (blue)}\label{fig:visual-precision-recall}
@@ -90,7 +90,7 @@ We count 1 \gls{tp}, 2 \gls{fp} and 1 \gls{fn} and thus observe
 
 \begin{figure}
     \center
-    \includegraphics[width=\textwidth/4]{metrics3.png}
+    \includegraphics[width=.3\textwidth]{metrics3.png}
     \caption{Visual example for bounding-box-wise confusion matrix, with
     groundtruth \glspl{bbox} (red) and inferred \glspl{bbox}(blue). For each
     inferred \gls{bbox} a confidence score (percent) is given.}\label{fig:bbox-precision-recall}
@@ -103,20 +103,23 @@ A more extensive example is shown in \cref{fig:precision-recall-curve}.
 To improve comparability, a curve \(f(x)\) can be smoothed by applying
 \(f(x) = \max (f(x), f(x')), \forall x' > x\). 
 
-\begin{figure}[!tpb]
-    \center
-    \subfloat[Precision-Recall-Curve. Each capital represents an inferred
-    \gls{bbox}. Recall \& Precision are plotted by accumulating \gls{tp} and
-    \gls{fp} over the list of inferred \glspl{bbox} sorted by confidence.] {
-        \includegraphics[width=\textwidth/2]{rafaelpadilla-precision-recall-curve.png}
-    }
-    \subfloat[Interpolated Precision-Recall-Curve with drawn-in area under the
-    curve, i.e.\ \gls{ap}.]{
-        \includegraphics[width=\textwidth/2]{rafaelpadilla-average-precision.png}
-    }
-    \caption[short={Precision-Recall-Curve}]{Precision-Recall-Curve and its
-    interpolation. Both figures where adopted from~\cite{Padilla.2019}}
-    \label{fig:precision-recall-curve}
+\begin{figure}[htp!]
+    \begin{subfigure}[t]{.49\linewidth}
+        \centering
+        \includegraphics[width=.9\textwidth]{rafaelpadilla-precision-recall-curve.png}
+        \subcaption{Precision-Recall-Curve. Each capital represents an inferred
+        \gls{bbox}. Recall \& Precision are plotted by accumulating \gls{tp} and
+        \gls{fp} over the list of inferred \glspl{bbox} sorted by confidence.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{.49\linewidth}
+        \centering
+        \includegraphics[width=.9\textwidth]{rafaelpadilla-average-precision.png}
+        \subcaption{Interpolated Precision-Recall-Curve with drawn-in area under the
+        curve, i.e.\ \gls{ap}.}
+    \end{subfigure}
+    \caption[Precision-Recall-Curve]{Precision-Recall-Curve and its
+    interpolation. Both figures where adopted from~\cite{Padilla.2019}.}\label{fig:precision-recall-curve}
 \end{figure}
 
 \Gls{map} builds upon \gls{ap}. \Gls{ap} is a 
