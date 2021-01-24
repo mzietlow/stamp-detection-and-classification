@@ -10,6 +10,12 @@
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}%
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+%\newcommand{\alphaAbs}[1]{%
+%    \big|#1\big|
+%}
+
 \newcommand{\alphaAbs}[1]{%
-    \big|#1\big|
+    \abs*{#1}
 }

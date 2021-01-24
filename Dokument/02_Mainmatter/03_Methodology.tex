@@ -1,12 +1,13 @@
 \section{Methodology}\label{sect:methodology}
 To address the challenges identified in~\cref{sect:related-work}, namely
-evaluation-speed and categorization of near-classes, recent advances in machine
-learning are considered. Contrary to most approaches in the field which perform
-segmentation, this work focuses on detecting \glspl{bbox}. In this section,
-details on the applied method is provided. Methods for object detection can coarsely
-be divided into two groups: one-staged and two-staged approaches. To reduce complexity,
-only a single one-stage approach will be considered in this paper. For details on
-two stage detectors confer e.g.\ \cite{Ren.2015}.
+evaluation-speed and overlap, recent advances in machine learning are considered.
+Contrary to most approaches in the field which perform segmentation, this work
+focuses on detecting \glspl{bbox}.
+
+In this section, details on the applied method is provided. Methods for object
+detection can coarsely be divided into two groups: one-staged and two-staged
+approaches~\cite[cf.][]{Liu.2020}. To reduce complexity, only a single one-stage approach will be
+considered in this paper.
 
 \bigskip
 {\large{\textbf{Single Shot MultiBox Detector}}}\\
@@ -22,25 +23,25 @@ Central concepts of \gls{ssd} are described in the following.
 \subsection{Default Boxes}\label{subsect:default-boxes}
 The most fundamental part of understanding \gls{ssd} is understanding its specific
 concept of \glspl{bbox}, default boxes and anchors. In order to reduce the very high
-complexity, this subsection is written in a slightly more colloquial manner.
+complexity, this subsection is written in a more colloquial manner.
 
 Slightly anticipating and simplifying \cref{subsect:SSD Architecture}, a
 \emph{prediction} from \gls{ssd} is the output from a set of \glspl{convolutional layer}
-that is chosen from within the network. Output of a single such \gls{layer} is,
-first and foremost, just a \gls{feature map} --- while the goal is to find the
-coordinates of a \gls{bbox} (and class predictions). 
+that are chosen from within the ``main'' network. Output of a single such layer is,
+first and foremost, just a \gls{feature map}. The goal in stamp detection, however,
+is to find the coordinates of a \gls{bbox}.
 
 Consider such a \gls{feature map} with dimensions \(m \times n\). Every pixel
 from that \gls{feature map} contains highly condensed information about a specific
 region from the original image\footnote{This concept is called the
 \emph{receptive field} of \glspl{cnn}, \cite[cf.][331\psq]{Goodfellow.2016}}.
-The \gls{feature map} is then processed further, s.t.\ for every such
-pixel (and therefore the related region within the original image) receive the
-coordinates of a single \gls{bbox} are received (simplified, for details see \cref{subsect:SSD Architecture}).
+The \gls{feature map} is then processed further, s.t.\ for every pixel
+(and therefore the related region within the original image) the coordinates of
+a single \gls{bbox} are received (simplified, for details see \cref{subsect:SSD Architecture}).
 
-To the reader, this might be confusing. Receiving \(m\times n\)
+To the reader, this might seem confusing. Receiving \(m\times n\)
 single \gls{bbox} predictions for every pixel within the \gls{feature map} for
-every chosen layer makes the number of predicted \glspl{bbox} \(\gg\) than the
+every chosen layer makes the number of predicted \glspl{bbox} much greater than the
 expected number of \gls{gt} \glspl{bbox}. And it raises a pressing question:\linebreak
 \textbf{How is training data constructed for such an unusual architecture?}
 
@@ -61,8 +62,8 @@ image \(I\) of height and width \(I_w\times I_h=300\times 300\) and a
 is shown in \cref{fig:vgg16-anchors}.
 
 \begin{align}
-    x_i&=0.5*\frac{w_I}{w_M} + \sum_{0}^{i-1} \frac{w_I}{w_M}\label{eq:anch-x}\\
-    y_j&=0.5*\frac{h_I}{h_M} + \sum_{0}^{j-1} \frac{h_I}{h_M}\label{eq:anch-y}
+    x_i&=0.5*\frac{I_w}{M_w} + \sum_{0}^{i-1} \frac{I_w}{M_w}\label{eq:anch-x}\\
+    y_j&=0.5*\frac{I_h}{M_h} + \sum_{0}^{j-1} \frac{I_h}{M_h}\label{eq:anch-y}
 \end{align}
 where:
 \begin{conditions}
@@ -76,12 +77,14 @@ where:
 \begin{figure}[t!]
     \centering
     \includegraphics[width=0.5\textwidth]{vgg16-19x19}
-    \caption{Generated anchors (blue) for an image of dimensions \(300\times 300\)
+    \caption[Generated anchors (blue) for an image and a \gls{feature map}]{Generated anchors (blue) for an image of dimensions \(300\times 300\)
     and \gls{feature map} of \(19\times 19\).}\label{fig:vgg16-anchors}
 \end{figure}
 Now, training data could be constructed by assigning every \gls{gt} \gls{bbox} to
 its closest anchor (from every chosen layer). An example of this is given in
-\cref{eq:train-anchor}. 
+\cref{eq:train-anchor}, where the first four rows are x- and y-coordinate, height
+and width of the respective \gls{bbox} and the last row is the class
+(0: \textit{no-object}, 1: \textit{object}).
 \begin{equation}\label{eq:train-anchor}
     \begin{matrix}
         \ldots\\
@@ -103,9 +106,6 @@ its closest anchor (from every chosen layer). An example of this is given in
         \ldots
     \end{matrix}
 \end{equation}
-where the first four rows are x- and y-coordinate, height and width of the respective
-\gls{bbox} and the last row is the class (0: \textit{no-object}, 1: \textit{object}).
-
 This approach is flawed in two ways:
 \begin{enumerate}
     \item Assigning \gls{gt} \glspl{bbox} to the closest anchor is entirely agnostic
@@ -115,7 +115,8 @@ This approach is flawed in two ways:
     smaller objects.\label{itm:anchor-flaw1}
     \item The model has no \textit{a priori} knowledge of \emph{position}, of
     \emph{x-} and \emph{y-coordinates}, of \emph{width} and \emph{height}.
-    This is especially critical for images with different resolutions.\label{itm:anchor-flaw2}
+    This is especially critical for applications of the model to images with varying
+    resolutions.\label{itm:anchor-flaw2}
 \end{enumerate}
 A possible solution to these flaws are \textbf{default boxes}.
 
@@ -126,22 +127,22 @@ more precisely (by overlap\footnote{The overlap could then be computed via
 \gls{iou} for example --- as is done in \cref{eq:bbox-matcher}.} with respective
 default boxes).
 
-As a starting point, so far a set of chosen layers \(\mathbf{L} = \left\{L_0, L_1, \ldots, L_{n-1}\right\}\)
+As of now, a set of chosen layers \(\mathbf{L} = \left\{L_0, L_1, \ldots, L_{n-1}\right\}\)
 and a set of anchors for every such layer\footnotemark{} \(\mathbf{A} = \left\{A_0, A_1, \ldots, A_{n-1}\right\}\)
 were constructed.
 
 \footnotetext{More precisely, a set of anchors for the \glspl{feature map} produced
 by such layer.}
 
-Now, although the exact receptive fields of the chosen \glspl{layer} are uncertain,
-their sizes, \(\abs*{recept\left(L\right)}\), \emph{are} known to be strictly
+Next, although the exact receptive fields of the chosen layers are uncertain, their
+sizes, \(\abs*{recept\left(L\right)}\), \emph{are} known to be strictly
 increasing with subsequent layers, i.e.\ \(\abs*{recept\left(L_0\right)} < \ldots < \abs*{recept\left(L_{n-1}\right)}\).
 
 Fortunately, \textcite{Liu.2016} claim that the exact size of the receptive field is of
 subordinate importance. Instead of calculating the exact receptive field, they
-propose to assign a fixed edge length \(s_k\) for every chosen \gls{layer} per \cref{eq:default-box-size}:
+propose to assign a fixed edge length \(s_k\) for every chosen layer per \cref{eq:default-box-size}:
 \begin{equation}\label{eq:default-box-size}
-    s_k=s_{_\text{min}} + k * \frac{s_{_\text{max}}-s_{_\text{min}}}{n-1}
+    s_k=s_{\mathrm{min}} + k * \frac{s_{\mathrm{max}}-s_{\mathrm{min}}}{n-1}
 \end{equation}
 where:
 \begin{conditions}
@@ -150,6 +151,11 @@ where:
     s_{_\text{min}} &=& 0.2\\
     s_{_\text{max}} &=& 0.9
 \end{conditions}
+\Cref{eq:default-box-size} produces values within \(\left[s_{\mathrm{min}}, s_{\mathrm{max}}\right]\)
+or \(\left[0,9\right]\) for the default parameters, where the value increase strictly
+per layer (like their receptive fields do). In the following \(s_k\) is used
+as a percental scaling factor to determine height and width of the default box.
+
 A default box \(d_{i,j}\) for a pixel \(p_{i,j}\) within a given layer \(L_k\)
 can then be computed as given in \cref{eq:dbox} (with h: height, w: width, x:
 x-coordinate of the box's center, y: y-coordinate of the box's center).
@@ -183,9 +189,9 @@ related default boxes which in turn are coarsely based on receptive fields.}
 
 \hyperref[itm:anchor-flaw2]{\(\left.\text{Flaw 2}.\right)\)} can now be tackled
 multiple ways. The most obvious would be to convert \gls{gt} \glspl{bbox} and
-default boxes into the \textit{percental} space (i.e. \(\left[0, 1\right]\))
-and predict percental coordinates of the \gls{gt} \glspl{bbox}. Hower, this would
-again require the model to learn different semantics per pixel within a \gls{feature map}.
+into the \textit{percental} space (i.e. \(\left[0, 1\right]\)) and predict their
+percental coordinates. However, this would again require the model
+to learn different semantics per pixel within a \gls{feature map}.
 For example, the upper left pixel/region would produce predictions within
 \(\left[0,0.2\right]\times \left[0,0.2\right]\), while the lower right region
 would produce predictions within \(\left[0.8,1.0\right]\times \left[0.8,1.0\right]\).
@@ -215,11 +221,11 @@ a \gls{feature map}. Normalized offsets \(o\) can be computed via \cref{eq:offse
 
 
 \Textcite{Liu.2016} introduce a last quirk inspired by the concept of priors
-from bayesian statistics~\cite[cf.][165\psqq]{Murphy.2012}. To improve convergence
+from Bayesian statistics~\cite[cf.][165\psqq]{Murphy.2012}. To improve convergence
 they choose multiple aspect ratios (i.e.\ 1:1, 1:2, 1:3, 2:1, 3:1) for their
 default boxes. In an attempt to reduce the extent of this paper, the reader is
-referred to \cite{Liu.2016}. In the following, the number of aspect ratios \(r\),
-and thereby the number of default boxes per anchor, will be omitted from all equations.
+referred to \cite{Liu.2016}. The number of aspect ratios \(r\), and thereby the
+number of default boxes per anchor, will be omitted from all equations in the following.
 
 This finalizes the introduction to anchors and default boxes. For reference,
 confer~\cite{Liu.2016}. Following, the concrete architecture of \gls{ssd} is discussed.
@@ -227,7 +233,7 @@ confer~\cite{Liu.2016}. Following, the concrete architecture of \gls{ssd} is dis
 \subsection{SSD Architecture}\label{subsect:SSD Architecture}
 As mentioned in the introduction to this section, \gls{ssd} is independent of any
 specific base network. Exemplary, \cref{fig:ssd-vgg} shows the architecture of
-\gls{ssd} for VGG16~\cite{Simonyan.2015}. Fully connected \glspl{layer} of VGG16
+\gls{ssd} for VGG16~\cite{Simonyan.2015}. \Glspl{dense layer} of VGG16
 are dropped and replaced with additional \glspl{convolutional layer} (blue in \cref{fig:ssd-vgg}).
 Let now \(\text{Network}:=\text{Base Network}\rightarrow \text{Additional Layers}\).
 \begin{figure}[th!]
@@ -239,7 +245,7 @@ Let now \(\text{Network}:=\text{Base Network}\rightarrow \text{Additional Layers
     Blue colored boxes represent the additional \glspl{convolutional layer} that are added to the base network.
     \\\\
     Green boxes represent the final additional \glspl{convolutional layer} that produce
-    the classes- and \gls{bbox} predictions.}
+    the class- and \gls{bbox} predictions.}
     \label{fig:ssd-vgg}
 \end{figure}
 Then (as briefly addressed in \cref{subsect:default-boxes}), a set of
@@ -259,12 +265,12 @@ condensed information about objects like wheels or headlights, whereas in a smal
 \gls{feature map} one pixel might contain  condensed information about the entire
 car. This concept is called the \textit{receptive field}~\cite[cf.][331\psq]{Goodfellow.2016}.}.
 
-To produce class- and \gls{bbox} predictions, every chosen \glspl{layer} \(L\in \mathbf{L}\)
+To produce class- and \gls{bbox} predictions, every chosen layer \(L\in \mathbf{L}\)
 is fed into a final additional \gls{convolutional layer} (i.e.\ one additional
-\gls{convolutional layer} per \gls{layer} in \(\mathbf{L}\), depicted green in \cref{fig:ssd-vgg}).
+\gls{convolutional layer} per layer in \(\mathbf{L}\), depicted green in \cref{fig:ssd-vgg}).
 
-As discussed in \cref{subsect:default-boxes}, the model prediction is supposed
-to be the quadruple \(o = \left(o^h, o^w, o^x, o^y\right)\). To enable also the
+As discussed in \cref{subsect:default-boxes}, the model is supposed
+to predict the quadruple \(o = \left(o^h, o^w, o^x, o^y\right)\). To enable also the
 prediction of different object classes, \(c\) is appended to the quadruple
 \(o\), where \(c\) is a one-hot encoded vector~\cite[cf.][35]{Murphy.2012} of all
 classes\footnotemark.
@@ -280,13 +286,14 @@ without constraints.
 \end{equation}
 where:
 \begin{conditions}
-    W & := & input size\\
-    K & := & kernel size\\
-    P & := & padding size\\
-    S & := & stride size
+    W' & := & output size\\
+    W  & := & input size\\
+    K  & := & kernel size\\
+    P  & := & padding size\\
+    S  & := & stride size
 \end{conditions}
 To produce an output of size \(m\times n \times \left(4 + \abs*{c}\right)\),
-kernel, padding, and stride sizes are therefore chosen \(K = 3, P = 1, S = 1\);
+kernel, padding, and stride sizes are chosen \(K = 3, P = 1, S = 1\);
 filter size is chosen as \(\left(4 + \abs*{c}\right)\).
 
 This concludes the overall \gls{ssd} architecture.
@@ -303,54 +310,57 @@ the network \(\mathbf{L}\subseteq \text{Network}\). For the output (i.e.\ the
 has been generated. Also, for every image a set of \gls{gt} \glspl{bbox} \(B\) is
 given from which the offsets \(O\) are computed following \cref{eq:offset-calc}
 and \(o_{b,d}\) is the offset related to \gls{bbox} \mathvar{b} and default box
-\mathvar{d}.
-Next, a set of matching \gls{gt} \gls{bbox} offsets and default boxes is built in
-\cref{eq:positives}:
-\begin{align}
-    \begin{split}\label{eq:positives}
-        &\text{Let}\ \left(D\in \mathbf{D}\right)\land \left(d\in D\right)\land \left(b\in B\right)\\
-        &\text{Then:}\\
-        &\quad \text{Pos} = \left\{\left(d, o_{b,d}\right) \,\middle|\, \text{IoU}\left(d, b\right) > 0.5 \lor \forall{D'\in\mathbf{D}}\ldotp\nexists{d'\in{}D'}: \text{IoU}\left(d,b,\right) > \text{IoU}\left(d',b,\right)\right\}
-    \end{split}
-\end{align}
-That is, \(\left(d,b\right)\) are added to Pos if their \gls{iou} is either greater than 0.5
-or if no other default box (out of all default boxes over all layers) has a larger
-\gls{iou}. The set of negative default boxes is then simply the complement as per
-\cref{eq:negatives}:
-\begin{equation}\label{eq:negatives}
-    \text{Neg} = \left\{d \,\middle|\, \left(D\in \mathbf{D}\right)\land \left(d\in D\right)\land d \notin \text{Pos}\right\}
-\end{equation}
-From the model architecture \cref{subsect:SSD Architecture} it becomes apparent,
-that the \(\abs*{\text{Negatives}} \gg \abs*{\text{Positives}}\). To prevent
-overfitting~\cite[cf.][111\psqq]{Goodfellow.2016} the model, for example s.t.\
-it detects only negatives, the \emph{amount} of negatives is pruned\footnotemark{}
-to be only three times greater than the number of positives.
+\mathvar{d}. From the model architecture \cref{subsect:SSD Architecture} it becomes
+apparent, that the number of matching (\cref{eq:bbox-matcher}) default boxes is
+much smaller than the total number of default boxes. To prevent the model from
+overfitting~\cite[cf.][111\psqq]{Goodfellow.2016}, for example s.t.\
+it detects only the \textit{no-object} class, the \emph{amount}
+of negatives is pruned\footnotemark{} to be only three times greater than the
+number of positives.
+
 \footnotetext{This process is also called hard negatives mining, please
 confer~\cite{Liu.2016}.}
-Therefore, the set of negatives is ordered by their class confidence score\footnotemark{} and then cut off at index
+
+This is done by ordering the set of negatives (i.e.\ not-matched default boxes)
+by their class confidence score\footnotemark{} and then cutting it off at index
 \(\left\lfloor 3*\abs*{Positives}\right\rfloor\).
 
 \footnotetext{In order to spare the reader, the exact derivation of the relation
 which specifies the order required for pruning is omitted.}
 
+The set of matching default boxes \gls{gt} \gls{bbox} offsets is built following
+\cref{eq:positives}.
+\begin{align}
+    \begin{split}\label{eq:positives}
+        &\text{Let}\ \left(D\in \mathbf{D}\right)\land \left(d\in D\right)\land \left(b\in B\right)\\
+        &\text{Then:}\\
+        &\quad \text{Pos} = \left\{\left(d, o_{b,d}\right) \,\middle|\, \text{IoU}\left(d, b\right) > 0.5 \lor \forall{D'\in\mathbf{D}}\ldotp\nexists{d'\in{}D'}: \text{IoU}\left(d,b\right) > \text{IoU}\left(d',b\right)\right\}
+    \end{split}
+\end{align}
+That is, \(\left(d,o_{b,d}\right)\) are added to the set, if their \gls{iou} is
+either greater than 0.5 or if no other default box (out of all default boxes over
+all layers) has a larger \gls{iou}. The set of negative default boxes is then simply
+the complement as per \cref{eq:negatives}.
+\begin{equation}\label{eq:negatives}
+    \text{Neg} = \left\{d \,\middle|\, \left(D\in \mathbf{D}\right)\land \left(d\in D\right)\land d \notin \text{Pos}\right\}
+\end{equation}
+
 Finally, the loss is the weighted sum of the confidence loss (\cref{eq:conf-loss}) and the
-location loss \cref{eq:loc-loss}. Let \(\mathds{1}_{b}^p = \{0, 1\}\) indicate, that
-\gls{gt} \gls{bbox} \mathvar{b} is of class \mathvar{p}.
-The confidence loss 
+location loss \cref{eq:loc-loss}. Let \(\mathds{1}_{d}^p = \{0, 1\}\) indicate, that
+the \gls{gt} \gls{bbox} \mathvar{b} (which was matched to default box \mathvar{b})
+is of class \mathvar{p}.
 \begin{alignat}{3}
-    \label{eq:conf-loss}&L_{\text{conf}}(l)     &=& - \sum_{p=1}^{\alphaAbs{C}} \left[ \sum_{\left(d,o\right)\in \text{Pos}} \mathds{1}_{o}^p * \log\left(\sigma\left(l_d^p\right)\right)\right] - \sum_{i\in \text{Neg}}\log\left(\sigma\left(l_d^0\right)\right)\\
-    \label{eq:loc-loss}&L_{\text{loc}}(l)       &=& \sum_{\left(d,o\right)\in \text{Pos}} \sum_{m\in \left\{ h,w,x,y \right\}} \operatorname{smooth_{L1}}\left(l_d^m - o_d^m\right)\\
+    \label{eq:conf-loss}&L_{\text{conf}}(l)     &=& - \sum_{p=1}^{\alphaAbs{C}} \left[ \sum_{\left(d,o\right)\in \text{Pos}} \mathds{1}_{d}^p * \log\left(\sigma\left(l_d^p\right)\right)\right] - \sum_{d\in \text{Neg}}\log\left(\sigma\left(l_d^0\right)\right)\\
+    \label{eq:loc-loss}&L_{\text{loc}}(l)       &=& \sum_{\left(d,o\right)\in \text{Pos}} \sum_{m\in \left\{ h,w,x,y \right\}} \operatorname{smooth_{L1}}\left(l_d^m - o^m\right)\\
     \label{eq:softmax}&\sigma\left(l_d^p\right) &=& \frac{\exp{\left(l_d^p\right)}}{\sum_{p'}{\exp\left(l_d^{p'}\right)}}
 \end{alignat}
 where:
 \begin{conditions}
     C &:= & is the set of all n-classes \(\left[1, n\right]\) without the \textit{no-object} class \(0\)\\
     l &:= & Prediction produced by the model\\
-    l_d^p &:= & Prediction associated with default box \mathvar{d} and class \mathvar{p}\\
-    l_d^m &:= & Prediction associated with default box \mathvar{d} and dimension \(m\in \left\{h,w,x,y\right\}\)\\
-    o_d^m &:= & Offset (see \cref{eq:offset-calc}) associated with default box \mathvar{d} and dimension \(m\in \left\{h,w,x,y\right\}\)
-
-
+    l_d^p &:= & Class prediction associated with default box \mathvar{d} and class \mathvar{p}\\
+    l_d^m &:= & \Gls{bbox} prediction associated with default box \mathvar{d} and dimension \(m\in \left\{h,w,x,y\right\}\)\\
+    o^m &:= & Offset (see \cref{eq:offset-calc}) associated with the current default box \mathvar{d} and dimension \(m\in \left\{h,w,x,y\right\}\)
 \end{conditions}
 The final loss is now given in \cref{eq:loss}.
 \begin{equation}\label{eq:loss}

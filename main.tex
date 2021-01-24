@@ -9,6 +9,8 @@
 % \include{preamble/end-equation.tex} % this must be included right-b4 doc-begin
 
 % wondering how to fix obscure errors? try preceding \protect
+\usepackage{luacode}
+\usepackage{shellesc}
 
 % Language-Encoding und Font
 \input{preamble/encoding-and-language.tex}
@@ -38,9 +40,9 @@
 \usepackage{blindtext}          % I like it better than lorem - but distubs some
 \usepackage{kantlipsum}         % 20% cooler than blindtext
 
-\usepackage[textwidth=15mm]{todonotes} % Insert von Todos - [disable]
+\usepackage[disable,textwidth=15mm]{todonotes} % Insert von Todos - [disable]
 \input{preamble/references-and-citation.tex}
-\setlength{\marginparwidth}{20mm} % For todonotes
+%\setlength{\marginparwidth}{20mm} % For todonotes
 \usepackage{hyperref}           % Verlinkungen im Dokument
 \usepackage[nameinlink]{cleveref}
 % Citation, Verweise
@@ -78,15 +80,14 @@
 \setcounter{tocdepth}{3}
 
 % Metadaten %
-\title{Online Anomaly Detection in Unlabeled Univariate Time Series Data}
-\subtitle{A Comparison of Approaches}
-\author[]{Martrikelnr.\ 8323}
+\title{A Generic Method for Stamp Detection and Classification using Machine Learning Object Detection Frameworks}
+\author[]{Malte Zietlow}
 \affil[]{
   Department of Computer Science \\
   Nordakademie \\
   Köllner Chaussee 11\\ 
   25337 Elmshorn}
-\affil[]{\textit{\{16103\}@nordakademie.de}}
+\affil[]{\textit{\{malte.zietlow\}@nordakademie.de}}
 
 \date{\today}
 \makeglossaries{}             % makeglossaries <document-root ohne .tex> per cmd
@@ -98,8 +99,8 @@
 
 %%%% Frontmatter %%%%
 \pagenumbering{gobble} % No page numbering for title and abstract
-%\maketitle
-\includepdf[pages=1]{misc/deckblattTerminiert.pdf}
+\maketitle
+%\includepdf[pages=1]{figures/front_page.pdf}
 \input{Dokument/01_Frontmatter/01_Abstract}
 \pagenumbering{roman} % Roman page numbering for TOC and lists
 {\hypersetup{hidelinks}
@@ -107,7 +108,7 @@
   \begingroup
   \listoffigures
   \let\clearpage\relax
-  \listoftables
+  %\listoftables % welp, no tables!
   \printglossaries{}
   \endgroup
 }

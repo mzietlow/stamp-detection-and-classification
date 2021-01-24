@@ -2,3 +2,14 @@
 \usepackage{xcolor}             % Using colors
 \usepackage{array,tabularx}
 \usepackage{booktabs}           % Tabellenpaket-keine vertikal und dicken Linien
+%\usepackage[active,tightpage]{preview}
+\usepackage{pgfplots}
+%\pgfplotsset{compat=newest,}
+\pgfplotsset{compat=newest,table/search path={figures/},}
+\definecolor{tb_color_1}{RGB}{245,124,0}
+\definecolor{tb_color_2}{RGB}{0,167,247}
+
+\pgfplotscreateplotcyclelist{tb}{
+semithick,tb_color_1\\%
+semithick,tb_color_2\\%
+}
