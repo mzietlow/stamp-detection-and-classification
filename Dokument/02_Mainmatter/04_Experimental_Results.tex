@@ -1,158 +1,139 @@
 \section{Experimental Results}
-This chapter gives an overview of the experimental setup, applied metrics
-(\cref{sect:metrics}), and dataset (\cref{sect:staver}). Summary and conclusion
-are given in \cref{sect:results-and-discussion}.
+This chapter gives an overview of the applied dataset (\cref{sect:staver})
+and experimental setup (\cref{sect:exp-setup}). Finally, the results are discussed
+in \cref{sect:results-and-discussion}. For the interested reader, an introduction
+to the applied metric (\gls{map}) is provided in \cref{sect:metrics}.
 
-\subsection{Metrics}\label{sect:metrics}
-To evaluate the results achieved by \gls{ssd} (see \cref{sect:methodology}) and
-make them comparable to diverging approaches, a set of metrics is introduced in
-this section. We consider \nameref{subsect:pixel-wise-metrics}, \nameref{subsect:mAP}
-and also introduce \nameref{subsect:normalized-iou}.
+\subsection{StaVer}\label{sect:staver}
+\Gls{ssd}, as presented in \cref{sect:methodology} will be evaluated on the publicly
+available dataset \gls{staver}\footnotemark~\cite{Micenkova.2015}.
+\footnotetext{\url{https://madm.dfki.de/downloads-ds-staver}}
 
-\subsubsection{Pixel-wise Metrics}\label{subsect:pixel-wise-metrics}
-In this subsubsection we briefly explain pixel-wise metrics such as
-\nameref{par:precision-recall}, \nameref{par:f-scores} and \nameref{par:iou}.
+From direct examination, the dataset contains 427 images in total. However,
+27 images are not annotated and can therefore not be used for train/test splits.
+Out of the remaining 400 images, 320 images contain colored and the remaining
+80 images contain black stamps.  To reduce computational complexity, a resolution
+of 200 dpi is chosen, although 300 and 600 dpi are also available. The dataset
+comprises several stamp-categories. Most distinctly, graphical and textual stamps
+are included. As an addition to the original dataset, the author has produced
+class annotation (``Text'', ``Image'').
 
-\paragraph{Precision \& Recall}\label{par:precision-recall}
-To the best of the author's knowledge, the most influential metric used in stamp 
-detection is pixel-wise evaluation of the precision and recall
-tuple~\cite{Nandedkar.2015b,Younas.2017,Ahmed.2013,Dey.2015,Micenkova.2011, Bhalgat.2016, Micenkova.2015,Nandedkar.2015b}.
-Often, recall and precision are used in settings with class imbalance where they
-provide a more sensible measure than accuracy. In the stamp detection, every
-image pixel can be considered to be from one of two classes, either
-\textit{stamp} (i.e.\ positive) or \textit{non-stamp} (i.e.\ negative). In
-training and evaluation images, \textit{non-stamp}-pixels greatly outnumber
-\textit{stamp}-pixels, thereby showing obvious class imbalance.
+For every image, two different \gls{gt} types are available. The former contains
+a segmentation map\footnotetext{Meaning that every pixel belonging to a stamp is
+marked.}, the latter \gls{gt} \glspl{bbox}. Unfortunately, both given \gls{gt}
+types are provided only in form of images \cref{fig:text-stamp-gt,fig:img-stamp-gt}.
 
-A definition of precision and recall is given in~\cite[423]{Goodfellow.2016} as
-follows. Precision is the fraction of \glsdisp{tp}{\textit{true} positive (TP)}
-pixels over all detected pixels (see \cref{eq:precision}). Recall is the fraction
-of \glsdisp{tp}{\textit{true} positive} detections over all \gls{gt} pixels
-(see \cref{eq:recall}). This relationship is visually depicted in \cref{fig:visual-precision-recall}.
-\begin{align}
-    \label{eq:precision}\text{Precision}    &= \frac{TP}{TP + FP}\\
-    \label{eq:recall}\text{Recall}          &= \frac{TP}{TP + FN}
-\end{align}
-Intuitively, precision is the ``ability of a classifier to distinguish a
-negative sample from [a] positive one''~\cite{Younas.2017}, while
-recall is ``the ability of a classifier to classify all positive samples''~\cite{Younas.2017}.
-\begin{figure}
-    \center
-    \includegraphics[width=.6\textwidth]{Metrics2.png}
-    \caption[short={Visual example of pixel-wise recall, precision and \gls{iou}}]
-    {Visual example of pixel-wise recall, precision and \gls{iou}, with
-    \gls{gt} (red) and detected pixels (blue)}\label{fig:visual-precision-recall}
+Coordinates (as required for \cref{eq:offset-calc}) are extracted from the \gls{gt}
+\gls{bbox} images programmatically. OpenCV~\cite{Bradski.2000} is used to find
+connected components and convert them into rectangles. Finally, coordinates are
+determined using \texttt{cv2.boxPoints(\ldots)}.
+
+\begin{figure}[th!]
+    \begin{subfigure}[t]{.225\linewidth}
+        \centering
+        \includegraphics[width=.9\textwidth]{stampDS-00251.png}
+        \subcaption{Textual stamp example from \gls{staver} (stampDS-00251)}\label{fig:text-stamp}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{.225\linewidth}
+        \centering
+        \includegraphics[width=.9\textwidth]{stampDS-00251-gt.png}
+        \subcaption{Image containing the \gls{gt}\gls{bbox} for the textual stamp (stampDS-00251)}\label{fig:text-stamp-gt}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{.225\linewidth}
+        \centering
+        \includegraphics[width=.9\textwidth]{stampDS-00138.png}
+        \subcaption{Two image-stamps from \gls{staver} (stampDS-00138)}\label{fig:img-stamp}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{.225\linewidth}
+        \centering
+        \includegraphics[width=.9\textwidth]{stampDS-00138-gt.png}
+        \subcaption{Image containing the \gls{gt}\gls{bbox} for the two image-stamps (stampDS-00138)}\label{fig:img-stamp-gt}
+    \end{subfigure}
+    \caption[Example images from \gls{staver} and respective \gls{gt}]{Example
+    images from \gls{staver} and respective \gls{gt} \glspl{bbox}. Unfortunately,
+    \gls{bbox} \gls{gt} is sometimes corrupted, e.g.\ (\subref{fig:img-stamp-gt}).}
 \end{figure}
 
-\paragraph{F-Scores}\label{par:f-scores}
-Precision and recall can then be combined into a harmonic average, which is usually
-called the family of \(F\)-Scores~\cite[e.g.][183]{Murphy.2012}. \(F_1\) is given
-in~\cite[183]{Murphy.2012} as per \cref{eq:f1}.
-\begin{equation}\label{eq:f1}
-    F_1=\frac{2*\text{Precision}*\text{Recall}}{\text{Precision} + \text{Recall}}
-\end{equation}
-However, almost all works reviewed in \cref{sect:related-work} give only
-precision \& recall and omit F-Scores.
+\subsection{Experimental Setup}\label{sect:exp-setup}
+For image preprocessing, a set of manipulations
+\begin{multline*}
+    \{\text{Brightness-jitter, Color-jitter, Saturation-jitter, Horizontal-flip, Vertical-flip, Random-crop,}\\\text{Black-and-White}\}
+\end{multline*}
+are applied randomly.
 
-\paragraph{Intersection over Union}\label{par:iou}
-\Gls{iou}, also known as the Jaccard-Index or Jaccard Similarity is a metric
-closely related to \nameref{par:f-scores} via the Tversky-Index (for details on
-this \cite[cf.][Section 6.3 Similarity Measures]{James.2011}). \Gls{iou} is 
-given by
-\begin{equation}
-    \text{IoU}=\frac{TP}{TP + FN + FP}
-\end{equation}
-Visually, this relation is shown also in \cref{fig:visual-precision-recall}.
+\Gls{ssd} is implemented by the author using Python 3.7 and TensorFlow 2.0~\cite{Abadi.2015}.
+As base network, MobileNet~\cite[cf.][]{Howard.2017} is adopted without pre-training\footnotemark.
+Hyperparameters are chosen as per the original paper, confer~\cite{Liu.2016}.
+Training and inference are run using \texttt{NVIDIA DGX A100} infrastructure.
 
-\subsubsection{Class-wise Mean Average Precision}\label{subsect:mAP}
-\Gls{map} is a widely used metric in object detection that was also adopted in
-challenges such as \gls{coco}, \gls{voc}, and \gls{oi}. We define \gls{map} in
-context of a multi-classification setting, where \gls{map} represents the
-arithmetic mean of \gls{ap} over the set of all classes. Next up we will
-redefine confusion matrix-values, then average precision will be explained.
+\footnotetext{Common datasets like e.g.\ ImageNet~\cite{Deng.2009} come from a substantially different
+distribution. Note please that pre-training and thereby heterogenous transfer learning
+\textit{might} be useful nonetheless~\cite{Day.2017}, but would require additional
+ablation studies which is beyond the scope of this work.}
 
-\paragraph{Confusion Matrix}
-Unlike in \fref{subsect:pixel-wise-metrics}, confusion matrix-values
-(\glspl{tp}, \glspl{fp} \& \glspl{fn}) are attributed not per individual pixel,
-but per \gls{bbox}. A predicted \gls{bbox} is considered a \gls{tp}, if its
-(pixel-wise) \gls{iou} with a groundtruth \gls{bbox} is greater than some
-threshold, \gls{fp} otherwise. Groundtruth \glspl{bbox} without an inferred
-\gls{bbox} are considered \gls{fn}.
-\par
-For example assume minimum \gls{iou}\(=0.5\). Then, in
-\cref{fig:bbox-precision-recall} \glspl{bbox} \(A\) and \(B\) would be considered
-\glspl{fp} due to their low \gls{iou}, while \gls{bbox} \(B\) is a \gls{tp}.
-We count 1 \gls{tp}, 2 \gls{fp} and 1 \gls{fn} and thus observe
-\(\text{Precision} = \frac{1}{3}, \text{Recall} = \frac{1}{2}\), following
-\cref{eq:precision-recall}.
+Out of the 400 available and annotated images, 65\% (240) are chosen for training
+and 35\% (100) are chosen for testing. A validation set is not constructed, because
+no hyperparameter optimization is conducted~\cite[cf.][120\psq]{Goodfellow.2016}.
+
+\subsection{Results \& Discussion}\label{sect:results-and-discussion}
+Results seem generally competitive with the original implementation by \textcite{Liu.2016}\footnotemark.
+Besides that, the results from this work unfortunately cannot be compared to
+related approaches in stamp detection which, as noted in \cref{sect:related-work},
+were mostly concerned with image segmentation.
+
+As demonstrated in \cref{fig:loss,fig:map-75}, the model converges after about
+a 10.000 training steps, reaching its maximum \gls{map}@0.75\gls{iou} of 0.593
+after 9.000 training steps.
+
+\footnotetext{Comparing apples and oranges, the best implementation of \gls{ssd}
+by \textcite{Liu.2016} reached a \gls{map}@.75\gls{iou} of 30.3[Table 6, \texttt{COCO test-dev2015}]\cite{Liu.2016}.}
 
 \begin{figure}[htp!]
     \centering
-    \includegraphics[width=.3\textwidth]{metrics3.png}
-    \caption{Visual example for bounding-box-wise confusion matrix, with
-    groundtruth \glspl{bbox} (red) and inferred \glspl{bbox}(blue). For each
-    inferred \gls{bbox} a confidence score (percent) is given.}\label{fig:bbox-precision-recall}
-\end{figure}
-
-\paragraph{Precision-Recall-Curves and Average Precision}\label{par:precision-recall-curves-ap}
-By ordering set of inferred \glspl{bbox} by confidence and then accumulating
-\glspl{tp} and \glspl{fp}, we can construct a Precision-Recall-Curve.
-A more extensive example is shown in \cref{fig:precision-recall-curve}.
-To improve comparability, a curve \(f(x)\) can be smoothed by applying
-\(f(x) = \max (f(x), f(x')), \forall x' > x\). 
-
-\begin{figure}[htp!]
-    \begin{subfigure}[t]{.49\linewidth}
-        \centering
-        \includegraphics[width=.9\textwidth]{rafaelpadilla-precision-recall-curve.png}
-        \subcaption{Precision-Recall-Curve. Each capital represents an inferred
-        \gls{bbox}. Recall \& Precision are plotted by accumulating \gls{tp} and
-        \gls{fp} over the list of inferred \glspl{bbox} sorted by confidence.}
+    \begin{subfigure}{.49\linewidth}
+        \begin{tikzpicture}
+            \begin{axis}[cycle list name=tb, 
+                        grid=both,
+                        grid style={solid,gray!30!white},
+                        axis lines=middle,
+                        xlabel={step},
+                        ylabel={L(l)},
+                        x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+                        y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},]
+            \addplot table [x=Step, y=Value, col sep=comma] {loss.csv};
+            \end{axis}
+        \end{tikzpicture}
+        \subcaption{Model loss over time}\label{fig:loss}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[t]{.49\linewidth}
-        \centering
-        \includegraphics[width=.9\textwidth]{rafaelpadilla-average-precision.png}
-        \subcaption{Interpolated Precision-Recall-Curve with drawn-in area under the
-        curve, i.e.\ \gls{ap}.}
+    \begin{subfigure}{.49\linewidth}
+        \begin{tikzpicture}
+            \begin{axis}[cycle list name=tb, 
+                        grid=both,
+                        grid style={solid,gray!30!white},
+                        axis lines=middle,
+                        xlabel={step},
+                        ylabel={mAP@75IoU},
+                        ytick={0.3,0.4,0.5,0.595},
+                        x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+                        y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},]
+            \addplot table [x=Step, y=Value, col sep=comma] {map@75iou.csv};
+            \end{axis}
+        \end{tikzpicture}
+        \subcaption{\gls{map}@.75\gls{iou} computed on the test set}\label{fig:map-75}
     \end{subfigure}
-    \caption[Precision-Recall-Curve]{Precision-Recall-Curve and its
-    interpolation. Both figures where adopted from~\cite{Padilla.2019}.}\label{fig:precision-recall-curve}
+    \caption{Model loss and test metrics over time}
 \end{figure}
 
-\Gls{map} builds upon \gls{ap}. \Gls{ap} is a 
-Despite its extensive use in the object detection community~\cite{Liu.2016,Ren.2015}, 
-\Gls{map} was only applied in a single work \cite{Zhu.2006} from 2006. This is,
-because 
-\begin{enumerate*}[i.)]
-    \item usually ranks are not generated in most approaches, therefore the 
-    underlying metric of average precision, which \textit{is} computed over ranks, 
-    lacks meaning and
-    \item oftentimes stamp detection is framed as a binary problem.
-\end{enumerate*} 
+From visual evaluation, the model is able to overcome most issues noted in
+\cref{sect:related-work}. In most cases, black and white stamps could be
+identified (see \cref{fig:black-and-white}) as well as stamps with significant
+overlap (\cref{fig:diff-domain-overlap,fig:overlap-insample}).
 
-\subsection{StaVer}\label{sect:staver}
-``The presented method is evaluated on a publicly available dataset (StaVer1) for stamp
-detection and verification [sic!]. This dataset contains 400 scanned document images. Out
-of these 400 documents, 80 documents contain black stamps whereas the remaining 320
-documents contain colored stamps. All of these document images are available in 200,
-300, and 600 dpi. For each image, two different types of ground truths are available.
-One contains the pixel level ground truth, meaning that all pixels which belong to
-stamps are marked in the image. The other ground truth format contains \gls{bbox}
-information per stamp. Hence, this dataset can be used for both pixel level and
-patch level evaluation of stamp detection. In addition, it contains different types of
-stamps ranging from rectangular, oval, to irregular shaped, and most importantly, textual
-stamps.
-For evaluation of the presented approach, the training set is generated by using 36 documents
-out of 400. Out of these 36 training documents, only 6 contains black stamps
-whereas the remaining 30 are with colored stamps. Testing is performed on the remaining
-364 documents (74 documents with black stamps, 290 documents with colored stamps).
-All the results are reported for 200 dpi documents.''~\cite{Ahmed.2016}
+As a downside it is noted that in few cases, \gls{ssd} was vulnerable to
+\gls{fp} detections of logos, which look very similar to graphical stamps
+(see \cref{fig:logo-as-stamp}). Also, sometimes multiple stamps are detected as
+a single stamp (see \cref{fig:multi-as-one}).
 
-\subsection{Results \& Discussion}\label{sect:results-and-discussion}
-Goals: 
-\begin{enumerate}
-    \item How good can stamp detection get with current frameworks?
-    \item How good can classification of a vast variety of similar classes get
-    with current frameworks?
-\end{enumerate}
+Interestingly, also stamps from different distributions could be identified without
+significant increase in \glspl{fp} (see \cref{fig-diff-domains}).
