@@ -1,8 +1,20 @@
 \section{Conclusion}
-\blindtext[1]
+In this paper, \gls{ssd}~\cite{Liu.2016} has been thoroughly explained, implemented
+by the author and applied on a publicly available dataset (\gls{staver}~\cite{Micenkova.2015}).
+The achieved results were generally good and the method was able to overcome
+several issues reported in previous work (see \cref{sect:related-work}).
 
 \subsection{Future Research}
-\blindtext[1]
+While the results were generally good, interesting ablation studies could include
+the use of more powerful base networks (NASNetLarge~\cite{Zoph.2018},
+InceptionResNetV2~\cite{Singh.2017}, \ldots). It would also be interesting to
+observe how well \gls{ssd} performs on a dataset with exclusively black-and-white
+images.
 
-\subsection{Lessons learned}
-\blindtext[1]
+Finally, hyperparameters could be tuned using e.g.\ grid search~\cite[432-434]{Goodfellow.2016}
+or Bayesian optimization~\cite{Agnihotri.2020}. Default box aspect ratios could
+be picked by observing the histogram of all aspect ratios and pick the \mathvar{n}
+most common aspect ratios.
+
+Another interesting area of research would be the adaptation of heatmaps~\cite{Marban.2021}
+to explain the predictions produced by the \gls{ssd} framework.

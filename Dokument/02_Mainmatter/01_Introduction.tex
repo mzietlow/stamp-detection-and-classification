@@ -1,2 +1,23 @@
 \section{Introduction}
-\blindtext[3]
+Digitalization is a recurring topic in German politics. Especially in governmental
+contexts however, formal letter writing is still sometimes a requirement.
+
+This paper is motivated by a use case identified within the author's corporation,
+regarding incompletely filled out billing documents. While the respective document
+contains rows explicitly for the name and address of the contractor, it is common
+practice that contact details are not provided via the fields. Instead, contractors
+use an ink stamp. Unfortunately, this practice excludes the document from currently
+applied simple automation pipelines. Therefore, a multistage plan has been
+forged, to enable automated document processing. Its first stage comprises the
+detection of a \gls{bbox} around the stamp.
+
+The paper is structured as follows. In \cref{sect:related-work}, related work
+on the topic of stamp detection is collected and discussed. In \cref{sect:methodology},
+the method that will be applied in this paper is thoroughly discussed. In \cref{sect:exp-setup},
+a public dataset (\acrshort{staver}) for stamp detection is introduced, and results
+are discussed. Finally, in \cref{sect:results-and-discussion}, the paper is wrapped
+up and future research directions are presented.
+
+Unfortunately, introduction to fundamental concepts from statistical learning is
+beyond the scope of this paper. The reader is therefore expected to be roughly
+familiar with basic terminology, regarding especially the usage of neural networks.
