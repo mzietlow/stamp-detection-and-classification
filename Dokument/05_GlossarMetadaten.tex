@@ -3,17 +3,15 @@
 % ----------------------------- Acronyms -----------------------------
 % \glslongpluralkey and glsshortpluralkey for plural. might night work betimes
 % deleting _all_ auxiliary files _might_ help.
-\newacronym{ml} {ML} {Machine Learning}
-\newacronym{skcm} {SKCM} {Simple K-Counting Machine}
-\newacronym{ai} {AI} {Artificial Intelligence}
-\newacronym{rnn} {RNN} {Recurrent Neural Network}
-\newacronym{cnn} {CNN} {Convolutional Neural Network}
-\newacronym{fcnn} {FCNN} {Fully Convolutional Neural Network}
-\newacronym{yolo} {YOLO} {You Only Look Once}
-\newacronym{ssd} {SSD} {Single Shot MultiBox Detector}
-\newacronym[description={A common activation function for neural neworks.
-\(f(x)=\max(0, x)\)}] {relu} {ReLU} {Rectified Linear Unit}
-\newacronym{map} {mAP} {mean Average Precision}
+\newacronym{ml}{ML}{Machine Learning}
+\newacronym{skcm}{SKCM}{Simple K-Counting Machine}
+\newacronym{ai}{AI}{Artificial Intelligence}
+\newacronym{rnn}{RNN}{Recurrent Neural Network}
+\newacronym{cnn}{CNN}{Convolutional Neural Network}
+\newacronym{fcnn}{FCNN}{Fully Convolutional Neural Network}
+\newacronym{yolo}{YOLO}{You Only Look Once}
+\newacronym{ssd}{SSD}{Single Shot MultiBox Detector}
+\newacronym{map}{mAP}{mean Average Precision}
 \newacronym{svm}{SVM}{Support Vector Machine}
 \newacronym{fcn}{FCN}{Fully Convolutional Neural Network}
 \newacronym{iou}{IoU}{Intersection over Union}
@@ -22,14 +20,17 @@
 \newacronym{tp}{TP}{True Positive}
 \newacronym{fn}{FN}{False Negative}
 \newacronym{tn}{TN}{True Negative}
-
+\newacronym{staver}{StaVer}{Stamp Verification Dataset~\cite{Micenkova.2015}}
+\newacronym{pca}{PCA}{Principal Component Algorithm}
+\newacronym[description={A common activation function for neural neworks.
+\(f(x)=\max(0, x)\)}]{relu}{ReLU}{Rectified Linear Unit}
 \newacronym[description={Umsetzung eines Features oder Produktes mit zwar
 minimalem Funktionsumfang, aber dennoch konkretem Mehrwert für den Nutzer},
 plural={MVPs}] {mvp}{MVP}{Minimal Viable Product}
 
 % ----------------------------- Glossary Entries -----------------------------
 
-\newglossaryentry{gt}{name={Ground truth},
+\newglossaryentry{gt}{name={Ground Truth},
     text={ground truth},
     description={The correct labels for an example}
 }
@@ -43,43 +44,37 @@ plural={MVPs}] {mvp}{MVP}{Minimal Viable Product}
 }
 
 
-\newglossaryentry{feature map} {
+\newglossaryentry{feature map}{
     name={Feature Map},
     text={feature map},
     description={Output of a convolutional layer after applying an activation function like \gls{relu}}
 }
 
-\newglossaryentry{coco} {
+\newglossaryentry{coco}{
     name={COCO},
-    description={Common Objects in Context (COCO) is a well known dataset for
-    object detection, segmentation and captioning dataset}
+    description={Common Objects in Context (COCO). A well known dataset for
+    object detection, segmentation and captioning}
 }
 
-\newglossaryentry{voc} {
+\newglossaryentry{voc}{
     name={Pascal VOC},
-    description={Pascal VOC is a well known dataset/challenge object detection
+    description={Pascal VOC is a well known dataset/challenge for object detection
     and classification}
 }
 
-\newglossaryentry{oi} {
+\newglossaryentry{oi}{
     name={Open Images},
     description={Google Open Images is a well known dataset/challenge for
     object detection and classification}
 }
 
-\newglossaryentry{anchor} {
+\newglossaryentry{anchor}{
     name={Anchor},
     text={anchor},
     description={Center of a bounding box},
 }
 
-\newglossaryentry{layer} {
-    name={Layer},
-    text={layer},
-    description={Contextsensitive, either dense- or \gls{convolutional layer} 
-    as defined by in}}
-
-\newglossaryentry{convolutional layer} {
+\newglossaryentry{convolutional layer}{
     name={Convolutional Layer},
     text={convolutional layer},
     description={Composition of the convolutional operation and nonlinearity, 
@@ -87,14 +82,14 @@ plural={MVPs}] {mvp}{MVP}{Minimal Viable Product}
     in~\cite[341]{Goodfellow.2016}}
 }
 
-\newglossaryentry{dense layer} {
+\newglossaryentry{dense layer}{
     name={Dense Layer},
     text={dense layer},
     description={Also: fully connected layer. Composition of the matrix operation and nonlinearity, partially referring to the `complex layer terminology' 
-    in~\cite[341]{Goodfellow.2016}} \todo{refine.~explain also conv in appendix.}
+    in~\cite[341]{Goodfellow.2016}}
 }
 
-\newglossaryentry{deconvolutional layer} {
+\newglossaryentry{deconvolutional layer}{
     name={Deconvolutional Layer},
     text={deconvolutional layer},
     description={Composition of the deconvolutional operation and nonlinearity,
